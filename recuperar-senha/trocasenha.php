@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once  'conexao.php';
+require_once '../conexao.php';
 
 if(isset($_POST['id']) && isset(($_SESSION['codigo']))) {
 
@@ -17,7 +17,7 @@ if(isset($_POST['id']) && isset(($_SESSION['codigo']))) {
 
         if ($stmt->execute()) {
             $_SESSION['sucessoSenha'] = 'Senha alterada com sucesso!';
-            header('location: login.php');
+            header('location: ../login/login.php');
         } else {
             $_SESSION['senhaErro'] = 'Ocorreu um erro!';
             $cod = $_SESSION['codigo'];
@@ -31,5 +31,5 @@ if(isset($_POST['id']) && isset(($_SESSION['codigo']))) {
     }
 }else {
     $_SESSION['loginErro'] = 'Você precisa estar logado.';
-    header('location: login.php');
+    header('location: ../login/login.php');
 }

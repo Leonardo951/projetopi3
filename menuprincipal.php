@@ -92,7 +92,7 @@ require_once 'check.php';
                                     <div class="card-body text-center">
                                         <h4 class="card-title">Fornecedores</h4>
                                         <p class="card-text">Gerenciar fornecedores</p>
-                                        <a href="fornecedores.php" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                        <a href="fornecedores/fornecedores.php" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -108,7 +108,7 @@ require_once 'check.php';
                                     <div class="card-body text-center">
                                         <h4 class="card-title">Usuários</h4>
                                         <p class="card-text">Gerenciar usuários</p>
-                                        <a href="usuarios.php" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                        <a href="usuarios/usuarios.php" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
                                     </div>
                                 </div>
                             </div>

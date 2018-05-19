@@ -11,25 +11,25 @@ session_start();
 
     <meta name="description" content="Projeto PI3 da faculdade. Sistema de compra e venda">
     <meta name="author" content="Grupo 5 - SENAC">
-    <link rel="icon" href="img/favicon.png">
+    <link rel="icon" href="../img/favicon.png">
 
     <title>CABLES-Infomática</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/login.css" rel="stylesheet">
+    <link href="../css/login.css" rel="stylesheet">
 
-    <script src="js/ie-emulation-modes-warning.js"></script>
+    <script src="../js/ie-emulation-modes-warning.js"></script>
 </head>
 <body>
 <div class="container">
 
-    <img id="profile-img" class="profile-img-card" src="img/cables.png" />
+    <img id="profile-img" class="profile-img-card" src="../img/cables.png" />
 
     <div class="card card-container">
 
@@ -73,7 +73,7 @@ session_start();
             <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Entrar</button>
         </form>
 
-        <a href="relembre-me.php" class="esqueceu-senha">
+        <a href="../recuperar-senha/relembre-me.php" class="esqueceu-senha">
             Esqueceu sua senha?
         </a>
     </div>

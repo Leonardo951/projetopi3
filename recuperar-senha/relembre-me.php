@@ -12,25 +12,25 @@ session_start();
 
     <meta name="description" content="Projeto PI3 da faculdade. Sistema de compra e venda">
     <meta name="author" content="Grupo 5 - SENAC">
-    <link rel="icon" href="img/favicon.png">
+    <link rel="icon" href="../img/favicon.png">
 
     <title>CABLES-Infomática</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/relembre-me.css" rel="stylesheet">
+    <link href="../css/relembre-me.css" rel="stylesheet">
 
-    <script src="js/ie-emulation-modes-warning.js"></script>
+    <script src="../js/ie-emulation-modes-warning.js"></script>
 </head>
 <body>
 
 <div class="containers">
-    <img id="profile-img" class="recuper_img" src="img/cables.png" />
+    <img id="profile-img" class="recuper_img" src="../img/cables.png" />
 
     <div class="cards cards-containers">
         <?php
@@ -49,7 +49,7 @@ session_start();
             <button class="btn_rec btn-lg btn-primary btn-block btn-recuper" type="submit">Enviar</button>
         </form>
 
-        <a href="login.php" class="btn-retorn">
+        <a href="../login/login.php" class="btn-retorn">
             Retornar ao login
         </a>
     </div>

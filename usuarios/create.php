@@ -1,14 +1,14 @@
 <?php
 
-require_once 'check.php';
-include_once 'conexao.php';
+require_once '../check.php';
+include_once '../conexao.php';
 session_start();
 
 echo '<head>
         <meta charset="utf-8">
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-        <script src="js/ie-emulation-modes-warning.js"></script>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+        <script src="../js/ie-emulation-modes-warning.js"></script>
     </head>';
 
 $nome   = $_POST['nome'];

@@ -1,6 +1,6 @@
 <?php
 
-include_once 'conexao.php';
+include_once '../conexao.php';
 session_start();
 
 // resgata variáveis do formulário
@@ -36,5 +36,5 @@ if (empty($users))
     $_SESSION['user_perfil'] = $users['perfil'];
     $_SESSION['recado'] = 'nada';
 
-    header('Location: menuprincipal.php');
+    header('Location: ../menuprincipal.php');
 }

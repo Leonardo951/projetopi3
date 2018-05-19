@@ -3,8 +3,8 @@ session_start();
 date_default_timezone_set('America/Sao_Paulo');
 // ini_set('smtp_port', 587);
 require_once 'conexao.php';
-require_once("class/class.phpmailer.php");
-require_once("class/class.smtp.php");
+require_once("../class/class.phpmailer.php");
+require_once("../class/class.smtp.php");
 
 $mail = new PHPMailer;
 $mail->IsSMTP();
