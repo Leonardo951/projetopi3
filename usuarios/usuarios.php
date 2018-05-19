@@ -1,5 +1,5 @@
 <?php
-    require_once 'check.php';
+    require_once '../check.php';
     session_start();
 ?>
 <!DOCTYPE html>
@@ -12,20 +12,20 @@
 
         <meta name="description" content="Projeto PI3 da faculdade. Sistema de compra e venda">
         <meta name="author" content="Grupo 5 - SENAC">
-        <link rel="icon" href="img/favicon.png">
+        <link rel="icon" href="../img/favicon.png">
 
         <title>CABLES-Infomática</title>
 
         <!-- Bootstrap core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
 
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+        <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
-        <link href="css/usuarios.css" rel="stylesheet">
+        <link href="../css/usuarios.css" rel="stylesheet">
 
-        <script src="js/ie-emulation-modes-warning.js"></script>
+        <script src="../js/ie-emulation-modes-warning.js"></script>
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -42,7 +42,7 @@
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-6">
-                            <img src="img/cables.png/" class="img-logo-usuario"/>
+                            <img src="../img/cables.png/" class="img-logo-usuario"/>
                             <?php
                             if ($_SESSION['recado'] == 'deletado') {?>
                                 <div class="alert alert-success">
@@ -79,7 +79,7 @@
                             ?>
                         </div>
                         <div class="col-sm-6">
-                            <a href="menuprincipal.php" class="btn btn-success-retorn">
+                            <a href="../menuprincipal.php" class="btn btn-success-retorn">
                                 <span><i class="fa fa-arrow-circle-left"></i> Voltar ao menu</span>
                             </a>
                             <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal">
@@ -100,7 +100,7 @@
                     </thead>
                     <tbody>
                     <?php
-                    include_once 'conexao.php';
+                    include_once '../conexao.php';
                     $qntd = 0;
                     // Definindo a quantidade de usuários por página
                     $limite = 5;
@@ -191,7 +191,7 @@
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                 </div>
                                 <div class="modal-body">
-                                    <b><p>Deseja excluir o usuário '. $nome .'?</p></b>
+                                    <b><p>Deseja excluir o usuário ' . $nome .'?</p></b>
                                     <p class="text-warning"><small>Essa ação não poderá ser desfeita..</small></p>
                                     <input name="id" type="hidden" value="' . $id . '" />
                                 </div>
@@ -255,7 +255,7 @@
         <div id="addEmployeeModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form method="POST" action="create-usuario.php">
+                    <form method="POST" action="create.php">
                         <div class="modal-header">
                             <h4 class="modal-title">Adicionar usuário</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>

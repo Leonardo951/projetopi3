@@ -1,6 +1,6 @@
 <?php
 
-require_once 'conexao.php';
+require_once '../conexao.php';
 session_start();
 
 $id = $_POST['id'];
