@@ -1,0 +1,305 @@
+<?php
+require_once 'check.php';
+include_once 'conexao.php';
+session_start();
+?>
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Projeto PI3 da faculdade. Sistema de compra e venda">
+    <meta name="author" content="Grupo 5 - SENAC">
+    <link rel="icon" href="img/favicon.png">
+
+    <title>CABLES-Infomática</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/fornecedores.css" rel="stylesheet">
+
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!--Página que mostra os usuários -->
+<div class="container">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="img/cables.png/" class="img-logo-usuario"/>
+                    <?php
+                    if ($_SESSION['recado'] == 'deletado') {
+                        echo '<div class="alert alert-success">
+                                    <strong>Excluido! </strong>O fornecedor foi removido com sucesso!
+                                    <button class="close" data-dismiss="alert">x</button>
+                                </div>';
+                    } elseif($_SESSION['recado'] == 'nodelete') {
+                        echo '<div class="alert alert-danger">
+                                <strong>Algo deu errado. </strong>Ocorreu um erro ao excluir o fornecedor.
+                                <button class="close" data-dismiss="alert">x</button>
+                            </div>';
+                    } elseif($_SESSION['recado'] == 'adicionado') {
+                        echo '<div class="alert alert-success">
+                                <strong>Adicionado! </strong>Novo fornecedor adicionado com sucesso!
+                                <button class="close" data-dismiss="alert">x</button>
+                            </div>';
+                    } elseif($_SESSION['recado'] == 'erroadicao') {
+                        echo '<div class="alert alert-warning">
+                                <strong>Algo deu errado. </strong>Ocorreu um erro ao adicionar o fornecedor!
+                                <button class="close" data-dismiss="alert">x</button>
+                            </div>';
+                    } elseif($_SESSION['recado'] == 'editado') {
+                        echo '<div class="alert alert-success">
+                                <strong>Modificado! </strong>As informações foram alteradas com sucesso!
+                                <button class="close" data-dismiss="alert">x</button>
+                            </div>';
+                    } elseif($_SESSION['recado'] == 'erroedicao') {
+                        echo '<div class="alert alert-danger">
+                                <strong>Algo deu errado. </strong>Ocorreu um erro ao modificar as informações do fornecedor!
+                                <button class="close" data-dismiss="alert">x</button>
+                            </div>';
+                    } elseif($_SESSION['recado'] == 'erroqntd') {
+                    echo '<div class="alert alert-danger">
+                                <strong>Ops! </strong>Você não pode excluir um fornecedor que ainda tem produtos disponíveis. 
+                                <button class="close" data-dismiss="alert">x</button>
+                            </div>';
+                    $_SESSION['recado'] = 'vazio';
+                    ?>
+                </div>
+                <div class="col-sm-6">
+                    <a href="menuprincipal.php" class="btn btn-success-retorn">
+                        <span><i class="fa fa-arrow-circle-left"></i> Voltar ao menu</span>
+                    </a>
+                    <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal">
+                        <i class="material-icons">&#xE147;</i>
+                        <span>Novo fornecedor</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped table-hover" id="usuariotable">
+            <tr>
+                <th>Nome</th>
+                <th>Razão Social</th>
+                <th>CNPJ</th>
+                <th>E-mail</th>
+                <th>DDD</th>
+                <th>Telefone</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            $qntd = 0;
+            // Definindo a quantidade de usuários por página
+            $limite = 5;
+            // definindo a paginação
+            $pg = (isset($_GET['page'])) ? $_GET['page'] : 1;
+            // Definindo qual será o ínicio
+            $inicio = ($pg * $limite) - $limite;
+            // Fazendo a vizualização dos dados
+            $sql = 'SELECT pk_fornecedor, nome, email, perfil FROM tb_fornecedor ORDER BY nome ASC LIMIT '.$inicio.','. $limite.';';
+            $prepara = $conex->prepare($sql);
+            $prepara->execute();
+            while ( $row = $prepara->fetch() ) {
+                $id = $row['pk_fornecedor'];
+                $nome = $row['nome'];
+                $email = $row['email'];
+                $rz = $row['razao_soc'];
+                $ddd = $row['ddd'];
+                $tel = $row['telefone'];
+                $cnpj = $row['cnpj'];
+                echo '<tr>
+                                    <td>' . $nome . '</td>
+                                    <td>' . $rz . '</td>
+                                    <td>' . $cnpj . '</td>
+                                    <td>' . $email . '</td>
+                                    <td>' . $ddd . '</td>
+                                    <td>' . $tel . '</td>
+                                    <td>';
+                echo '<a href="#editUsuario' . $id . '" class="editar" data-toggle="modal">
+                                            <i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i>
+                                        </a>
+                                            <a href="#deleteUsuario' . $id . '" class="excluir" data-toggle="modal")>
+                                                <i class="material-icons" data-toggle="tooltip" title="Excluir">&#xE872;</i>
+                                            </a>    
+                                        </td>
+                                    </tr>';
+                echo '<!-- EditUsuario HTML -->
+                                                <div id="editForn' . $id . '" class="modal fade">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <form action="update.php" method="POST">
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title">Editar usuário</h4>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <div class="form-group">
+                                                                        <label>Nome</label>
+                                                                        <input type="text" name="nome" class="form-control" value="' . $nome . '" required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label>Razão Social</label>
+                                                                        <input type="text" name="razao" class="form-control" value="' . $rz . '" required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label>CNPJ</label>
+                                                                        <input type="text" name="cnpj" class="form-control" value="' . $rz . '" required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label>E-mail</label>
+                                                                        <input type="email" name="email" class="form-control" value="' . $email . '" required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label>DDD</label>
+                                                                        <select class="form-control" required name="ddd" >';
+                                                                    if($perfil = Vendedor){
+                                                                        echo '<option>Administrador</option>
+                                                                            <option>Gerente</option>
+                                                                            <option selected>Vendedor</option>';
+                                                                    } else {
+                                                                        echo '<option selected>Administrador</option>
+                                                                            <option>Gerente</option>
+                                                                            <option>Vendedor</option>';
+                                                                    };
+                                                                    echo '
+                                                                        </select>
+                                                                    <div class="form-group">
+                                                                        <label>Telefone</label>
+                                                                        <input type="tel" name="fone" class="form-control" value="' . $tel . '" required>
+                                                                    </div>
+                                                                        <input name="id" type="hidden" value="' . $id . '" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+                                                                    <input type="submit" class="btn btn-info" value="Salvar">
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>';
+                echo ' <!-- DeleteUsuario HTML -->
+                                                <div id="deleteForn' . $id . '" class="modal fade">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <form action="delete.php" method="POST">
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title">Excluir usuário</h4>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <b><p>Deseja realmente excluir este fornecedor?</p></b>
+                                                                    <p class="text-warning"><small>Essa ação não poderá ser desfeita..</small></p>
+                                                                    <input name="id" type="hidden" value="' . $id . '" />
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+                                                                    <input type="submit" class="btn btn-danger" value="Excluir">
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>';
+                $qntd = $qntd + 1;
+            }
+            // Verificando quantos itens existem na tabela
+            $sql_Total = 'SELECT pk_usuario FROM tb_usuario';
+            $query_Total = $conex->prepare($sql_Total);
+            $query_Total->execute();
+            $query_result = $query_Total->fetchAll(PDO::FETCH_ASSOC);
+            $query_count =  $query_Total->rowCount(PDO::FETCH_ASSOC);
+            // Colocando na variavel quantas páginas vão existir
+            $qtdPag = ceil($query_count/$limite);
+            $pagina_anterior = $pg -1;
+            $pagina_posterior = $pg +1;
+
+            echo '</tbody>';
+            echo '</table>';
+            // apresentar a paginação
+            echo '<div class="clearfix">
+                    <div class="hint-text">Mostrando <b>'. $qntd .'</b> de <b>'. $query_count .'</b> registros</div>
+                    <ul class="pagination">';
+            if($pagina_anterior != 0) {
+                echo '<li class="page-item"><a href="usuarios.php?page='. $pagina_anterior .'">Anterior</a></li>';
+            } else {
+                echo '<li class="page-item disabled"><a href="#">Anterior</a></li>';
+            };
+            if($qtdPag > 1 && $pg <= $qtdPag){
+                for($i = 1; $i <= $qtdPag; $i++){
+                    if($i == $pg){
+                        echo "<li class=\"page-item active\"><a href=\"#\" class=\"page-link\">" . $i. "</a></li>";
+                    } else {
+                        echo '<li class=\"page-item disabled><a href="usuarios.php?page='.$i.'" class=\"page-link\">'. $i  .'</a></li>';
+                    }
+                }
+            }if($pagina_posterior <= $qtdPag) {
+                echo '<li class="page-item"><a href="usuarios.php?page='.$pagina_posterior.'" class="page-link">Próxima</a></li>';
+            } else {
+                echo '<li class="page-item disabled"><a href="#" class="page-link">Próxima</a></li>';
+            };
+            echo '</ul>
+                </div>';
+            ?>
+    </div>
+</div>
+
+<!-- AdicionarUsuario HTML -->
+<div id="addEmployeeModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="POST" action="create-usuario.php">
+                <div class="modal-header">
+                    <h4 class="modal-title">Adicionar usuário</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Nome do usuário</label>
+                        <input type="text" class="form-control" name="nome" required autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input type="email" class="form-control" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Senha</label>
+                        <input type="text" class="form-control" value="p@ssw0rd" name="senha" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Perfil de Acesso</label>
+                        <select class="form-control" required name="perfil">
+                            <option></option>
+                            <option>Administrador</option>
+                            <option>Gerente</option>
+                            <option>Vendedor</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+                    <input type="submit" class="btn btn-success" value="Adicionar" onclick="reload();">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

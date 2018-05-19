@@ -1,0 +1,82 @@
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+body, html {
+    max-height: 100%;
+    background-color: #15243c !important;
+}
+
+#team {
+    background: #15243c !important; }
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #108d6f;
+    border-color: #108d6f;
+    box-shadow: none;
+    outline: none; }
+
+.btn-primary {
+    color: #fff;
+    background-color: #007b5e;
+    border-color: #007b5e;
+    width: 30px;
+    height: 23px; }
+
+section .section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 50px;
+    text-transform: uppercase; }
+
+.frontside {
+    position: relative;
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    z-index: 2;
+    margin-bottom: 30px;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: 1s;
+    -moz-transform-style: preserve-3d;
+    -o-transition: 1s;
+    -o-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d; }
+
+.frontside .card {
+    max-height: 300px;
+    min-height: 150px; }
+
+.frontside .card .card-title {
+    color: #007b5e !important;
+    font-size: 25px; }
+
+.card-text {
+    font-size: 15px; }
+
+.frontside .card .card-body img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; }
+
+.card:hover,
+.card:focus,
+.card:active {
+    background-color: #e3edef;
+    border-color: #555D50; }
+
+.btn-exit {
+    padding: 3px 20px;
+    font-weight: bold;
+    background-color: white;
+    border-color: black;
+    border-radius: 5px;
+    margin-left: 200px; }
+
+/*# sourceMappingURL=menu-principal.component.css.map */
