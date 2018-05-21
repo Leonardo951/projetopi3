@@ -46,7 +46,7 @@
                             <?php
                             if ($_SESSION['recado'] == 'deletado') {?>
                                 <div class="alert alert-success">
-                                    <strong>Apagado! </strong>O usuário foi removido com sucesso!
+                                    <strong>Excluído! </strong>O usuário foi removido com sucesso!
                                     <button class="close" data-dismiss="alert">x</button>
                                 </div>
                             <?php } elseif($_SESSION['recado'] == 'nodelete') {?>
@@ -100,6 +100,7 @@
                     </thead>
                     <tbody>
                     <?php
+                    $myperfs = array('Administrador', 'Gerente', 'Vendedor');
                     include_once '../conexao.php';
                     $qntd = 0;
                     // Definindo a quantidade de usuários por página
@@ -152,22 +153,13 @@
                                         <div class="form-group">
                                             <label>Perfil de acesso</label>
                                             <select class="form-control" required name="perfil" >';
-                                            if($perfil = Vendedor){
-                                                echo '
-                                                <option>Administrador</option>
-                                                <option>Gerente</option>
-                                                <option selected>Vendedor</option>';
-                                            } elseif ($perfil = Gerente) {
-                                                echo '
-                                                <option>Administrador</option>
-                                                <option selected>Gerente</option>
-                                                <option>Vendedor</option>';
-                                            } else {
-                                                echo '
-                                                <option selected>Administrador</option>
-                                                <option>Gerente</option>
-                                                <option>Vendedor</option>';
-                                            };
+                                                for($i = 0; $i < count($myperfs); ++$i) {
+                                                    if($myperfs[$i] == $perfil) {
+                                                        echo '<option selected>'.$myperfs[$i].'</option>';
+                                                    } else {
+                                                        echo '<option>'.$myperfs[$i].'</option>';
+                                                    }
+                                                }
                                             echo '
                                         </select>
                                         <input name="id" type="hidden" value="' . $id . '" />
@@ -277,9 +269,9 @@
                                 <label>Perfil de Acesso</label>
                                 <select class="form-control" required name="perfil">
                                     <option></option>
-                                    <option>Administrador</option>
-                                    <option>Gerente</option>
-                                    <option>Vendedor</option>
+                                    <?php for($i = 0; $i < count($myperfs); ++$i) {
+                                        echo '<option>'.$myperfs[$i].'</option>';
+                                    } ?>
                                 </select>
                             </div>
                         </div>
