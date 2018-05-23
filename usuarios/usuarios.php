@@ -1,5 +1,6 @@
 <?php
     require_once '../check.php';
+    include_once '../conexao.php';
     session_start();
 ?>
 <!DOCTYPE html>
@@ -100,8 +101,12 @@
                     </thead>
                     <tbody>
                     <?php
-                    $myperfs = array('Administrador', 'Gerente', 'Vendedor');
-                    include_once '../conexao.php';
+                    $sql = 'SELECT perfil FROM tb_perfil;';
+                    $perf = $conex->prepare($sql);
+                    $perf->execute();
+                    while ($per = $perf->fetch()) {
+                        $myperfs[] = $per['perfil'];
+                    };
                     $qntd = 0;
                     // Definindo a quantidade de usuários por página
                     $limite = 5;
@@ -110,7 +115,7 @@
                     // Definindo qual será o ínicio
                     $inicio = ($pg * $limite) - $limite;
                     // Fazendo a vizualização dos dados
-                    $sql = 'SELECT pk_usuario, nome, email, perfil FROM tb_usuario ORDER BY nome ASC LIMIT '.$inicio.','. $limite.';';
+                    $sql = 'SELECT * FROM perfil_usuario ORDER BY nome ASC LIMIT '.$inicio.','. $limite.';';
                     $prepara = $conex->prepare($sql);
                     $prepara->execute();
                     while ( $row = $prepara->fetch() ) {
