@@ -19,7 +19,7 @@ $sql = "UPDATE tb_fornecedor SET nome = :nome WHERE pk_usuario = :id;
         UPDATE tb_fornecedor SET cnpj = :cnpj WHERE pk_usuario = :id;
         UPDATE tb_fornecedor SET email = :email WHERE pk_usuario = :id;
         UPDATE tb_fornecedor SET telefone = :telefone WHERE pk_usuario = :id;
-        UPDATE tb_fornecedor SET ddd = :ddd WHERE pk_usuario = :id";
+        UPDATE tb_fornecedor SET fk_ddd = :fk_ddd WHERE pk_usuario = :id";
 
 $stmt = $PDO->prepare($sql);
 
@@ -27,7 +27,7 @@ $stmt->bindParam(':nome', $nome);
 $stmt->bindParam(':razao_soc', $rz);
 $stmt->bindParam(':cnpj', $cnpj);
 $stmt->bindParam(':email', $email);
-$stmt->bindParam(':ddd', $ddd);
+$stmt->bindParam(':fk_ddd', $ddd);
 $stmt->bindParam(':telefone', $tel);
 $stmt->bindParam(':id', $id);
 

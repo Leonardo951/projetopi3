@@ -115,7 +115,7 @@
                     // Definindo qual será o ínicio
                     $inicio = ($pg * $limite) - $limite;
                     // Fazendo a vizualização dos dados
-                    $sql = 'SELECT * FROM perfil_usuario ORDER BY nome ASC LIMIT '.$inicio.','. $limite.';';
+                    $sql = 'SELECT * FROM view_usuario ORDER BY nome ASC LIMIT '.$inicio.','. $limite.';';
                     $prepara = $conex->prepare($sql);
                     $prepara->execute();
                     while ( $row = $prepara->fetch() ) {

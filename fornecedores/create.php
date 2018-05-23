@@ -11,7 +11,7 @@ $ddd = $_POST['ddd'];
 $tel = $_POST['tel'];
 $cnpj = $_POST['cnpj'];
 
-$sql = "INSERT INTO tb_fornecedor (nome, email, razao_soc, cnpj, ddd, telefone) VALUES (?,?,?,?,?,?);";
+$sql = "INSERT INTO tb_fornecedor (nome, email, razao_soc, cnpj, fk_ddd, telefone) VALUES (?,?,?,?,?,?);";
 
 $stmt = $conex->prepare($sql);
 $stmt->bindValue(1, $nome);

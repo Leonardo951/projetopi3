@@ -9,10 +9,8 @@ $email  = $_POST['email'];
 $senha  = $_POST['senha'];
 $perfil = $_POST['perfil'];
 
-$PDO = $conex;
-
 $sql = 'SELECT pk_perfil FROM tb_perfil WHERE perfil = :perfil;';
-$prepara = $PDO->prepare($sql);
+$prepara = $conex->prepare($sql);
 $prepara->bindParam(':perfil', $perfil);
 $prepara->execute();
 while ($pk = $prepara->fetch()) {
