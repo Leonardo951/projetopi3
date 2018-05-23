@@ -61,7 +61,7 @@
                                 </div>
                             <?php } elseif($_SESSION['recado'] == 'erroadicao') {?>
                                 <div class="alert alert-warning">
-                                    <strong>Algo deu errado. </strong>Ocorreu um erro ao adicionar o usuário!
+                                    <strong>Algo deu errado. </strong>Ocorreu um erro ao adicionar o fornecedor!
                                     <button class="close" data-dismiss="alert">x</button>
                                 </div>
                             <?php } elseif($_SESSION['recado'] == 'editado') {?>
