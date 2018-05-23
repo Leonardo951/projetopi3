@@ -60,7 +60,7 @@ require_once 'check.php';
                                     <div class="card-body text-center">
                                         <h4 class="card-title">Estoque</h4>
                                         <p class="card-text">Produtos disponiveis</p>
-                                        <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                        <a href="produtos/produtos.php" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
                                     </div>
                                 </div>
                             </div>

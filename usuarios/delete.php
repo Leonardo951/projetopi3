@@ -7,11 +7,11 @@ $id = $_POST['id'];
 
 $PDO = $conex;
 
-$sql="DELETE FROM tb_usuario WHERE pk_usuario = :id";
+$sql="DELETE FROM tb_usuario WHERE pk_usuario = :pk_usuario;";
 
 $stmt = $PDO->prepare($sql);
 
-$stmt->bindParam(':id', $id, PDO::PARAM_INT);
+$stmt->bindParam(':pk_usuario', $id, PDO::PARAM_INT);
 
 if ( $stmt->execute() ) {
     $_SESSION['recado'] = 'deletado';

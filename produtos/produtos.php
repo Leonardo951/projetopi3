@@ -1,11 +1,11 @@
 <?php
-    session_start();
     require_once '../check.php';
     include_once '../conexao.php';
+    session_start();
 ?>
 <!DOCTYPE html>
 
-<html lang="pt-br" xmlns="http://www.w3.org/1999/html">
+<html lang="pt-br">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,7 +24,7 @@
         <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
-        <link href="../css/fornecedores.css" rel="stylesheet">
+        <link href="../css/produtos.css" rel="stylesheet">
 
         <script src="../js/ie-emulation-modes-warning.js"></script>
 
@@ -47,22 +47,27 @@
                             <?php
                             if ($_SESSION['recado'] == 'deletado') {?>
                                 <div class="alert alert-success">
-                                    <strong>Excluído! </strong>O fornecedor foi removido com sucesso!
+                                    <strong>Excluído! </strong>O produto foi removido com sucesso!
                                     <button class="close" data-dismiss="alert">x</button>
                                 </div>
                             <?php } elseif($_SESSION['recado'] == 'nodelete') {?>
                                 <div class="alert alert-danger">
-                                    <strong>Algo deu errado. </strong>Ocorreu um erro ao excluir o fornecedor.
+                                    <strong>Algo deu errado. </strong>Ocorreu um erro ao excluir o produto.
+                                    <button class="close" data-dismiss="alert">x</button>
+                                </div>
+                            <?php } elseif($_SESSION['recado'] == 'quantidade') {?>
+                                <div class="alert alert-danger">
+                                    <strong>Ops! </strong>Não podemos excluir um produto que ainda está disponível em estoque.
                                     <button class="close" data-dismiss="alert">x</button>
                                 </div>
                             <?php } elseif($_SESSION['recado'] == 'adicionado') {?>
                                 <div class="alert alert-success">
-                                    <strong>Adicionado! </strong>O fornecedor foi adicionado com sucesso!
+                                    <strong>Adicionado! </strong>O novo produto foi adicionado com sucesso!
                                     <button class="close" data-dismiss="alert">x</button>
                                 </div>
                             <?php } elseif($_SESSION['recado'] == 'erroadicao') {?>
                                 <div class="alert alert-warning">
-                                    <strong>Algo deu errado. </strong>Ocorreu um erro ao adicionar o fornecedor!
+                                    <strong>Algo deu errado. </strong>Ocorreu um erro ao adicionar este produto!
                                     <button class="close" data-dismiss="alert">x</button>
                                 </div>
                             <?php } elseif($_SESSION['recado'] == 'editado') {?>
@@ -72,7 +77,7 @@
                                 </div>
                             <?php } elseif($_SESSION['recado'] == 'erroedicao') {?>
                                 <div class="alert alert-danger">
-                                    <strong>Algo deu errado. </strong>Ocorreu um erro ao modificar as informações do fornecedor!
+                                    <strong>Algo deu errado. </strong>Ocorreu um erro ao modificar os dados deste produto!
                                     <button class="close" data-dismiss="alert">x</button>
                                 </div>
                             <?php }
@@ -85,7 +90,7 @@
                             </a>
                             <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal">
                                 <i class="material-icons">&#xE147;</i>
-                                <span>Novo fornecedor</span>
+                                <span>Novo produto</span>
                             </a>
                         </div>
                     </div>
@@ -93,21 +98,21 @@
                 <table class="table table-striped table-hover" id="usuariotable">
                     <thead>
                         <tr>
-                            <th>Nome</th>
-                            <th>Razão Social</th>
-                            <th>CNPJ</th>
-                            <th>E-mail</th>
-                            <th>DDD</th>
-                            <th>Telefone</th>
+                            <th>Produto</th>
+                            <th>Categoria</th>
+                            <th>Quantidade disponível</th>
+                            <th>Preço (R$)</th>
+                            <th>Fornecedores</th>
+                            <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
                     <?php
-                    $sql = 'SELECT ddd FROM tb_ddd;';
-                    $ddds = $conex->prepare($sql);
-                    $ddds->execute();
-                    while ($n = $ddds->fetch()) {
-                        $myddds[] = $n['ddd'];
+                    $sql = 'SELECT categoria FROM tb_categoria;';
+                    $c = $conex->prepare($sql);
+                    $c->execute();
+                    while ($cat = $c->fetch()) {
+                        $mycateg[] = $cat['categoria'];
                     };
                     $qntd = 0;
                     // Definindo a quantidade de usuários por página
@@ -117,28 +122,27 @@
                     // Definindo qual será o ínicio
                     $inicio = ($pg * $limite) - $limite;
                     // Fazendo a vizualização dos dados
-                    $sql = 'SELECT * FROM view_fornecedores ORDER BY nome ASC LIMIT '.$inicio.','. $limite.';';
+                    $sql = 'SELECT * FROM view_produtos ORDER BY nome_prod ASC LIMIT '.$inicio.','. $limite.';';
                     $prepara = $conex->prepare($sql);
                     $prepara->execute();
                     while ( $row = $prepara->fetch() ) {
-                        $id = $row['pk_fornecedor'];
-                        $nome = $row['nome'];
-                        $email = $row['email'];
-                        $rz = $row['razao_soc'];
-                        $ddd = $row['ddd'];
-                        $tel = $row['telefone'];
-                        $cnpj = $row['cnpj'];
+                        $id = $row['pk_prod'];
+                        $prod = $row['nome_prod'];
+                        $preco = $row['preco'];
+                        $estoque = $row['qntd_estoq'];
+                        $categoria = $row['categoria'];
                         echo '
                         <tr>
-                            <td>' . $nome . '</td>
-                            <td>' . $rz . '</td>
-                            <td>' . $cnpj . '</td>
-                            <td>' . $email . '</td>
-                            <td>' . $ddd . '</td>
-                            <td>' . $tel . '</td>
+                            <td>' . $prod . '</td>  
+                            <td>' . $categoria . '</td>
+                            <td>' . $estoque . '</td>
+                            <td>' . number_format($preco, 2, ',', '.') . '</td>
+                            <td>
+                                <a href="#" class="forn" data-toggle="modal">Visualizar</a>
+                            </td>
                             <td>
                                 <a href="#editUsuario' . $id . '" class="editar" data-toggle="modal">
-                                     <i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i>
+                                    <i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i>
                                 </a>
                                 <a href="#deleteUsuario' . $id . '" class="excluir" data-toggle="modal")>
                                     <i class="material-icons" data-toggle="tooltip" title="Excluir">&#xE872;</i>
@@ -151,39 +155,31 @@
                                 <div class="modal-content">
                                     <form action="update.php" method="POST">
                                         <div class="modal-header">
-                                            <h4 class="modal-title">Editar fornecedor</h4>
+                                            <h4 class="modal-title">Editar informações produto</h4>
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                         </div>
                                         <div class="modal-body">
                                             <div class="form-group">
-                                                <label>Nome</label>
-                                                <input type="text" name="nome" class="form-control" value="' . $nome . '" required>
-                                            </div>
-                                             <div class="form-group">
-                                                <label>Razão Social</label>
-                                                <input type="text" name="razao" class="form-control" value="' . $rz . '" required>
+                                                <label>Produto</label>
+                                                <input type="text" name="prod" class="form-control" value="' . $prod . '" required>
                                             </div>
                                             <div class="form-group">
-                                                <label>CNPJ</label>
-                                                <input type="text" name="cnpj" class="form-control" value="' . $rz . '" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>E-mail</label>
-                                                <input type="email" name="email" class="form-control" value="' . $email . '" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>DDD</label>
-                                                <select class="form-control" required name="ddd" >';
-                                                for($i = 0; $i < count($myddds); ++$i) {
-                                                    if($myddds[$i] == $ddd) {
-                                                        echo '<option selected>'.$myddds[$i].'</option>';
-                                                    } else {
-                                                        echo '<option>'.$myddds[$i].'</option>';
+                                                <label>Categoria</label>
+                                                <select class="form-control" required name="cat" >';
+                                                    for($i = 0; $i < count($mycateg); ++$i) {
+                                                        if($mycateg[$i] == $categoria) {
+                                                            echo '<option selected>'.$mycateg[$i].'</option>';
+                                                        } else {
+                                                            echo '<option>'.$mycateg[$i].'</option>';
+                                                        }
                                                     }
-                                                }
-                                                echo '
+                                                    echo '
                                                 </select>
                                                 <input name="id" type="hidden" value="' . $id . '" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Preço</label>
+                                                <input type="text" name="preco" class="form-control" value="' . $preco . '" required>
                                             </div>
                                         </div>
                                         <div class="modal-footer">
@@ -200,13 +196,15 @@
                                 <div class="modal-content">
                                     <form action="delete.php" method="POST">
                                         <div class="modal-header">
-                                            <h4 class="modal-title">Excluir fornecedor</h4>
+                                            <h4 class="modal-title">Excluir produto</h4>
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                         </div>
                                         <div class="modal-body">
-                                            <b><p>Deseja excluir o fornecedor ' . $nome .'?</p></b>
+                                            <b><p>Deseja realmente excluir este produto?</p></b>
+                                            <p class="text-warning"><small>Para excluir quantidade disponível deve ser igual a 0.</small></p>
                                             <p class="text-warning"><small>Essa ação não poderá ser desfeita...</small></p>
                                             <input name="id" type="hidden" value="' . $id . '" />
+                                            <input name="qntd" type="hidden" value="' . $estoque . '" />
                                         </div>
                                         <div class="modal-footer">
                                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
@@ -219,7 +217,7 @@
                         $qntd = $qntd + 1;
                     }
                     // Verificando quantos itens existem na tabela
-                    $sql_Total = 'SELECT pk_fornecedor FROM tb_fornecedor';
+                    $sql_Total = 'SELECT pk_prod FROM tb_produto';
                     $query_Total = $conex->prepare($sql_Total);
                     $query_Total->execute();
                     $query_result = $query_Total->fetchAll(PDO::FETCH_ASSOC);
@@ -237,7 +235,7 @@
                         <?php
                         if($pagina_anterior != 0) {
                             echo '
-                                <li class="page-item"><a href="fornecedores.php?page='. $pagina_anterior .'">Anterior</a></li>';
+                                <li class="page-item"><a href="produtos.php?page='. $pagina_anterior .'">Anterior</a></li>';
                         } else {
                             echo '
                                 <li class="page-item disabled"><a href="#">Anterior</a></li>';
@@ -249,12 +247,12 @@
                                         <li class=\"page-item active\"><a href=\"#\" class=\"page-link\">" . $i. "</a></li>";
                                 } else {
                                     echo '
-                                        <li class=\"page-item disabled\"><a href="fornecedores.php?page='.$i.'" class=\"page-link\">'. $i  .'</a></li>';
+                                        <li class=\"page-item disabled\"><a href="produtos.php?page='.$i.'" class=\"page-link\">'. $i  .'</a></li>';
                                 }
                             }
                         }if($pagina_posterior <= $qtdPag) {
                             echo '
-                                <li class="page-item"><a href="fornecedores.php?page='.$pagina_posterior.'" class="page-link">Próxima</a></li>';
+                                <li class="page-item"><a href="produtos.php?page='.$pagina_posterior.'" class="page-link">Próxima</a></li>';
                         } else {
                             echo '
                                 <li class="page-item disabled"><a href="#" class="page-link">Próxima</a></li>';
@@ -263,45 +261,32 @@
                 </div>
             </div>
         </div>
-
         <!-- AdicionarUsuario HTML -->
         <div id="addEmployeeModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form method="POST" action="create.php">
+                    <form method="POST" action="insert.php">
                         <div class="modal-header">
-                            <h4 class="modal-title">Adicionar fornecedor</h4>
+                            <h4 class="modal-title">Adicionar novo produto</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label>Fornecedor</label>
-                                <input type="text" class="form-control" name="nome" required autofocus>
+                                <label>Produto</label>
+                                <input type="text" class="form-control" name="prod" required autofocus>
                             </div>
                             <div class="form-group">
-                                <label>Razão Social</label>
-                                <input type="text" class="form-control" name="razao_soc" required>
-                            </div>
-                            <div class="form-group">
-                                <label>CNPJ</label>
-                                <input type="text" maxlength="14" class="form-control cpf-mask" name="cnpj" required>
-                            </div>
-                            <div class="form-group">
-                                <label>E-mail</label>
-                                <input type="email" class="form-control" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label>DDD</label>
-                                <select class="form-control" required name="ddd">
+                                <label>Categoria</label>
+                                <select class="form-control" required name="cat">
                                     <option></option>
-                                    <?php for($i = 0; $i < count($myddds); ++$i) {
-                                        echo '<option>'.$myddds[$i].'</option>';
+                                    <?php for($i = 0; $i < count($mycateg); ++$i) {
+                                        echo '<option>'.$mycateg[$i].'</option>';
                                     } ?>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label>Telefone</label>
-                                <input type="tel" maxlength="8" class="form-control" name="tel" required>
+                                <label>Preço</label>
+                                <input type="text" class="form-control" name="preco" required>
                             </div>
                         </div>
                         <div class="modal-footer">

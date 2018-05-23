@@ -189,7 +189,7 @@
                                 </div>
                                 <div class="modal-body">
                                     <b><p>Deseja excluir o usuário ' . $nome .'?</p></b>
-                                    <p class="text-warning"><small>Essa ação não poderá ser desfeita..</small></p>
+                                    <p class="text-warning"><small>Essa ação não poderá ser desfeita...</small></p>
                                     <input name="id" type="hidden" value="' . $id . '" />
                                 </div>
                                 <div class="modal-footer">
@@ -233,7 +233,7 @@
                                 <li class=\"page-item active\"><a href=\"#\" class=\"page-link\">" . $i. "</a></li>";
                             } else {
                                 echo '
-                                <li class=\"page-item disabled><a href="usuarios.php?page='.$i.'" class=\"page-link\">'. $i  .'</a></li>';
+                                <li class=\"page-item disabled\"><a href="usuarios.php?page='.$i.'" class=\"page-link\">'. $i  .'</a></li>';
                             }
                         }
                     }if($pagina_posterior <= $qtdPag) {
@@ -282,7 +282,7 @@
                         </div>
                         <div class="modal-footer">
                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-                            <input type="submit" class="btn btn-success" value="Adicionar" onclick="reload();">
+                            <input type="submit" class="btn btn-success" value="Adicionar">
                         </div>
                     </form>
                 </div>
