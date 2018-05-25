@@ -4,7 +4,7 @@ require_once '../conexao.php';
 session_start();
 
 $id = $_POST['id'];
-$nome = $_POST['nome'];
+$nome = ucwords(strtolower($_POST['nome']));
 $email = $_POST['email'];
 $perfil = $_POST['perfil'];
 

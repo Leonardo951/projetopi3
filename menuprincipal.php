@@ -76,7 +76,7 @@ require_once 'check.php';
                                     <div class="card-body text-center">
                                         <h4 class="card-title">Clientes</h4>
                                         <p class="card-text">Gerenciar clientes</p>
-                                        <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                        <a href="clientes/cadastro.php" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
                                     </div>
                                 </div>
                             </div>
