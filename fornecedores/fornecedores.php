@@ -1,5 +1,4 @@
 <?php
-    session_start();
     require_once '../check.php';
     include_once '../conexao.php';
 ?>

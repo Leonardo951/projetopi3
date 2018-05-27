@@ -1,7 +1,6 @@
 <?php
+    require_once '../conexao.php';
     require_once '../check.php';
-    include_once '../conexao.php';
-    session_start();
 ?>
 <!DOCTYPE html>
 

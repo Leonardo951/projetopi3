@@ -76,7 +76,7 @@ require_once 'variaveis.php';
 
                             <label class="col-md-1 control-label" for="radios">Sexo</label>
                             <div class="col-md-4">
-                                <label required class="radio-inline" for="sexoF" >
+                                <label class="radio-inline" for="sexoF" >
                                     <input name="sexo" id="sexoF" value="F" type="radio" <?php if(isset($sexo) && $sexo == "F") { echo'checked'; } else { echo ''; } ?> >
                                     Feminino
                                 </label>
