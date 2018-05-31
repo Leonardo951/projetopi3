@@ -1,7 +1,6 @@
 <?php
 require_once '../check.php';
 require_once '../conexao.php';
-require_once 'variaveis.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,24 +15,23 @@ require_once 'variaveis.php';
 
         <title>CABLES-Infomática</title>
 
-        <!-- Bootstrap core CSS -->
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
         <link href="../css/cadastro.css" rel="stylesheet">
+        <!-- Bootstrap core CSS -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
 
-        <script src="../js/ie-emulation-modes-warning.js"></script>
+        <script src="../js/ie-emulation-modes-warning.js" type="text/javascript"></script>
+        <script src="../js/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mask.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.min.js" type="type/javascript"></script>
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     </head>
     <body>
         <div class="container">
@@ -45,47 +43,68 @@ require_once 'variaveis.php';
                 <i class="glyphicon glyphicon-menu-hamburger"></i>
                 <span>Ver clientes existentes</span>
             </a>
+            <?php if($_SESSION['recado'] == 'adicionado') {?>
+            <div class="alert alert-success">
+                <strong>Adicionado! </strong>Novo cliente adicionado com sucesso!
+                <button class="close" data-dismiss="alert">x</button>
+            </div>
+            <?php } elseif($_SESSION['recado'] == 'erroadicao') {?>
+            <div class="alert alert-warning">
+                <strong>Algo deu errado. </strong>Ocorreu um erro ao adicionar este cliente!
+                <button class="close" data-dismiss="alert" id="message">x</button>
+            </div>
+            <?php } $_SESSION['recado'] = 'vazio';?>
             <form class="form-horizontal" method="POST" action="insert.php">
-                <br>
                 <fieldset>
                     <div class="panel panel-primary"><br>
-                        <!--                 Text input-->
+                        <div class="pessoa text-center">
+                            <label class="radio-inline" for="pf" >
+                                <input name="pessoa" id="pf" value="PF" type="radio" onclick="tipoPessoaFis()" checked>
+                                Pessoa Física
+                            </label>
+                            <label class="radio-inline" for="pj">
+                                <input name="pessoa" id="pj" value="PJ" required type="radio" onclick="tipoPessoaJur()">
+                                Pessoa Jurídica
+                            </label>
+                        </div>
+                        <!--                        Se for PF mostrar essa div-->
+                        <div id="fisica">
                         <div class="form-group">
-                            <label class="col-md-2 control-label" for="Nome">Nome</label>
+                            <label class="col-md-2 control-label" for="nome">Nome</label>
                             <div class="col-md-8">
-                                <input id="Nome" name="nome" placeholder="Nome Completo" value="<?php if(isset($nome)) { echo $nome;}else {echo '';} ?>" class="form-control input-md" required type="text">
+                                <input id="nome" name="nome" placeholder="Nome Completo" class="form-control input-md" required type="text">
                             </div>
                         </div>
 
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-md-2 control-label" for="nome">CPF</label>
+                            <label class="col-md-2 control-label" for="cpf">CPF</label>
                             <div class="col-md-2">
-                                <input id="cpf" name="cpf" placeholder="Apenas números" value="<?php if(isset($cpf)) { echo $cpf;}else {echo '';} ?>" class="form-control input-md" required="" type="text" maxlength="11" pattern="[0-9]+$">
+                                <input id="cpf" name="cpf" placeholder="Apenas números" class="form-control input-md" required type="text" maxlength="14">
                             </div>
 
-                            <label class="col-md-1 control-label" for="Nome">Nascimento</label>
+                            <label class="col-md-1 control-label" for="dtnasc">Nascimento</label>
                             <div class="col-md-2">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                                    <input id="dtnasc" name="dtnasc" value="<?php if(isset($dtnasc)) { echo $dtnasc;}else {echo '';} ?>"  placeholder="DD/MM/AAAA" class="form-control input-md" required type="text" maxlength="10" OnKeyPress="formatar('##/##/####', this)" onBlur="showhide()">
+                                    <input id="dtnasc" name="dtnasc" placeholder="DD/MM/AAAA" class="form-control input-md" required type="text" maxlength="10">
                                 </div>
                             </div>
 
                             <!-- Multiple Radios (inline) -->
 
-                            <label class="col-md-1 control-label" for="radios">Sexo</label>
+                            <label class="col-md-1 control-label">Sexo</label>
                             <div class="col-md-4">
                                 <label class="radio-inline" for="sexoF" >
-                                    <input name="sexo" id="sexoF" value="F" type="radio" <?php if(isset($sexo) && $sexo == "F") { echo'checked'; } else { echo ''; } ?> >
+                                    <input name="sexo" id="sexoF" value="F" type="radio" >
                                     Feminino
                                 </label>
                                 <label class="radio-inline" for="sexoM">
-                                    <input name="sexo" id="sexoM" value="M" required type="radio" <?php if(isset($sexo) && $sexo == "M") { echo'checked'; }else { echo ''; } ?> >
+                                    <input name="sexo" id="sexoM" value="M" required type="radio" >
                                     Masculino
                                 </label>
                                 <label class="radio-inline" for="sexoI">
-                                    <input name="sexo" id="sexoI" value="I" type="radio" <?php if(isset($sexo) && $sexo == "I") { echo'checked'; } else { echo ''; } ?> >
+                                    <input name="sexo" id="sexoI" value="I" type="radio" >
                                     Outros
                                 </label>
                             </div>
@@ -93,11 +112,11 @@ require_once 'variaveis.php';
 
                         <!-- Prepended text-->
                         <div class="form-group">
-                            <label class="col-md-2 control-label" for="prependedtext">DDD</label>
+                            <label class="col-md-2 control-label" for="ddd">DDD</label>
                             <div class="col-md-2">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                                    <select required class="form-control" name="ddd">
+                                    <select required class="form-control" name="ddd" id="ddd">
                                         <option></option>
                                         <?php
                                         $sql = 'SELECT ddd FROM tb_ddd;';
@@ -107,59 +126,124 @@ require_once 'variaveis.php';
                                             $myddds[] = $n['ddd'];
                                         };
                                         for($i = 0; $i < count($myddds); ++$i) {
-                                            if(isset($ddd) && $ddd == $myddds[$i]) {
-                                                    echo '<option selected>'.$myddds[$i].'</option>';
-                                                } else {
                                                     echo '<option>'.$myddds[$i].'</option>';
-                                                }
                                         } ?>
                                     </select>
                                 </div>
                             </div>
-                            <label class="col-md-1 control-label" for="prependedtext">Telefone</label>
+                            <label class="col-md-1 control-label" for="tel">Telefone</label>
                             <div class="col-md-2">
                                 <div class="input-group">
-                                    <span class="input-group-addon"><i class="	glyphicon glyphicon-phone-alt"></i></span>
-                                    <input id="prependedtext" name="tel" value="<?php if(isset($tel)) { echo $tel;}else {echo '';} ?>" class="form-control" placeholder="XXXX-XXXX" type="tel" maxlength="8"  pattern="\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
+                                    <input id="tel" name="tel" class="form-control" placeholder="XXXX-XXXX" type="tel" maxlength="9">
                                 </div>
                             </div>
                         </div>
 
                         <!-- Prepended text-->
                         <div class="form-group">
-                            <label class="col-md-2 control-label" for="prependedtext">Email</label>
+                            <label class="col-md-2 control-label" for="email">Email</label>
                             <div class="col-md-5">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                    <input id="prependedtext" name="email" value="<?php if(isset($mail)) { echo $mail;}else {echo '';} ?>" class="form-control" placeholder="email@email.com" required type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" >
+                                    <input id="email" name="email" class="form-control" placeholder="email@email.com" required type="email" >
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+<!--                        Se for PJ mostrar essa div-->
+                        <div id="juridica">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="nome">Nome da empresa</label>
+                                <div class="col-md-8">
+                                    <input id="empresa" name="nome" placeholder="Empresa" class="form-control input-md" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="raao_soc">Razão Social</label>
+                                <div class="col-md-8">
+                                    <input id="razao_soc" name="razao_soc" placeholder="Razão Social" class="form-control input-md" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="resp">Responsável</label>
+                                <div class="col-md-8">
+                                    <input id=resp name="resp" placeholder="Responsável" class="form-control input-md" type="text">
+                                </div>
+                            </div>
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="cnpj">CNPJ</label>
+                                <div class="col-md-3">
+                                    <input id="cnpj" name="cnpj" placeholder="Apenas números" class="form-control input-md" type="text" maxlength="18">
+                                </div>
+<!--                                <div class="form-group">-->
+                                    <label class="col-md-1 control-label" for="email">Email</label>
+                                    <div class="col-md-4">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                            <input id="mail" name="email" class="form-control" placeholder="email@email.com" type="email">
+                                        </div>
+<!--                                    </div>-->
+                                </div>
+                            </div>
+
+                            <!-- Prepended text-->
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="ddd">DDD</label>
+                                <div class="col-md-2">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                        <select class="form-control" name="ddd" id="ddd_pj">
+                                            <option></option>
+                                            <?php
+                                            $sql = 'SELECT ddd FROM tb_ddd;';
+                                            $ddds = $conex->prepare($sql);
+                                            $ddds->execute();
+                                            while ($n = $ddds->fetch()) {
+                                                $myddds[] = $n['ddd'];
+                                            };
+                                            for($i = 0; $i < count($myddds); ++$i) {
+                                                echo '<option>'.$myddds[$i].'</option>';
+                                            } ?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <label class="col-md-1 control-label" for="tel_pj">Telefone</label>
+                                <div class="col-md-2">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
+                                        <input id="tel_pj" name="tel" class="form-control" placeholder="XXXX-XXXX" type="tel" maxlength="9">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <!-- Search input-->
                         <div class="form-group">
-                            <label class="col-md-2 control-label" for="CEP">CEP</label>
+                            <label class="col-md-2 control-label" for="cep">CEP</label>
                             <div class="col-md-2">
-                                <input id="cep" name="cep" placeholder="Apenas números" value="<?php if(isset($cep)) { echo $cep;}else {echo '';} ?>" class="form-control input-md" required type="search" maxlength="8" pattern="[0-9]+$">
+                                <input id="cep" name="cep" placeholder="Apenas números" class="form-control input-md" type="search" maxlength="8">
                             </div>
                             <div class="col-md-2">
-                                <button type="submit" class="btn-primary">Pesquisar</button>
+                                <button type="button" id="pesquisar" class="btn-primary" onclick="getEndereco()">Pesquisar</button>
                             </div>
                         </div>
 
                         <!-- Prepended text-->
                         <div class="form-group">
-                            <label class="col-md-2 control-label" for="prependedtext">Endereço</label>
+                            <label class="col-md-2 control-label" for="logradouro">Endereço</label>
                             <div class="col-md-4">
                                 <div class="input-group">
-                                    <span class="input-group-addon"><?php if(isset($tipo)) { echo $tipo.':';}else {echo 'Logradouro:';} ?></span>
-                                    <input id="quadra" name="logradouro" value="<?php if(isset($logradouro)) { echo $logradouro;}else {echo '';} ?>" class="form-control" required readonly type="text">
+                                    <span class="input-group-addon">Logradouro</span>
+                                    <input id="logradouro" name="logradouro" class="form-control" required readonly type="text">
                                 </div>
 
                             </div>
                             <div class="col-md-3">
                                 <div class="input-group">
                                     <span class="input-group-addon">Complemento</span>
-                                    <input id="comple" name="compl" class="form-control" type="text">
+                                    <input id="compl" name="compl" class="form-control" type="text">
                                 </div>
                             </div>
                             <div class="col-md-2">
@@ -171,30 +255,30 @@ require_once 'variaveis.php';
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-2 control-label" for="prependedtext"></label>
+                            <label class="col-md-2 control-label" for="cidade"></label>
                             <div class="col-md-4">
                                 <div class="input-group">
                                     <span class="input-group-addon">Cidade</span>
-                                    <input id="cidade" name="cidade" value="<?php if(isset($cidade)) { echo $cidade;}else {echo '';} ?>" class="form-control" required readonly type="text">
+                                    <input id="cidade" name="cidade" class="form-control" required readonly type="text">
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="input-group">
                                     <span class="input-group-addon">Bairro</span>
-                                    <input id="bairro" name="bairro" value="<?php if(isset($bairro)) { echo $bairro;}else {echo '';} ?>" class="form-control" required readonly type="text">
+                                    <input id="bairro" name="bairro" class="form-control" required readonly type="text">
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="input-group">
                                     <span class="input-group-addon">Estado</span>
-                                    <input id="estado" name="estado" value="<?php if(isset($uf)) { echo $uf;}else {echo '';} ?>" class="form-control" required readonly type="text">
+                                    <input id="estado" name="estado" class="form-control" required readonly type="text">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label" for="Cadastrar"></label>
                                 <div class="col-md-8">
                                     <button id="Cadastrar" name="Cadastrar" class="btn btn-success" type="Submit">Cadastrar</button>
-                                    <button id="Cancelar" name="limpar" class="btn btn-danger" type="Reset">Limpar</button>
+                                    <button id="Cancelar" name="limpar" class="btn btn-danger" type="Reset" onclick="limparPJ()">Limpar</button>
                                 </div>
                             </div>
                         </div>
@@ -202,5 +286,7 @@ require_once 'variaveis.php';
                 </fieldset>
             </form>
         </div>
+        <script type="text/javascript" src="../js/buscarCep.js"></script>
+        <script type="text/javascript" src="../js/cadastro.js"></script>
     </body>
 </html>

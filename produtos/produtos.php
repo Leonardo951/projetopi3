@@ -16,24 +16,24 @@
 
         <title>CABLES-Infomática</title>
 
-        <!-- Bootstrap core CSS -->
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
         <link href="../css/produtos.css" rel="stylesheet">
 
-        <script src="../js/ie-emulation-modes-warning.js"></script>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+        <script src="../js/ie-emulation-modes-warning.js" type="text/javascript"></script>
+        <script src="../js/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mask.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.min.js" type="type/javascript"></script>
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
         <!--Página que mostra os usuários -->
@@ -42,7 +42,9 @@
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-6">
-                            <img src="../img/cables.png/" class="img-logo-usuario"/>
+                            <a href="../menuprincipal.php">
+                                <img src="../img/cables.png/" class="img-logo-usuario"/>
+                            </a>
                             <?php
                             if ($_SESSION['recado'] == 'deletado') {?>
                                 <div class="alert alert-success">

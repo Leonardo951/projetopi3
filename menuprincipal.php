@@ -15,20 +15,22 @@ require_once 'check.php';
 
         <title>CABLES-Infomática</title>
 
-        <!-- Bootstrap core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
         <link href="css/menuprincipal.css" rel="stylesheet">
 
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+        <script src="js/ie-emulation-modes-warning.js" type="text/javascript"></script>
+        <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script src="js/jquery.mask.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="type/javascript"></script>
+
         <script src="js/ie-emulation-modes-warning.js"></script>
 
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     <body>
     <section id="team" class="pb-5">
@@ -37,7 +39,7 @@ require_once 'check.php';
             <div class="row">
                 <!-- Vendas -->
                 <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="image-flip">
                         <div class="mainflip">
                             <div class="frontside">
                                 <div class="card">
@@ -53,7 +55,7 @@ require_once 'check.php';
                 </div>
                 <!-- Estoque -->
                 <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="image-flip">
                         <div class="mainflip">
                             <div class="frontside">
                                 <div class="card">
@@ -69,7 +71,7 @@ require_once 'check.php';
                 </div>
                 <!-- Cliente -->
                 <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="image-flip">
                         <div class="mainflip">
                             <div class="frontside">
                                 <div class="card">
@@ -85,7 +87,7 @@ require_once 'check.php';
                 </div>
                 <!-- Fornecedores -->
                 <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="image-flip">
                         <div class="mainflip">
                             <div class="frontside">
                                 <div class="card">
@@ -101,7 +103,7 @@ require_once 'check.php';
                 </div>
                 <!-- usuários -->
                 <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="image-flip">
                         <div class="mainflip">
                             <div class="frontside">
                                 <div class="card">
@@ -117,7 +119,7 @@ require_once 'check.php';
                 </div>
                 <!-- Sobre -->
                 <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="image-flip">
                         <div class="mainflip">
                             <div class="frontside">
                                 <div class="card">

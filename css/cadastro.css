@@ -31,3 +31,11 @@ body, .container {
     font-size: 21px;
     margin-right: 5px;
 }
+
+.pessoa {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+#juridica {
+    display: none;
+}
