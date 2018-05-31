@@ -126,7 +126,7 @@ require_once '../conexao.php';
                                             $myddds[] = $n['ddd'];
                                         };
                                         for($i = 0; $i < count($myddds); ++$i) {
-                                                    echo '<option>'.$myddds[$i].'</option>';
+                                            echo '<option>'.$myddds[$i].'</option>';
                                         } ?>
                                     </select>
                                 </div>
@@ -156,7 +156,7 @@ require_once '../conexao.php';
                             <div class="form-group">
                                 <label class="col-md-2 control-label" for="nome">Nome da empresa</label>
                                 <div class="col-md-8">
-                                    <input id="empresa" name="nome" placeholder="Empresa" class="form-control input-md" type="text">
+                                    <input id="empresa" name="empresa" placeholder="Empresa" class="form-control input-md" type="text">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -183,7 +183,7 @@ require_once '../conexao.php';
                                     <div class="col-md-4">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                            <input id="mail" name="email" class="form-control" placeholder="email@email.com" type="email">
+                                            <input id="mail" name="mail" class="form-control" placeholder="email@email.com" type="email">
                                         </div>
 <!--                                    </div>-->
                                 </div>
@@ -195,7 +195,7 @@ require_once '../conexao.php';
                                 <div class="col-md-2">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                                        <select class="form-control" name="ddd" id="ddd_pj">
+                                        <select class="form-control" name="ddd_pj" id="ddd_pj">
                                             <option></option>
                                             <?php
                                             $sql = 'SELECT ddd FROM tb_ddd;';
@@ -214,7 +214,7 @@ require_once '../conexao.php';
                                 <div class="col-md-2">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
-                                        <input id="tel_pj" name="tel" class="form-control" placeholder="XXXX-XXXX" type="tel" maxlength="9">
+                                        <input id="tel_pj" name="tel_pj" class="form-control" placeholder="XXXX-XXXX" type="tel" maxlength="9">
                                     </div>
                                 </div>
                             </div>
