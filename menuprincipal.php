@@ -21,7 +21,7 @@ require_once 'check.php';
         <!-- Custom styles for this template -->
         <link href="css/menuprincipal.css" rel="stylesheet">
 
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
 
         <script src="js/ie-emulation-modes-warning.js" type="text/javascript"></script>
         <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>

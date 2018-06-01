@@ -32,6 +32,8 @@ require_once '../conexao.php';
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
         <div class="container">
@@ -39,7 +41,7 @@ require_once '../conexao.php';
             <a href="../menuprincipal.php" class="btn btn-success-retorn">
                 <span><i class="fa fa-arrow-circle-left"></i> Voltar ao menu</span>
             </a>
-            <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal">
+            <a href="clientes.php" class="btn btn-primary">
                 <i class="glyphicon glyphicon-menu-hamburger"></i>
                 <span>Ver clientes existentes</span>
             </a>
@@ -223,7 +225,7 @@ require_once '../conexao.php';
                         <div class="form-group">
                             <label class="col-md-2 control-label" for="cep">CEP</label>
                             <div class="col-md-2">
-                                <input id="cep" name="cep" placeholder="Apenas números" class="form-control input-md" type="search" maxlength="8">
+                                <input id="cep" name="cep" placeholder="Apenas números" class="form-control input-md" type="search" maxlength="10">
                             </div>
                             <div class="col-md-2">
                                 <button type="button" id="pesquisar" class="btn-primary" onclick="getEndereco()">Pesquisar</button>

@@ -18,7 +18,7 @@ if(isset($_POST['pessoa'])) {
         $num = $_POST['numero'];
     }
     if (isset($num) && isset($compl)) {
-        $sql = "INSERT INTO tb_endereco (logradouro, cidade, bairro, uf, numero, complemento) VALUES (?,?,?,?,?,?);";
+        $sql = "INSERT INTO tb_endereco (logradouro, cidade, bairro, uf, numero, complemento, cep) VALUES (?,?,?,?,?,?,?);";
         $stmt = $conex->prepare($sql);
         $stmt->bindValue(1, $logradouro);
         $stmt->bindValue(2, $cidade);
@@ -26,22 +26,25 @@ if(isset($_POST['pessoa'])) {
         $stmt->bindValue(4, $uf);
         $stmt->bindValue(5, $num);
         $stmt->bindValue(6, $compl);
+        $stmt->bindValue(7, $cep);
     } elseif (isset($num)) {
-        $sql = "INSERT INTO tb_endereco (logradouro, cidade, bairro, uf, numero) VALUES (?,?,?,?,?);";
+        $sql = "INSERT INTO tb_endereco (logradouro, cidade, bairro, uf, cep, numero) VALUES (?,?,?,?,?,?);";
         $stmt = $conex->prepare($sql);
         $stmt->bindValue(1, $logradouro);
         $stmt->bindValue(2, $cidade);
         $stmt->bindValue(3, $bairro);
         $stmt->bindValue(4, $uf);
-        $stmt->bindValue(5, $num);
+        $stmt->bindValue(5, $cep);
+        $stmt->bindValue(6, $num);
     } elseif (isset($compl)) {
-        $sql = "INSERT INTO tb_endereco (logradouro, cidade, bairro, uf, complemento) VALUES (?,?,?,?,?);";
+        $sql = "INSERT INTO tb_endereco (logradouro, cidade, bairro, uf, cep, complemento) VALUES (?,?,?,?,?,?);";
         $stmt = $conex->prepare($sql);
         $stmt->bindValue(1, $logradouro);
         $stmt->bindValue(2, $cidade);
         $stmt->bindValue(3, $bairro);
         $stmt->bindValue(4, $uf);
-        $stmt->bindValue(5, $compl);
+        $stmt->bindValue(5, $cep);
+        $stmt->bindValue(6, $compl);
     } else {
         $sql = "INSERT INTO tb_endereco (logradouro, cidade, bairro, uf) VALUES (?,?,?,?);";
         $stmt = $conex->prepare($sql);
