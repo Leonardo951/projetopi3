@@ -5,7 +5,7 @@ require_once '../check.php';
 include_once '../conexao.php';
 
 $nome = ucwords(strtolower($_POST['nome']));
-$email  = $_POST['email'];
+$email  = strtolower($_POST['email']);
 $senha  = $_POST['senha'];
 $perfil = $_POST['perfil'];
 

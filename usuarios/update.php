@@ -5,7 +5,7 @@ session_start();
 
 $id = $_POST['id'];
 $nome = ucwords(strtolower($_POST['nome']));
-$email = $_POST['email'];
+$email = strtolower($_POST['email']);
 $perfil = $_POST['perfil'];
 
 $PDO = $conex;

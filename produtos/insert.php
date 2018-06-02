@@ -5,7 +5,7 @@ require_once '../check.php';
 include_once '../conexao.php';
 include_once '../converter.php';
 
-$prod   = $_POST['prod'];
+$prod   = ucwords(strtolower($_POST['prod']));
 $preco = sanear_valor($_POST['preco']);
 $cat = $_POST['cat'];
 
@@ -20,7 +20,7 @@ while ($pk = $prepara->fetch()) {
 $sql = "INSERT INTO tb_produto (nome_prod, preco, fk_categoria) VALUES (?,?,?);";
 $stmt = $conex->prepare($sql);
 $stmt->bindValue(1, $prod);
-$stmt->bindValue(2, $valor);
+$stmt->bindValue(2, $preco);
 $stmt->bindValue(3, $pk_categoria);
 
 if( $stmt->execute() ){

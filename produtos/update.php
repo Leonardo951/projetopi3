@@ -5,7 +5,7 @@ require_once '../conexao.php';
 include_once '../converter.php';
 
 $id = $_POST['id'];
-$prod = $_POST['prod'];
+$prod = ucwords(strtolower($_POST['prod']));
 $preco = sanear_valor($_POST['preco']);
 $categoria = $_POST['cat'];
 

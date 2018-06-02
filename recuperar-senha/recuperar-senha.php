@@ -29,6 +29,8 @@ require_once '../conexao.php';
         <script src="../js/jquery.mask.min.js" type="text/javascript"></script>
         <script src="../js/bootstrap.min.js" type="type/javascript"></script>
 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
         <?php

@@ -19,7 +19,7 @@ require_once '../conexao.php';
     <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../css/cadastro.css" rel="stylesheet">
+    <link href="../css/view.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 

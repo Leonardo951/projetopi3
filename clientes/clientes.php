@@ -35,7 +35,12 @@ require_once '../check.php';
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.quicksearch/2.3.1/jquery.quicksearch.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 </head>
 <body>
 <!--Página que mostra os usuários -->
@@ -104,11 +109,14 @@ require_once '../check.php';
                     <a class="btn btn-default" id="show-pj" href="#" onclick="tipoPessoaJur()">Pessoa Jurídica</a>
                 </div>
             </div>
-            <div class="col-md-3 bar">
-                <input type="search" placeholder="Pesquisar cliente" id="seacrch" class="form-control">
+        <div class="col-md-3 bar">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="	glyphicon glyphicon-search"></i></span>
+                <input id="input-search" name="search" class="form-control" placeholder="Pesquisar cliente" type="search" title="Pesquisar">
             </div>
+        </div>
         <div id="fisica">
-        <table class="table table-striped table-hover" id="usuariotable">
+        <table class="table table-striped table-hover" id="usuariotable" title="Pesquisar">
             <thead>
                 <tr>
                     <th>Nome</th>
@@ -132,7 +140,8 @@ require_once '../check.php';
             while ( $row = $prepara->fetch() ) {
                 $id = $row['pk_clie_pf'];
                 $nome = $row['nome'];
-                $cpf = $row['cpf'];
+                $nbr_cpf = $row['cpf'];
+                $cpf = vsprintf( '%d.%d.%d-%d' , sscanf( $nbr_cpf , '%3d%3d%3d%2d' ) );
                 $cod = base64_encode($id);
                 echo '
                         <tr>
@@ -239,7 +248,8 @@ require_once '../check.php';
                 while ( $row = $prepara->fetch() ) {
                     $id = $row['pk_cliente_pj'];
                     $rz = $row['razao_soc'];
-                    $cnpj = $row['cnpj'];
+                    $nbr_cnpj = $row['cnpj'];
+                    $cnpj = vsprintf( '%d.%d.%d/%d-%d' , sscanf( $nbr_cnpj , '%2d%3d%3d%4d%2d' ) );
                     echo '
                         <tr>
                             <td>' . $rz . '</td>  
@@ -324,5 +334,6 @@ require_once '../check.php';
     </div>
 </div>
 <script type="text/javascript" src="../js/clientes.js"></script>
+<script type="text/javascript" src="../js/search.js"></script>
 </body>
 </html>

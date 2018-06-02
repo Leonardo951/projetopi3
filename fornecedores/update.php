@@ -4,9 +4,9 @@ require_once '../conexao.php';
 session_start();
 
 $id = $_POST['id'];
-$nome   = $_POST['nome'];
-$email  = $_POST['email'];
-$rz  = $_POST['razao_soc'];
+$nome   = ucwords(strtolower($_POST['nome']));
+$email  = strtolower($_POST['email']);
+$rz  = ucwords(strtolower($_POST['razao_soc']));
 $ddd = $_POST['ddd'];
 $tel = $_POST['tel'];
 $cnpj = $_POST['cnpj'];

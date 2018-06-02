@@ -1,0 +1,37 @@
+h11 {
+    color:red;
+}
+
+#logo {
+    max-height: 150px;
+}
+
+body, .container {
+    background-color: #15243c !important;
+}
+
+.btn-success-retorn {
+    background-color: #e3edef !important;
+}
+.btn {
+    margin-top: 70px;
+    float: right;
+    font-size: 13px;
+    border: none;
+    min-width: 50px;
+    border-radius: 2px;
+    border: none;
+    outline: none !important;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.btn i {
+    float: left;
+    font-size: 21px;
+    margin-right: 5px;
+}
+
+#pesquisar {
+    display: none;
+}
