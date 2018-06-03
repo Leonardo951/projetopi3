@@ -37,25 +37,32 @@ require_once '../conexao.php';
     </head>
     <body>
         <div class="container">
-            <img id="logo" src="../img/cables.png"/>
-            <a href="../menuprincipal.php" class="btn btn-success-retorn btn_ini">
-                <span><i class="fa fa-arrow-circle-left"></i> Voltar ao menu</span>
-            </a>
-            <a href="clientes.php" class="btn btn-primary btn_ini">
-                <i class="glyphicon glyphicon-menu-hamburger"></i>
-                <span>Ver clientes existentes</span>
-            </a>
-            <?php if($_SESSION['recado'] == 'adicionado') {?>
-            <div class="alert alert-success">
-                <strong>Adicionado! </strong>Novo cliente adicionado com sucesso!
-                <button class="close" data-dismiss="alert">x</button>
+            <div class="table-wrapper">
+                <div class="table-title">
+                    <img id="logo" src="../img/cables.png"/>
+                    <a href="../menuprincipal.php" class="btn btn-success-retorn btn_ini">
+                        <span><i class="fa fa-arrow-circle-left"></i> Voltar ao menu</span>
+                    </a>
+                    <a href="clientes.php" class="btn btn-primary btn_ini">
+                        <i class="glyphicon glyphicon-menu-hamburger"></i>
+                        <span>Ver clientes existentes</span>
+                    </a>
+                    <div class="col-md-6">
+                        <?php if($_SESSION['recado'] == 'adicionado') {?>
+                        <div class="alert alert-success">
+                            <strong>Adicionado! </strong>Novo cliente adicionado com sucesso!
+                            <button class="close" data-dismiss="alert">x</button>
+                        </div>
+                        <?php } elseif($_SESSION['recado'] == 'erroadicao') {?>
+                        <div class="alert alert-warning">
+                            <strong>Algo deu errado. </strong>Ocorreu um erro ao adicionar este cliente!
+                            <button class="close" data-dismiss="alert" id="message">x</button>
+                        </div>
+                        <?php } $_SESSION['recado'] = 'vazio';?>
+                    </div>
+                </div>
             </div>
-            <?php } elseif($_SESSION['recado'] == 'erroadicao') {?>
-            <div class="alert alert-warning">
-                <strong>Algo deu errado. </strong>Ocorreu um erro ao adicionar este cliente!
-                <button class="close" data-dismiss="alert" id="message">x</button>
-            </div>
-            <?php } $_SESSION['recado'] = 'vazio';?>
+            <br><br>
             <form class="form-horizontal" method="POST" action="insert.php">
                 <fieldset>
                     <div class="panel panel-primary"><br>

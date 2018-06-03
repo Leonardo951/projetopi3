@@ -4,12 +4,11 @@ body, html {
 }
 
 .img-logo-usuario {
-    max-height: 200px; }
+    max-height: 150px; }
 
 .table-wrapper {
     background: #fff;
     padding: 20px 25px;
-    margin: 30px 0;
     border-radius: 5px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); }
 
@@ -222,4 +221,15 @@ table.table .avatar {
 .modal form label {
     font-weight: normal; }
 
-/*# sourceMappingURL=usuarios.component.css.map */
+.btn_ini {
+    margin-top: 70px;
+    float: right;
+    font-size: 13px;
+    border: none;
+    min-width: 50px;
+    border-radius: 2px;
+    border: none;
+    outline: none !important;
+    margin-left: 10px;
+    font-weight: bold;
+}

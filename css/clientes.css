@@ -4,12 +4,11 @@ body, html {
 }
 
 .img-logo-usuario {
-    max-height: 200px; }
+    max-height: 150px; }
 
 .table-wrapper {
     background: #fff;
     padding: 20px 25px;
-    margin: 30px 0;
     border-radius: 5px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); }
 
@@ -230,6 +229,7 @@ table.table .avatar {
 #juridica {
     display: none;
 }
+
 .btn_ini {
     margin-top: 70px;
     float: right;

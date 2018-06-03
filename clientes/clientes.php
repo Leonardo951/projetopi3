@@ -57,6 +57,7 @@ require_once '../check.php';
     <div class="table-wrapper">
         <div class="table-title fisica">
             <div class="row">
+                <div class="col-md-6">
                     <?php
                     if ($_SESSION['recado'] == 'deletado') {?>
                         <div class="alert alert-success">
@@ -96,6 +97,7 @@ require_once '../check.php';
                     <?php }
                     $_SESSION['recado'] = 'vazio';
                     ?>
+                </div>
             </div>
         </div>
             <div class="col-md-3 bar">

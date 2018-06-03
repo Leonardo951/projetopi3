@@ -43,10 +43,17 @@
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">
-                        <div class="col-sm-6">
                             <a href="../menuprincipal.php">
                                 <img src="../img/cables.png/" class="img-logo-usuario"/>
                             </a>
+                            <a href="../menuprincipal.php" class="btn btn-success-retorn btn_ini">
+                                <span><i class="fa fa-arrow-circle-left"></i> Voltar ao menu</span>
+                            </a>
+                            <a href="#addEmployeeModal" class="btn btn-success btn_ini" data-toggle="modal">
+                                <i class="material-icons">&#xE147;</i>
+                                <span>Novo usuário</span>
+                            </a>
+                        <div class="col-sm-6">
                             <?php
                             if ($_SESSION['recado'] == 'deletado') {?>
                                 <div class="alert alert-success">
@@ -81,15 +88,6 @@
                             <?php }
                             $_SESSION['recado'] = 'vazio';
                             ?>
-                        </div>
-                        <div class="col-sm-6">
-                            <a href="../menuprincipal.php" class="btn btn-success-retorn">
-                                <span><i class="fa fa-arrow-circle-left"></i> Voltar ao menu</span>
-                            </a>
-                            <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal">
-                                <i class="material-icons">&#xE147;</i>
-                                <span>Novo usuário</span>
-                            </a>
                         </div>
                     </div>
                 </div>
