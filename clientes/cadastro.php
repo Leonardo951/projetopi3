@@ -38,10 +38,10 @@ require_once '../conexao.php';
     <body>
         <div class="container">
             <img id="logo" src="../img/cables.png"/>
-            <a href="../menuprincipal.php" class="btn btn-success-retorn">
+            <a href="../menuprincipal.php" class="btn btn-success-retorn btn_ini">
                 <span><i class="fa fa-arrow-circle-left"></i> Voltar ao menu</span>
             </a>
-            <a href="clientes.php" class="btn btn-primary">
+            <a href="clientes.php" class="btn btn-primary btn_ini">
                 <i class="glyphicon glyphicon-menu-hamburger"></i>
                 <span>Ver clientes existentes</span>
             </a>
@@ -61,11 +61,11 @@ require_once '../conexao.php';
                     <div class="panel panel-primary"><br>
                         <div class="pessoa text-center">
                             <label class="radio-inline" for="pf" >
-                                <input name="pessoa" id="pf" value="PF" type="radio" onclick="tipoPessoaFis()" checked>
+                                <input name="pessoa" id="pf" value="PF" type="radio" onclick="tipoPessoaFis()" <?php if(isset($_SESSION['pessoa']) && $_SESSION['pessoa'] == 'PF'){ echo'checked'; unset($_SESSION['pessoa']);}elseif(isset($_SESSION['pessoa']) && $_SESSION['pessoa'] == 'PJ'){ echo ''; }else { echo 'checked'; }?>>
                                 Pessoa Física
                             </label>
                             <label class="radio-inline" for="pj">
-                                <input name="pessoa" id="pj" value="PJ" required type="radio" onclick="tipoPessoaJur()">
+                                <input name="pessoa" id="pj" value="PJ" required type="radio" onclick="tipoPessoaJur()" <?php if(isset($_SESSION['pessoa']) && $_SESSION['pessoa'] == 'PJ'){ echo'checked'; unset($_SESSION['pessoa']);} ?>>
                                 Pessoa Jurídica
                             </label>
                         </div>
@@ -74,7 +74,7 @@ require_once '../conexao.php';
                         <div class="form-group">
                             <label class="col-md-2 control-label" for="nome">Nome</label>
                             <div class="col-md-8">
-                                <input id="nome" name="nome" placeholder="Nome Completo" class="form-control input-md" required type="text">
+                                <input id="nome" name="nome" placeholder="Nome Completo" class="form-control input-md" required type="text" <?php if(isset($_SESSION['nome_pf'])){ echo'value="'.$_SESSION["nome_pf"].'"'; unset($_SESSION['nome_pf']);} ?>>
                             </div>
                         </div>
 
@@ -82,37 +82,32 @@ require_once '../conexao.php';
                         <div class="form-group">
                             <label class="col-md-2 control-label" for="cpf">CPF</label>
                             <div class="col-md-2">
-                                <input id="cpf" name="cpf" placeholder="Apenas números" class="form-control input-md" required type="text" maxlength="14">
+                                <input id="cpf" name="cpf" placeholder="Apenas números" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" class="form-control input-md" required type="text" maxlength="14" <?php if(isset($_SESSION['cpf'])){ echo'value="'.$_SESSION["cpf"].'"'; unset($_SESSION['cpf']);} ?>>
                             </div>
 
                             <label class="col-md-1 control-label" for="dtnasc">Nascimento</label>
                             <div class="col-md-2">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                                    <input id="dtnasc" name="dtnasc" placeholder="DD/MM/AAAA" class="form-control input-md" required type="text" maxlength="10">
+                                    <input id="dtnasc" name="dtnasc" placeholder="DD/MM/AAAA" pattern="\d{1,2}/\d{1,2}/\d{4}" class="form-control input-md" required type="text" maxlength="10" <?php if(isset($_SESSION['dtnasc'])){ echo'value="'.$_SESSION["dtnasc"].'"'; unset($_SESSION['dtnasc']);} ?>>
                                 </div>
                             </div>
-
-                            <!-- Multiple Radios (inline) -->
-
                             <label class="col-md-1 control-label">Sexo</label>
                             <div class="col-md-4">
                                 <label class="radio-inline" for="sexoF" >
-                                    <input name="sexo" id="sexoF" value="F" type="radio" >
+                                    <input name="sexo" id="sexoF" value="F" type="radio" <?php if(isset($_SESSION['sexo']) && $_SESSION['sexo'] == 'F'){ echo'checked'; unset($_SESSION['sexo']);} ?>>
                                     Feminino
                                 </label>
                                 <label class="radio-inline" for="sexoM">
-                                    <input name="sexo" id="sexoM" value="M" required type="radio" >
+                                    <input name="sexo" id="sexoM" value="M" required type="radio" <?php if(isset($_SESSION['sexo']) && $_SESSION['sexo'] == 'M'){ echo'checked'; unset($_SESSION['sexo']);} ?>>
                                     Masculino
                                 </label>
                                 <label class="radio-inline" for="sexoI">
-                                    <input name="sexo" id="sexoI" value="I" type="radio" >
+                                    <input name="sexo" id="sexoI" value="I" type="radio" <?php if(isset($_SESSION['sexo']) && $_SESSION['sexo'] == 'I'){ echo'checked'; unset($_SESSION['sexo']);} ?>>
                                     Outros
                                 </label>
                             </div>
                         </div>
-
-                        <!-- Prepended text-->
                         <div class="form-group">
                             <label class="col-md-2 control-label" for="ddd">DDD</label>
                             <div class="col-md-2">
@@ -128,7 +123,12 @@ require_once '../conexao.php';
                                             $myddds[] = $n['ddd'];
                                         };
                                         for($i = 0; $i < count($myddds); ++$i) {
-                                            echo '<option>'.$myddds[$i].'</option>';
+                                            if($_SESSION['ddd'] == $myddds[$i]) {
+                                                echo '<option selected>'.$myddds[$i].'</option>';
+                                                unset($_SESSION['ddd']);
+                                            } else {
+                                                 echo '<option>'.$myddds[$i].'</option>';
+                                            }
                                         } ?>
                                     </select>
                                 </div>
@@ -137,7 +137,7 @@ require_once '../conexao.php';
                             <div class="col-md-2">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
-                                    <input id="tel" name="tel" class="form-control" placeholder="XXXX-XXXX" type="tel" maxlength="9">
+                                    <input id="tel" name="tel" class="form-control" placeholder="XXXX-XXXX" type="tel" pattern="\d{4}-\d{4}" maxlength="9" <?php if(isset($_SESSION['tel'])){ echo'value="'.$_SESSION["tel"].'"'; unset($_SESSION['tel']);} ?>>
                                 </div>
                             </div>
                         </div>
@@ -148,7 +148,7 @@ require_once '../conexao.php';
                             <div class="col-md-5">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                    <input id="email" name="email" class="form-control" placeholder="email@email.com" required type="email" >
+                                    <input id="email" name="email" class="form-control" placeholder="email@email.com" required type="email" <?php if(isset($_SESSION['mail'])){ echo'value="'.$_SESSION["mail"].'"'; unset($_SESSION['mail']);} ?>>
                                 </div>
                             </div>
                         </div>
@@ -158,19 +158,19 @@ require_once '../conexao.php';
                             <div class="form-group">
                                 <label class="col-md-2 control-label" for="nome">Nome da empresa</label>
                                 <div class="col-md-8">
-                                    <input id="empresa" name="empresa" placeholder="Empresa" class="form-control input-md" type="text">
+                                    <input id="empresa" name="empresa" placeholder="Empresa" class="form-control input-md" type="text" <?php if(isset($_SESSION['empresa'])){ echo'value="'.$_SESSION["empresa"].'"'; unset($_SESSION['empresa']);} ?>>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label" for="raao_soc">Razão Social</label>
                                 <div class="col-md-8">
-                                    <input id="razao_soc" name="razao_soc" placeholder="Razão Social" class="form-control input-md" type="text">
+                                    <input id="razao_soc" name="razao_soc" placeholder="Razão Social" class="form-control input-md" type="text" <?php if(isset($_SESSION['razao_soc'])){ echo'value="'.$_SESSION["razao_soc"].'"'; unset($_SESSION['razao_soc']);} ?>>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label" for="resp">Responsável</label>
                                 <div class="col-md-8">
-                                    <input id=resp name="resp" placeholder="Responsável" class="form-control input-md" type="text">
+                                    <input id=resp name="resp" placeholder="Responsável" class="form-control input-md" type="text" <?php if(isset($_SESSION['resp'])){ echo'value="'.$_SESSION["resp"].'"'; unset($_SESSION['resp']);} ?>>
                                 </div>
                             </div>
 
@@ -178,16 +178,14 @@ require_once '../conexao.php';
                             <div class="form-group">
                                 <label class="col-md-2 control-label" for="cnpj">CNPJ</label>
                                 <div class="col-md-3">
-                                    <input id="cnpj" name="cnpj" placeholder="Apenas números" class="form-control input-md" type="text" maxlength="18">
+                                    <input id="cnpj" name="cnpj" placeholder="Apenas números" pattern="[0-9]{2}\.[0-9]{3}\.[0-9]{3}\/[0-9]{4}\-[0-9]{2}" class="form-control input-md" type="text" maxlength="18" <?php if(isset($_SESSION['cnpj'])){ echo'value="'.$_SESSION["cnpj"].'"'; unset($_SESSION['cnpj']);} ?>>
                                 </div>
-<!--                                <div class="form-group">-->
                                     <label class="col-md-1 control-label" for="email">Email</label>
                                     <div class="col-md-4">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                            <input id="mail" name="mail" class="form-control" placeholder="email@email.com" type="email">
+                                            <input id="mail" name="mail" class="form-control" placeholder="email@email.com" type="email" <?php if(isset($_SESSION['mail_pj'])){ echo'value="'.$_SESSION["mail_pj"].'"'; unset($_SESSION['mail_pj']);} ?>>
                                         </div>
-<!--                                    </div>-->
                                 </div>
                             </div>
 
@@ -207,7 +205,12 @@ require_once '../conexao.php';
                                                 $myddds[] = $n['ddd'];
                                             };
                                             for($i = 0; $i < count($myddds); ++$i) {
-                                                echo '<option>'.$myddds[$i].'</option>';
+                                                if($_SESSION['ddd_pj'] == $myddds[$i]) {
+                                                    echo '<option selected id="tirar">'.$myddds[$i].'</option>';
+                                                    unset($_SESSION['ddd_pj']);
+                                                }else {
+                                                    echo '<option>'.$myddds[$i].'</option>';
+                                                }
                                             } ?>
                                         </select>
                                     </div>
@@ -216,31 +219,27 @@ require_once '../conexao.php';
                                 <div class="col-md-2">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
-                                        <input id="tel_pj" name="tel_pj" class="form-control" placeholder="XXXX-XXXX" type="tel" maxlength="9">
+                                        <input id="tel_pj" name="tel_pj" class="form-control" placeholder="XXXX-XXXX" pattern="\d{4}-\d{4}" type="tel" maxlength="9" <?php if(isset($_SESSION['tel_pj'])){ echo'value="'.$_SESSION["tel_pj"].'"'; unset($_SESSION['tel_pj']);} ?>>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Search input-->
                         <div class="form-group">
                             <label class="col-md-2 control-label" for="cep">CEP</label>
                             <div class="col-md-2">
-                                <input id="cep" name="cep" placeholder="Apenas números" class="form-control input-md" type="search" maxlength="10">
+                                <input id="cep" name="cep" placeholder="Apenas números" class="form-control input-md" type="search" maxlength="10" <?php if(isset($_SESSION['cep'])){ echo'value="'.$_SESSION["cep"].'"'; unset($_SESSION['cep']);} ?>>
                             </div>
                             <div class="col-md-2">
-                                <button type="button" id="pesquisar" class="btn-primary" onclick="getEndereco()">Pesquisar</button>
+                                <button type="button" id="pesquisar" class="btn btn-primary" onclick="getEndereco()">Pesquisar</button>
                             </div>
                         </div>
-
-                        <!-- Prepended text-->
                         <div class="form-group">
                             <label class="col-md-2 control-label" for="logradouro">Endereço</label>
                             <div class="col-md-4">
                                 <div class="input-group">
                                     <span class="input-group-addon">Logradouro</span>
-                                    <input id="logradouro" name="logradouro" class="form-control" required readonly type="text">
+                                    <input id="logradouro" name="logradouro" class="form-control" required readonly type="text" <?php if(isset($_SESSION['logradouro'])){ echo'value="'.$_SESSION["logradouro"].'"'; unset($_SESSION['logradouro']);} ?>>
                                 </div>
-
                             </div>
                             <div class="col-md-3">
                                 <div class="input-group">
@@ -261,26 +260,26 @@ require_once '../conexao.php';
                             <div class="col-md-4">
                                 <div class="input-group">
                                     <span class="input-group-addon">Cidade</span>
-                                    <input id="cidade" name="cidade" class="form-control" required readonly type="text">
+                                    <input id="cidade" name="cidade" class="form-control" required readonly type="text" <?php if(isset($_SESSION['cidade'])){ echo'value="'.$_SESSION["cidade"].'"'; unset($_SESSION['cidade']);} ?>>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="input-group">
                                     <span class="input-group-addon">Bairro</span>
-                                    <input id="bairro" name="bairro" class="form-control" required readonly type="text">
+                                    <input id="bairro" name="bairro" class="form-control" required readonly type="text" <?php if(isset($_SESSION['bairro'])){ echo'value="'.$_SESSION["bairro"].'"'; unset($_SESSION['bairro']);} ?>>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="input-group">
                                     <span class="input-group-addon">Estado</span>
-                                    <input id="estado" name="estado" class="form-control" required readonly type="text">
+                                    <input id="estado" name="estado" class="form-control" required readonly type="text" <?php if(isset($_SESSION['uf'])){ echo'value="'.$_SESSION["uf"].'"'; unset($_SESSION['uf']);} ?>>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label" for="Cadastrar"></label>
                                 <div class="col-md-8">
-                                    <button id="Cadastrar" name="Cadastrar" class="btn btn-success" type="Submit">Cadastrar</button>
-                                    <button id="Cancelar" name="limpar" class="btn btn-danger" type="Reset" onclick="limparPJ()">Limpar</button>
+                                    <button id="cadastrar" name="Cadastrar" class="btn btn-success btn_fim" type="Submit">Cadastrar</button>
+                                    <button id="limpar" name="limpar" class="btn btn-danger btn_fim" onclick="limparPJ()" type="button">Limpar</button>
                                 </div>
                             </div>
                         </div>

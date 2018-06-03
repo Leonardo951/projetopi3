@@ -33,57 +33,38 @@ if(isset($_POST['pessoa'])) {
         $cidade = $_POST['cidade'];
         $bairro = $_POST['bairro'];
         $uf = $_POST['estado'];
-        if (isset($_POST['compl'])) {
-            $compl = $_POST['compl'];
-        }
-        if (isset($_POST['numero'])) {
-            $num = $_POST['numero'];
-        }
-        if (isset($num) && isset($compl)) {
-            $sql = "INSERT INTO tb_endereco (fk_cli_pf, logradouro, cidade, bairro, uf, numero, complemento, cep) VALUES (?,?,?,?,?,?,?,?);";
-            $stmt = $conex->prepare($sql);
-            $stmt->bindValue(1, $id_end);
-            $stmt->bindValue(2, $logradouro);
-            $stmt->bindValue(3, $cidade);
-            $stmt->bindValue(4, $bairro);
-            $stmt->bindValue(5, $uf);
-            $stmt->bindValue(6, $num);
-            $stmt->bindValue(7, $compl);
-            $stmt->bindValue(8, $cep);
-        } elseif (isset($num)) {
-            $sql = "INSERT INTO tb_endereco (fk_cli_pf, logradouro, cidade, bairro, uf, cep, numero) VALUES (?,?,?,?,?,?,?);";
-            $stmt = $conex->prepare($sql);
-            $stmt->bindValue(1, $id_end);
-            $stmt->bindValue(2, $logradouro);
-            $stmt->bindValue(3, $cidade);
-            $stmt->bindValue(4, $bairro);
-            $stmt->bindValue(5, $uf);
-            $stmt->bindValue(6, $cep);
-            $stmt->bindValue(7, $num);
-        } elseif (isset($compl)) {
-            $sql = "INSERT INTO tb_endereco (fk_cli_pf, logradouro, cidade, bairro, uf, cep, complemento) VALUES (?,?,?,?,?,?,?);";
-            $stmt = $conex->prepare($sql);
-            $stmt->bindValue(1, $id_end);
-            $stmt->bindValue(2, $logradouro);
-            $stmt->bindValue(3, $cidade);
-            $stmt->bindValue(4, $bairro);
-            $stmt->bindValue(5, $uf);
-            $stmt->bindValue(6, $cep);
-            $stmt->bindValue(7, $compl);
-        } else {
-            $sql = "INSERT INTO tb_endereco (fk_cli_pf, logradouro, cidade, bairro, uf) VALUES (?,?,?,?,?);";
-            $stmt = $conex->prepare($sql);
-            $stmt->bindValue(1, $id_end);
-            $stmt->bindValue(2, $logradouro);
-            $stmt->bindValue(3, $cidade);
-            $stmt->bindValue(4, $bairro);
-            $stmt->bindValue(5, $uf);
-        }
+        $compl = $_POST['compl'];
+        $num = $_POST['numero'];
+
+        $sql = "INSERT INTO tb_endereco (fk_cli_pf, logradouro, cidade, bairro, uf, numero, complemento, cep) VALUES (?,?,?,?,?,?,?,?);";
+        $stmt = $conex->prepare($sql);
+        $stmt->bindValue(1, $id_end);
+        $stmt->bindValue(2, $logradouro);
+        $stmt->bindValue(3, $cidade);
+        $stmt->bindValue(4, $bairro);
+        $stmt->bindValue(5, $uf);
+        $stmt->bindValue(6, $num);
+        $stmt->bindValue(7, $compl);
+        $stmt->bindValue(8, $cep);
+
         if ($stmt->execute()) {
             $_SESSION['recado'] = 'adicionado';
             header('Location: cadastro.php');
         } else {
             $_SESSION['recado'] = 'erroadicao';
+            $_SESSION['nome_pf'] = $nome;
+            $_SESSION['cpf'] = $cpf;
+            $_SESSION['dtnasc'] = $dtnasc;
+            $_SESSION['mail'] = $mail;
+            $_SESSION['sexo'] = $sexo;
+            $_SESSION['ddd'] = $ddd;
+            $_SESSION['tel'] = $tel;
+            $_SESSION['logradouro'] = $logradouro;
+            $_SESSION['cidade'] = $cidade;
+            $_SESSION['bairro'] = $bairro;
+            $_SESSION['uf'] = $uf;
+            $_SESSION['cep'] = $cep;
+            $_SESSION['pessoa'] = $_POST['pessoa'];
             header('Location: cadastro.php');
         }
     } else {
@@ -115,13 +96,8 @@ if(isset($_POST['pessoa'])) {
         $cidade = $_POST['cidade'];
         $bairro = $_POST['bairro'];
         $uf = $_POST['estado'];
-        if (isset($_POST['compl'])) {
-            $compl = $_POST['compl'];
-        }
-        if (isset($_POST['numero'])) {
-            $num = $_POST['numero'];
-        }
-        if (isset($num) && isset($compl)) {
+        $compl = $_POST['compl'];
+        $num = $_POST['numero'];
             $sql = "INSERT INTO tb_endereco (fk_cli_pj, logradouro, cidade, bairro, uf, numero, complemento, cep) VALUES (?,?,?,?,?,?,?,?);";
             $stmt = $conex->prepare($sql);
             $stmt->bindValue(1, $id_end);
@@ -132,44 +108,28 @@ if(isset($_POST['pessoa'])) {
             $stmt->bindValue(6, $num);
             $stmt->bindValue(7, $compl);
             $stmt->bindValue(8, $cep);
-        } elseif (isset($num)) {
-            $sql = "INSERT INTO tb_endereco (fk_cli_pj, logradouro, cidade, bairro, uf, cep, numero) VALUES (?,?,?,?,?,?,?);";
-            $stmt = $conex->prepare($sql);
-            $stmt->bindValue(1, $id_end);
-            $stmt->bindValue(2, $logradouro);
-            $stmt->bindValue(3, $cidade);
-            $stmt->bindValue(4, $bairro);
-            $stmt->bindValue(5, $uf);
-            $stmt->bindValue(6, $cep);
-            $stmt->bindValue(7, $num);
-        } elseif (isset($compl)) {
-            $sql = "INSERT INTO tb_endereco (fk_cli_pj, logradouro, cidade, bairro, uf, cep, complemento) VALUES (?,?,?,?,?,?,?);";
-            $stmt = $conex->prepare($sql);
-            $stmt->bindValue(1, $id_end);
-            $stmt->bindValue(2, $logradouro);
-            $stmt->bindValue(3, $cidade);
-            $stmt->bindValue(4, $bairro);
-            $stmt->bindValue(5, $uf);
-            $stmt->bindValue(6, $cep);
-            $stmt->bindValue(7, $compl);
-        } else {
-            $sql = "INSERT INTO tb_endereco (fk_cli_pj, logradouro, cidade, bairro, uf) VALUES (?,?,?,?,?);";
-            $stmt = $conex->prepare($sql);
-            $stmt->bindValue(1, $id_end);
-            $stmt->bindValue(2, $logradouro);
-            $stmt->bindValue(3, $cidade);
-            $stmt->bindValue(4, $bairro);
-            $stmt->bindValue(5, $uf);
-        }
+
         if ($stmt->execute()) {
             $_SESSION['recado'] = 'adicionado';
             header('Location: cadastro.php');
         } else {
             $_SESSION['recado'] = 'erroadicao';
+            $_SESSION['empresa'] = $empresa;
+            $_SESSION['cnpj'] = $cnpj;
+            $_SESSION['resp'] = $resp;
+            $_SESSION['razao_soc'] = $rz;
+            $_SESSION['ddd_pj'] = $ddd;
+            $_SESSION['tel_pj'] = $tel;
+            $_SESSION['mail_pj'] = $mail;
+            $_SESSION['logradouro'] = $logradouro;
+            $_SESSION['cidade'] = $cidade;
+            $_SESSION['bairro'] = $bairro;
+            $_SESSION['uf'] = $uf;
+            $_SESSION['cep'] = $cep;
+            $_SESSION['pessoa'] = $_POST['pessoa'];
             header('Location: cadastro.php');
         }
     }
 } else {
-    $_SESSION['recado'] = 'erroadicao';
-    header('Location: cadastro.php');
+    header('Location: login.php');
 }

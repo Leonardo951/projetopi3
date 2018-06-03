@@ -144,7 +144,7 @@
                         <div id="editUsuario' . $id . '" class="modal fade">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                    <form action="update.php" method="POST">
+                                    <form action="update.pf.php" method="POST">
                                         <div class="modal-header">
                                             <h4 class="modal-title">Editar usuário</h4>
                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>

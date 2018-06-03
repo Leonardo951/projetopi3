@@ -8,6 +8,13 @@ $(document).ready(function () {
     $("#cnpj").mask('00.000.000/0000-00', {reverse: true});
 });
 
+$(document).ready(function () {
+    let pj = document.getElementById("pj").checked;
+    if (pj) {
+        $("#pj").click();
+    }
+});
+
 // Troca de campos caso seja PJ
 function tipoPessoaJur() {
     let pj = document.getElementById("pj").checked;
@@ -58,6 +65,5 @@ function tipoPessoaFis() {
 
 // Correção de bug no botão de limpar
 function limparPJ() {
-    document.getElementById("fisica").style.display = "block";
-    document.getElementById("juridica").style.display = "none";
+    window.location.reload();
 }

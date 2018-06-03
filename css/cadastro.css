@@ -13,7 +13,21 @@ body, .container {
 .btn-success-retorn {
     background-color: #e3edef !important;
 }
-.btn {
+
+.btn_fim {
+    margin-top: 40px;
+    float: right;
+    font-size: 13px;
+    border: none;
+    min-width: 50px;
+    border-radius: 2px;
+    border: none;
+    outline: none !important;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.btn_ini {
     margin-top: 70px;
     float: right;
     font-size: 13px;

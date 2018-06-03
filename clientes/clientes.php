@@ -37,7 +37,6 @@ require_once '../check.php';
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.quicksearch/2.3.1/jquery.quicksearch.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -45,13 +44,19 @@ require_once '../check.php';
 <body>
 <!--Página que mostra os usuários -->
 <div class="container">
+    <a href="../menuprincipal.php">
+        <img src="../img/cables.png/" class="img-logo-usuario"/>
+    </a>
+    <a href="../menuprincipal.php" class="btn btn-success-retorn btn_ini">
+        <span><i class="fa fa-home" style="font-size:20px;"></i> Ir ao menu</span>
+    </a>
+    <a href="cadastro.php" class="btn btn-success btn_ini">
+        <i class="fa fa-arrow-circle-left"></i>
+        <span>Voltar ao cadastro</span>
+    </a>
     <div class="table-wrapper">
         <div class="table-title fisica">
             <div class="row">
-                <div class="col-sm-6">
-                    <a href="../menuprincipal.php">
-                        <img src="../img/cables.png/" class="img-logo-usuario"/>
-                    </a>
                     <?php
                     if ($_SESSION['recado'] == 'deletado') {?>
                         <div class="alert alert-success">
@@ -91,16 +96,6 @@ require_once '../check.php';
                     <?php }
                     $_SESSION['recado'] = 'vazio';
                     ?>
-                </div>
-                <div class="col-sm-6">
-                    <a href="../menuprincipal.php" class="btn btn-success-retorn">
-                        <span><i class="fa fa-home" style="font-size:20px;"></i> Ir ao menu</span>
-                    </a>
-                    <a href="cadastro.php" class="btn btn-success">
-                        <i class="fa fa-arrow-circle-left"></i>
-                        <span>Voltar ao cadastro</span>
-                    </a>
-                </div>
             </div>
         </div>
             <div class="col-md-3 bar">
@@ -140,18 +135,18 @@ require_once '../check.php';
             while ( $row = $prepara->fetch() ) {
                 $id = $row['pk_clie_pf'];
                 $nome = $row['nome'];
-                $nbr_cpf = $row['cpf'];
-                $cpf = vsprintf( '%d.%d.%d-%d' , sscanf( $nbr_cpf , '%3d%3d%3d%2d' ) );
+                $cpf = $row['cpf'];
+//                $cpf = vsprintf( '%d.%d.%d-%d' , sscanf( $nbr_cpf , '%3d%3d%3d%2d' ) );
                 $cod = base64_encode($id);
                 echo '
                         <tr>
                             <td>' . $nome . '</td>  
                             <td>' . $cpf . '</td>
                             <td>
-                                <a href="viewer.php?view=' . $cod . '" class="vizualizar" data-toggle="modal">
+                                <a href="viewer.pf.php?view=' . $cod . '" class="vizualizar" data-toggle="modal">
                                     <i class="material-icons" data-toggle="tooltip" title="Vizualizar">&#xe85d;</i>
                                 </a>
-                                <a href="#deleteClientePF' . $id . '" class="excluir" data-toggle="modal")>
+                                <a href="#deleteClientePF' . $id . '" class="excluir" data-toggle="modal">
                                     <i class="material-icons" data-toggle="tooltip" title="Excluir">&#xE872;</i>
                                 </a>    
                             </td>
@@ -160,9 +155,9 @@ require_once '../check.php';
                         <div id="deleteClientePF' . $id . '" class="modal fade">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                    <form action="delete.php" method="POST">
+                                    <form action="delete.pf.php" method="POST">
                                         <div class="modal-header">
-                                            <h4 class="modal-title">Excluir produto</h4>
+                                            <h4 class="modal-title">Excluir cliente</h4>
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                         </div>
                                         <div class="modal-body">
@@ -236,46 +231,48 @@ require_once '../check.php';
                 <tbody>
                 <?php
                 $qntd_pj = 0;
+                $lim = 5;
                 // Definindo a quantidade de usuários por página
                 // definindo a paginação
-                $pg = (isset($_GET['page'])) ? $_GET['page'] : 1;
+                $page = (isset($_GET['pg'])) ? $_GET['pg'] : 1;
                 // Definindo qual será o ínicio
-                $inicio_pj = ($pg * $limite) - $limite;
+                $ini = ($page * $lim) - $lim;
                 // Fazendo a vizualização dos dados
-                $sql = 'SELECT pk_cliente_pj, razao_soc, cnpj FROM tb_cliente_pj ORDER BY razao_soc ASC LIMIT '.$inicio.','. $limite.';';
+                $sql = 'SELECT pk_cliente_pj, razao_soc, cnpj FROM tb_cliente_pj ORDER BY razao_soc ASC LIMIT '.$ini.','. $lim.';';
                 $prepara = $conex->prepare($sql);
                 $prepara->execute();
                 while ( $row = $prepara->fetch() ) {
-                    $id = $row['pk_cliente_pj'];
+                    $id_pj = $row['pk_cliente_pj'];
                     $rz = $row['razao_soc'];
                     $nbr_cnpj = $row['cnpj'];
                     $cnpj = vsprintf( '%d.%d.%d/%d-%d' , sscanf( $nbr_cnpj , '%2d%3d%3d%4d%2d' ) );
+                    $cod_pj = base64_encode($id_pj);
                     echo '
                         <tr>
                             <td>' . $rz . '</td>  
                             <td>' . $cnpj . '</td>
                             <td>
-                                <a href="viewer.php?' . $id . '" class="vizualizar" data-toggle="modal">
+                                <a href="viewer.pj.php?view=' . $cod_pj . '" class="vizualizar" data-toggle="modal">
                                     <i class="material-icons" data-toggle="tooltip" title="Vizualizar">&#xe85d;</i>
                                 </a>
-                                <a href="#deleteClientePJ' . $id . '" class="excluir" data-toggle="modal")>
+                                <a href="#deleteClientePJ' . $id_pj . '" class="excluir" data-toggle="modal">
                                     <i class="material-icons" data-toggle="tooltip" title="Excluir">&#xE872;</i>
                                 </a>    
                             </td>
                         </tr>
                         <!-- DeleteUsuario HTML -->
-                        <div id="deleteClientePJ' . $id . '" class="modal fade">
+                        <div id="deleteClientePJ' . $id_pj . '" class="modal fade">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                    <form action="delete.php" method="POST">
+                                    <form action="delete.pj.php" method="POST">
                                         <div class="modal-header">
-                                            <h4 class="modal-title">Excluir produto</h4>
+                                            <h4 class="modal-title">Excluir cliente</h4>
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                         </div>
                                         <div class="modal-body">
                                             <b><p>Deseja realmente excluir este cliente?</p></b>
                                             <p class="text-warning"><small>Essa ação não poderá ser desfeita...</small></p>
-                                            <input name="id" type="hidden" value="' . $id . '" />
+                                            <input name="id" type="hidden" value="' . $id_pj . '" />
                                         </div>
                                         <div class="modal-footer">
                                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
@@ -294,9 +291,9 @@ require_once '../check.php';
                 $query_resulta = $query_Total->fetchAll(PDO::FETCH_ASSOC);
                 $query_counte =  $query_Total->rowCount(PDO::FETCH_ASSOC);
                 // Colocando na variavel quantas páginas vão existir
-                $qtdPagn = ceil($query_count/$limite);
-                $paginaAnterior = $pg -1;
-                $paginaPosterior = $pg +1;?>
+                $qtdPagn = ceil($query_counte/$limite);
+                $paginaAnterior = $page -1;
+                $paginaPosterior = $page +1;?>
                 </tbody>
             </table>
             <!--    apresentar a paginação-->
@@ -311,9 +308,9 @@ require_once '../check.php';
                         echo '
                                 <li class="page-item disabled"><a href="#">Anterior</a></li>';
                     };
-                    if($qtdPagn > 1 && $pg <= $qtdPagn){
+                    if($qtdPagn > 1 && $page <= $qtdPagn){
                         for($i = 1; $i <= $qtdPagn; $i++){
-                            if($i == $pg){
+                            if($i == $page){
                                 echo "
                                         <li class=\"page-item active\"><a href=\"#\" class=\"page-link\">" . $i. "</a></li>";
                             } else {

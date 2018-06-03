@@ -13,7 +13,20 @@ body, .container {
 .btn-success-retorn {
     background-color: #e3edef !important;
 }
-.btn {
+.btn_fim {
+    margin-top: 40px;
+    float: right;
+    font-size: 13px;
+    border: none;
+    min-width: 50px;
+    border-radius: 2px;
+    border: none;
+    outline: none !important;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.btn_ini {
     margin-top: 70px;
     float: right;
     font-size: 13px;
@@ -35,3 +48,34 @@ body, .container {
 #pesquisar {
     display: none;
 }
+/* Modal styles */
+.modal .modal-dialog {
+    max-width: 400px; }
+
+.modal .modal-header, .modal .modal-body, .modal .modal-footer {
+    padding: 20px 30px; }
+
+.modal .modal-content {
+    border-radius: 3px; }
+
+.modal .modal-footer {
+    background: #ecf0f1;
+    border-radius: 0 0 3px 3px; }
+
+.modal .modal-title {
+    display: inline-block; }
+
+.modal .form-control {
+    border-radius: 2px;
+    box-shadow: none;
+    border-color: #dddddd; }
+
+.modal textarea.form-control {
+    resize: vertical; }
+
+.modal .btn {
+    border-radius: 2px;
+    min-width: 100px; }
+
+.modal form label {
+    font-weight: normal; }
