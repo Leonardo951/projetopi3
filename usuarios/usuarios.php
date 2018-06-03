@@ -139,7 +139,7 @@
                             </td>
                         </tr>
                         <!-- EditUsuario HTML -->
-                        <div id="editUsuario' . $id . '" class="modal fade">
+                        <div id="editUsuario' . $id . '" class="modal fade editar">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <form action="update.pf.php" method="POST">
@@ -150,15 +150,15 @@
                                         <div class="modal-body">
                                         <div class="form-group">
                                             <label>Nome</label>
-                                            <input type="text" name="nome" class="form-control" value="' . $nome . '" required>
+                                            <input type="text" name="nome" class="form-control" value="' . $nome . '" required onchange="habilitaSave()">
                                         </div>
                                         <div class="form-group">
                                             <label>E-mail</label>
-                                            <input type="email" name="email" class="form-control" value="' . $email . '" required>
+                                            <input type="email" name="email" class="form-control" value="' . $email . '" required onchange="habilitaSave()">
                                         </div>
                                         <div class="form-group">
                                             <label>Perfil de acesso</label>
-                                            <select class="form-control" required name="perfil" >';
+                                            <select class="form-control" required name="perfil" onchange="habilitaSave()">';
                                                 for($i = 0; $i < count($myperfs); ++$i) {
                                                     if($myperfs[$i] == $perfil) {
                                                         echo '<option selected>'.$myperfs[$i].'</option>';
@@ -173,7 +173,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-                                    <input type="submit" class="btn btn-info" value="Salvar">
+                                    <input type="submit" class="btn btn-primary save" value="Salvar" disabled>
                                 </div>
                             </form>
                         </div>
@@ -289,5 +289,6 @@
                 </div>
             </div>
         </div>
+    <script type="text/javascript" src="../js/usuarios.js"></script>
     </body>
 </html>

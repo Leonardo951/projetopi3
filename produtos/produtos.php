@@ -151,7 +151,7 @@
                             </td>
                         </tr>
                         <!-- EditUsuario HTML -->
-                        <div id="editUsuario' . $id . '" class="modal fade">
+                        <div id="editUsuario' . $id . '" class="modal fade editar">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <form action="update.pf.php" method="POST">
@@ -162,11 +162,11 @@
                                         <div class="modal-body">
                                             <div class="form-group">
                                                 <label>Produto</label>
-                                                <input type="text" name="prod" class="form-control" value="' . $prod . '" required>
+                                                <input type="text" name="prod" class="form-control" value="' . $prod . '" required onchange="habilitaSave()">
                                             </div>
                                             <div class="form-group">
                                                 <label>Categoria</label>
-                                                <select class="form-control" required name="cat" >';
+                                                <select class="form-control" required name="cat" onchange="habilitaSave()">';
                                                     for($i = 0; $i < count($mycateg); ++$i) {
                                                         if($mycateg[$i] == $categoria) {
                                                             echo '<option selected>'.$mycateg[$i].'</option>';
@@ -180,12 +180,12 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Preço</label>
-                                                <input type="text" name="preco" class="form-control" value="' . $preco . '" required>
+                                                <input type="text" name="preco" class="form-control" value="' . $preco . '" required onchange="habilitaSave()">
                                             </div>
                                         </div>
                                         <div class="modal-footer">
                                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-                                            <input type="submit" class="btn btn-info" value="Salvar">
+                                            <input type="submit" class="btn btn-info save" value="Salvar" disabled>
                                         </div>
                                     </form>
                                 </div>
@@ -298,5 +298,6 @@
                 </div>
             </div>
         </div>
+    <script type="text/javascript" src="../js/produtos.js"></script>
     </body>
 </html>
