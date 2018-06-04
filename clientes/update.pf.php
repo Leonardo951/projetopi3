@@ -67,8 +67,8 @@ if ($stmt->execute()) {
         header('Location: viewer.pf.php?view=' . $cod . '');
     } else {
         $_SESSION['recado'] = 'erroend';
-//        header('Location: viewer.pf.php?view=' . $cod . '');
-        print_r($stmt->errorInfo());
+        header('Location: viewer.pf.php?view=' . $cod . '');
+//        print_r($stmt->errorInfo());
     }
 } else {
     $_SESSION['recado'] = 'erroedicao';

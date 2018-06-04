@@ -1,6 +1,6 @@
 <?php
 
-require_once '../check.php';
+require_once '../functions/check.php';
 include_once '../conexao.php';
 session_start();
 

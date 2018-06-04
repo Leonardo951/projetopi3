@@ -1,5 +1,5 @@
 <?php
-require_once 'check.php';
+require_once 'functions/check.menu.php';
 ?>
 <!DOCTYPE html>
 

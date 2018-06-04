@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once '../check.php';
+require_once '../functions/check.php';
 include_once '../conexao.php';
 include_once '../converter.php';
 

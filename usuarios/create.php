@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once '../check.php';
+require_once '../functions/check.php';
 include_once '../conexao.php';
 
 $nome = ucwords(strtolower($_POST['nome']));

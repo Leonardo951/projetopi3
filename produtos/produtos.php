@@ -1,6 +1,6 @@
 <?php
     require_once '../conexao.php';
-    require_once '../check.php';
+    require_once '../functions/check.php';
 ?>
 <!DOCTYPE html>
 

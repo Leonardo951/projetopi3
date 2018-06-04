@@ -1,6 +1,6 @@
 <?php
 require_once '../conexao.php';
-require_once '../check.php';
+require_once '../functions/check.php';
 ?>
 <!DOCTYPE html>
 
@@ -44,19 +44,20 @@ require_once '../check.php';
 <body>
 <!--Página que mostra os usuários -->
 <div class="container">
-    <a href="../menuprincipal.php">
-        <img src="../img/cables.png/" class="img-logo-usuario"/>
-    </a>
-    <a href="../menuprincipal.php" class="btn btn-success-retorn btn_ini">
-        <span><i class="fa fa-home" style="font-size:20px;"></i> Ir ao menu</span>
-    </a>
-    <a href="cadastro.php" class="btn btn-success btn_ini">
-        <i class="fa fa-arrow-circle-left"></i>
-        <span>Voltar ao cadastro</span>
-    </a>
     <div class="table-wrapper">
         <div class="table-title fisica">
             <div class="row">
+                <a href="../menuprincipal.php">
+                    <img src="../img/cables.png/" class="img-logo-usuario"/>
+                </a>
+                <a href="../menuprincipal.php" class="btn btn-success-retorn btn_ini">
+                    <span><i class="fa fa-home" style="font-size:20px;"></i> Ir ao menu</span>
+                </a>
+                <a href="cadastro.php" class="btn btn-success btn_ini">
+                    <i class="fa fa-arrow-circle-left"></i>
+                    <span>Voltar ao cadastro</span>
+                </a>
+
                 <div class="col-md-6">
                     <?php
                     if ($_SESSION['recado'] == 'deletado') {?>
@@ -100,12 +101,12 @@ require_once '../check.php';
                 </div>
             </div>
         </div>
-            <div class="col-md-3 bar">
-                <div class="btn-group btn-group-justified">
-                    <a class="btn btn-default active" id="show-pf" href="#" onclick="tipoPessoaFis()">Pessoa Física</a>
-                    <a class="btn btn-default" id="show-pj" href="#" onclick="tipoPessoaJur()">Pessoa Jurídica</a>
-                </div>
+        <div class="col-md-3 bar">
+            <div class="btn-group btn-group-justified">
+                <a class="btn btn-default active" id="show-pf" href="#" onclick="tipoPessoaFis()">Pessoa Física</a>
+                <a class="btn btn-default" id="show-pj" href="#" onclick="tipoPessoaJur()">Pessoa Jurídica</a>
             </div>
+        </div>
         <div class="col-md-3 bar">
             <div class="input-group">
                 <span class="input-group-addon"><i class="	glyphicon glyphicon-search"></i></span>
@@ -113,34 +114,34 @@ require_once '../check.php';
             </div>
         </div>
         <div id="fisica">
-        <table class="table table-striped table-hover" id="usuariotable" title="Pesquisar">
-            <thead>
+            <table class="table table-striped table-hover" id="usuariotable" title="Pesquisar">
+                <thead>
                 <tr>
                     <th>Nome</th>
                     <th>CPF</th>
                     <th>Ações</th>
                 </tr>
-            </thead>
-            <tbody>
-            <?php
-            $qntd = 0;
-            // Definindo a quantidade de usuários por página
-            $limite = 5;
-            // definindo a paginação
-            $pg = (isset($_GET['page'])) ? $_GET['page'] : 1;
-            // Definindo qual será o ínicio
-            $inicio = ($pg * $limite) - $limite;
-            // Fazendo a vizualização dos dados
-            $sql = 'SELECT pk_clie_pf, nome, cpf FROM tb_clientes_pf ORDER BY nome ASC LIMIT '.$inicio.','. $limite.';';
-            $prepara = $conex->prepare($sql);
-            $prepara->execute();
-            while ( $row = $prepara->fetch() ) {
-                $id = $row['pk_clie_pf'];
-                $nome = $row['nome'];
-                $cpf = $row['cpf'];
+                </thead>
+                <tbody>
+                <?php
+                $qntd = 0;
+                // Definindo a quantidade de usuários por página
+                $limite = 5;
+                // definindo a paginação
+                $pg = (isset($_GET['page'])) ? $_GET['page'] : 1;
+                // Definindo qual será o ínicio
+                $inicio = ($pg * $limite) - $limite;
+                // Fazendo a vizualização dos dados
+                $sql = 'SELECT pk_clie_pf, nome, cpf FROM tb_clientes_pf ORDER BY nome ASC LIMIT '.$inicio.','. $limite.';';
+                $prepara = $conex->prepare($sql);
+                $prepara->execute();
+                while ( $row = $prepara->fetch() ) {
+                    $id = $row['pk_clie_pf'];
+                    $nome = $row['nome'];
+                    $cpf = $row['cpf'];
 //                $cpf = vsprintf( '%d.%d.%d-%d' , sscanf( $nbr_cpf , '%3d%3d%3d%2d' ) );
-                $cod = base64_encode($id);
-                echo '
+                    $cod = base64_encode($id);
+                    echo '
                         <tr>
                             <td>' . $nome . '</td>  
                             <td>' . $cpf . '</td>
@@ -175,51 +176,51 @@ require_once '../check.php';
                                 </div>
                             </div>
                         </div>';
-                $qntd = $qntd + 1;
-            }
-            // Verificando quantos itens existem na tabela
-            $sql_Total = 'SELECT pk_clie_pf FROM tb_clientes_pf';
-            $query_Total = $conex->prepare($sql_Total);
-            $query_Total->execute();
-            $query_result = $query_Total->fetchAll(PDO::FETCH_ASSOC);
-            $query_count =  $query_Total->rowCount(PDO::FETCH_ASSOC);
-            // Colocando na variavel quantas páginas vão existir
-            $qtdPag = ceil($query_count/$limite);
-            $pagina_anterior = $pg -1;
-            $pagina_posterior = $pg +1;?>
-            </tbody>
-        </table>
-        <!--    apresentar a paginação-->
-        <div class="clearfix">
-            <?php echo'<div class="hint-text">Mostrando <b>'. $qntd .'</b> de <b>'. $query_count .'</b> registros</div>';?>
-            <ul class="pagination">
-                <?php
-                if($pagina_anterior != 0) {
-                    echo '
+                    $qntd = $qntd + 1;
+                }
+                // Verificando quantos itens existem na tabela
+                $sql_Total = 'SELECT pk_clie_pf FROM tb_clientes_pf';
+                $query_Total = $conex->prepare($sql_Total);
+                $query_Total->execute();
+                $query_result = $query_Total->fetchAll(PDO::FETCH_ASSOC);
+                $query_count =  $query_Total->rowCount(PDO::FETCH_ASSOC);
+                // Colocando na variavel quantas páginas vão existir
+                $qtdPag = ceil($query_count/$limite);
+                $pagina_anterior = $pg -1;
+                $pagina_posterior = $pg +1;?>
+                </tbody>
+            </table>
+            <!--    apresentar a paginação-->
+            <div class="clearfix">
+                <?php echo'<div class="hint-text">Mostrando <b>'. $qntd .'</b> de <b>'. $query_count .'</b> registros</div>';?>
+                <ul class="pagination">
+                    <?php
+                    if($pagina_anterior != 0) {
+                        echo '
                                 <li class="page-item"><a href="clientes.php?page='. $pagina_anterior .'">Anterior</a></li>';
-                } else {
-                    echo '
+                    } else {
+                        echo '
                                 <li class="page-item disabled"><a href="#">Anterior</a></li>';
-                };
-                if($qtdPag > 1 && $pg <= $qtdPag){
-                    for($i = 1; $i <= $qtdPag; $i++){
-                        if($i == $pg){
-                            echo "
+                    };
+                    if($qtdPag > 1 && $pg <= $qtdPag){
+                        for($i = 1; $i <= $qtdPag; $i++){
+                            if($i == $pg){
+                                echo "
                                         <li class=\"page-item active\"><a href=\"#\" class=\"page-link\">" . $i. "</a></li>";
-                        } else {
-                            echo '
+                            } else {
+                                echo '
                                         <li class=\"page-item disabled\"><a href="clientes.php?page='.$i.'" class=\"page-link\">'. $i  .'</a></li>';
+                            }
                         }
-                    }
-                }if($pagina_posterior <= $qtdPag) {
-                    echo '
+                    }if($pagina_posterior <= $qtdPag) {
+                        echo '
                                 <li class="page-item"><a href="clientes.php?page='.$pagina_posterior.'" class="page-link">Próxima</a></li>';
-                } else {
-                    echo '
+                    } else {
+                        echo '
                                 <li class="page-item disabled"><a href="#" class="page-link">Próxima</a></li>';
-                };?>
-            </ul>
-        </div>
+                    };?>
+                </ul>
+            </div>
         </div>
         <div id="juridica">
             <table class="table table-striped table-hover" id="usuariotable">
