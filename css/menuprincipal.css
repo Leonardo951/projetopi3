@@ -78,3 +78,14 @@ section .section-title {
     border-color: black;
     border-radius: 5px;
     margin-left: 200px; }
+
+.glyphicon {
+    font-size: 15px;
+    color: white;
+}
+
+.not {
+    background-color: #D01D33 !important;
+    border-color: #D01D33 !important;
+    cursor: default !important;
+}

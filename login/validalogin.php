@@ -9,7 +9,7 @@ $senha = isset($_POST['senha']) ? $_POST['senha'] : '';
 
 $PDO = $conex;
 
-$sql = "SELECT email, senha FROM tb_usuario WHERE email = :email AND senha = :senha";
+$sql = "SELECT * FROM view_usuario WHERE email = :email AND senha = :senha";
 $stmt = $PDO->prepare($sql);
 
 $stmt->bindParam(':email', $email);
@@ -17,7 +17,7 @@ $stmt->bindParam(':senha', $senha);
 
 $stmt->execute();
 
-$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$users = $stmt->fetch();
 
 if (empty($users))
 {
@@ -31,8 +31,7 @@ if (empty($users))
         $_SESSION["sessiontime"] = time() + 1200;
     };
 
-    $_SESSION['user_email'] = $users['email'];
-    $_SESSION['user_senha'] = $users['senha'];
+    $_SESSION['user_perf'] = base64_encode($users['perfil']);
     $_SESSION['recado'] = 'nada';
 
     header('Location: ../menuprincipal.php');
