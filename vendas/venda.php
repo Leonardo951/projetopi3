@@ -89,12 +89,10 @@ require_once '../functions/check.php';
             ?>
         </div>
 <!--        <div class="col-sm-12 col-md-10 col-md-offset-1">-->
-            <table class="table table-hover" id="mytable">
+            <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>
-                        Produtos
-                    </th>
+                    <th>Produtos</th>
                     <th>Quantidade</th>
                     <th class="text-center">Preço</th>
                     <th class="text-center">Total</th>
@@ -105,12 +103,12 @@ require_once '../functions/check.php';
                 <td>
                     <div class="input-group div-input">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-                        <input id="busca_prod" class="form-control"  placeholder="Digite o código do produto..." type="search" title="Digite o código e aperte enter para pesquisar" onchange="buscaProd()">
+                        <input id="busca_prod" class="form-control" autofocus placeholder="Digite o código do produto..." type="search" title="Digite o código e aperte enter para pesquisar" onchange="buscaProd()">
                     </div>
                     <p class="text-warning" id="alert"><i class="material-icons">&#xe002;</i><small id="text"></small></p>
                 </td>
-                <tr id="exex">
-                    <td class="col-sm-8 col-md-6">
+                <tr id="exe">
+                    <td class="col-sm-8 col-md-6" id="primeira">
                         <div class="media">
                             <div class="pull-left"> <img class="media-object img" src="../img/products.png"> </div>
                             <div>
@@ -120,17 +118,17 @@ require_once '../functions/check.php';
                             </div>
                         </div>
                     </td>
-                    <td class="col-sm-1 col-md-1">
-                        <input type="text" class="form-control qntd">
+                    <td class="col-sm-1 col-md-1" id="segunda">
+                        <input type="text" class="form-control qntd" onchange="mudaTotal(this); somaTudo();" id="qntd" name="qntd">
                     </td>
-                    <td class="col-sm-1 col-md-1 text-center"><strong></strong></td>
-                    <td class="col-sm-1 col-md-1 text-center"><strong id="preco"></strong></td>
-                    <td class="col-sm-1 col-md-1">
+                    <td class="col-sm-1 col-md-1 text-center" id="terceira"><strong id="preco">xxxx</strong></td>
+                    <td class="col-sm-1 col-md-1 text-center" id="quarta"><strong id="total" class="soma"></strong></td>
+                    <td class="col-sm-1 col-md-1" id="quinta">
                         <button type="button" class="btn btn-danger">
                             <span class="glyphicon glyphicon-remove"></span> Remover
                         </button></td>
                 </tr>
-                <tr id="aqui"></tr>
+                <tr id="inner"></tr>
                 <tr>
                     <td>   </td>
                     <td>   </td>
@@ -150,7 +148,7 @@ require_once '../functions/check.php';
                     <td>   </td>
                     <td>   </td>
                     <td><h3>Total</h3></td>
-                    <td class="text-right"><h3><strong>$31.53</strong></h3></td>
+                    <td class="text-right"><h3><strong id="tot-geral">$31.53</strong></h3></td>
                 </tr>
                 <tr>
                     <td>   </td>

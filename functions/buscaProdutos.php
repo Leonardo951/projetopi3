@@ -13,12 +13,15 @@ if ($stmt->execute()) {
         $nome = $produto['nome_prod'];
         $qntd = $produto['qntd_estoq'];
         $preco = $produto['preco'];
+        $cat = $produto['categoria'];
 
         echo json_encode(array(
             "result" => true,
+            "cod" => $cod_prod,
             "nome" => $nome,
             "qntd" => $qntd,
-            "preco" => $preco
+            "preco" => $preco,
+            "categ" => $cat
         ));
     } else {
         echo json_encode(array(
