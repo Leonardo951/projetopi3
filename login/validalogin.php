@@ -31,7 +31,7 @@ if (empty($users))
         $_SESSION["sessiontime"] = time() + 1200;
     };
 
-    $_SESSION['user_perf'] = base64_encode($users['perfil']);
+    $_SESSION['user'] = base64_encode($users['perfil']);
     $_SESSION['recado'] = 'nada';
 
     header('Location: ../menuprincipal.php');

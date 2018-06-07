@@ -1,5 +1,5 @@
 <?php
-require_once 'functions/check.menu.php';
+require_once 'functions/check.php';
 ?>
 <!DOCTYPE html>
 
@@ -47,7 +47,7 @@ require_once 'functions/check.menu.php';
                                     <div class="card-body text-center">
                                         <h4 class="card-title">Vendas</h4>
                                         <p class="card-text">Controle de vendas</p>
-                                        <a href="#" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-log-in"></i></a>
+                                        <a href="vendas/venda.php" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-log-in"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -96,7 +96,7 @@ require_once 'functions/check.menu.php';
                                         <h4 class="card-title">Fornecedores</h4>
                                         <p class="card-text">Gerenciar fornecedores</p>
                                         <?php
-                                        if(base64_decode($_SESSION['user_perf']) == 'Vendedor') {
+                                        if(base64_decode($_SESSION['user']) == 'Vendedor') {
                                             echo '<a class="btn btn-primary btn-sm not" title="Acesso não permitido!"><i class="glyphicon glyphicon-ban-circle"></i></a>';
                                         } else {
                                           echo '<a href="fornecedores/fornecedores.php" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-log-in"></i></a>';
@@ -118,7 +118,7 @@ require_once 'functions/check.menu.php';
                                         <h4 class="card-title">Usuários</h4>
                                         <p class="card-text">Gerenciar usuários</p>
                                         <?php
-                                        if(base64_decode($_SESSION['user_perf']) == 'Vendedor' || base64_decode($_SESSION['user_perf']) == 'Gerente') {
+                                        if(base64_decode($_SESSION['user']) == 'Vendedor' || base64_decode($_SESSION['user']) == 'Gerente') {
                                             echo '<a class="btn btn-primary btn-sm not" title="Acesso não permitido!"><i class="glyphicon glyphicon-ban-circle"></i></a>';
                                         } else {
                                             echo '<a href="usuarios/usuarios.php" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-log-in"></i></a>';

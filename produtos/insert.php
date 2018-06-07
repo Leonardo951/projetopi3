@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 require_once '../functions/check.php';
 include_once '../conexao.php';
 include_once '../converter.php';
@@ -17,11 +16,31 @@ while ($pk = $prepara->fetch()) {
     $pk_categoria = $pk['pk_categoria'];
 };
 
-$sql = "INSERT INTO tb_produto (nome_prod, preco, fk_categoria) VALUES (?,?,?);";
+$c = 1;
+while ($c < 1000) {
+    if($cat == "Software") {
+        $cod = rand(11111, 99999);
+    }else{
+        $cod = rand(111111, 999999);
+    }
+    $sql = "SELECT cod_prod FROM tb_produto WHERE cod_prod = :cod_prod;";
+    $stmt = $conex->prepare($sql);
+    $stmt->bindParam(':cod_prod', $cod);
+    $stmt->execute();
+    $codigos = $stmt->fetch();
+    if (empty($codigos)){
+        $cod_prod = $cod;
+        break;
+    }
+    $c = $c+1;
+}
+
+$sql = "INSERT INTO tb_produto (nome_prod, preco, fk_categoria, cod_prod) VALUES (?,?,?,?);";
 $stmt = $conex->prepare($sql);
 $stmt->bindValue(1, $prod);
 $stmt->bindValue(2, $preco);
 $stmt->bindValue(3, $pk_categoria);
+$stmt->bindValue(4, $cod_prod);
 
 if( $stmt->execute() ){
     $_SESSION['recado'] = 'adicionado';

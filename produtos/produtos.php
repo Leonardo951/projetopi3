@@ -99,6 +99,7 @@
                 <table class="table table-striped table-hover" id="usuariotable">
                     <thead>
                         <tr>
+                            <th>Código</th>
                             <th>Produto</th>
                             <th>Categoria</th>
                             <th>Quantidade disponível</th>
@@ -128,12 +129,14 @@
                     $prepara->execute();
                     while ( $row = $prepara->fetch() ) {
                         $id = $row['pk_prod'];
+                        $cod_prod = $row['cod_prod'];
                         $prod = $row['nome_prod'];
                         $preco = $row['preco'];
                         $estoque = $row['qntd_estoq'];
                         $categoria = $row['categoria'];
                         echo '
                         <tr>
+                            <td>' . $cod_prod . '</td>
                             <td>' . $prod . '</td>  
                             <td>' . $categoria . '</td>
                             <td>' . $estoque . '</td>
