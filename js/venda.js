@@ -1,3 +1,4 @@
+// funçaõ executada quando fazemos a pesquisa por um produto
 function buscaProd() {
     let prod = $("#busca_prod").val();
     document.getElementById("alert").style.display = "none";
@@ -55,6 +56,7 @@ function buscaProd() {
     })
 }
 
+// função executada quando mudamos a quantidade
 function mudaTotal(item) {
     let id = $(item).attr("id").split('d')[1];
     let id_preco = '#preco'+id;
@@ -63,8 +65,10 @@ function mudaTotal(item) {
     let preco = moedaParaNumero($(id_preco).text());
     let total = preco*qtd;
     $(id_total).text(numberToReal(total));
+    somaTudo();
 }
 
+// Função que soma todos os valores dos produtos e coloca em subtotal
 function somaTudo() {
     let total = 0;
     $(".soma").each(function(){
@@ -72,43 +76,88 @@ function somaTudo() {
         total += val;
     });
     $("#subtotal").text(numberToReal(total));
-    $("#tot-geral").text(numberToReal(total));
+    somaGeral();
 }
 
+// Verifica se tem algum desconto e aplica ao valor total da venda
+function somaGeral() {
+    let total = moedaParaNumero($('#subtotal').text());
+    if(total == 0) {
+        $("#tot-geral").text($('#subtotal').text());
+    }else{
+        if($('#percentual').val().length > 1 || $('#avista').val().length > 2) {
+            if($('#avista').val() == 'R$'){
+                // se verdadeiro significa que temos uma porcentagem, se não teremos um valor em dinheiro
+                let valor = moedaParaNumero($('#percentual').val().split('%')[0]);
+                let res = (moedaParaNumero(total)/100)*valor;
+                let resultado = moedaParaNumero(total)-res;
+                if(resultado <= 0) {
+                    alert('Desconto inválido!');
+                    $("#percentual").val('');
+                    $("#tot-geral").text($('#subtotal').text());
+                }else{
+                    $("#tot-geral").text(numberToReal(resultado));
+                }
+            }else {
+                let valor = moedaParaNumero($('#avista').val().split('$')[1]);
+                let resul = (total-valor);
+                $("#tot-geral").text(numberToReal(resul));
+                if(resul <= 0) {
+                    alert('Desconto inválido!');
+                    $("#avista").val('');
+                    $("#tot-geral").text($('#subtotal').text());
+                }else{
+                    $("#tot-geral").text(numberToReal(resul));
+                }
+            }
+        }else {
+            $("#tot-geral").text(numberToReal(total));
+        }
+    }
+}
+
+//Função do botão de remover
 function removeLinha(item) {
     let id = $(item).attr("id").split('e')[1];
     let id_linha = '#linha'+id;
     $(id_linha).remove();
+    somaGeral();
 }
 
+//Transforma numero inteiro na formatação de moeda
 function numberToReal(numer) {
     let numero = numer.toFixed(2).split('.');
     numero[0] = "R$ " + numero[0].split(/(?=(?:...)*$)/).join('.');
     return numero.join(',');
 }
 
+// Formatação de moeda para numero inteiro
 function moedaParaNumero(valor) {
     return isNaN(valor) == false ? parseFloat(valor) :   parseFloat(valor.replace("R$","").replace(".","").replace(",","."));
 }
 
-
+// Define a mascara de moeda para o campo de desconto, assim que a pagina é carregada
 $("#avista").mask('000.000.000,00', {reverse: true});
 
+// Executada quando o usuário sai do foco do campo de desconto em dinheiro
 function simbolDinh(item){
-    if($('#avista').val().length < 3) {
+    if($('#avista').val().length > 0 && $('#avista').val().length < 3) {
         $(item).val( $(item).val() + ',00' );
     }
-    if($(item).val().length > 0) {
-        $(item).val( 'R$' + $(item).val() );
-    }
+    $(item).val( 'R$' + $(item).val() );
+    somaGeral();
 }
+
+// define um valor pre estabelecido para o campo de desconto em dinheiro assim que a pagina é carregada
 $('#avista').val( 'R$' + $('#avista').val() );
 
+// tira o R$ do deconto em dinheiro quando ele fica em foco
 function dinhFoco(item) {
     $(item).val( $(item).val().split('$')[1]);
 }
 
-$('#percentual').mask('Z#9V##', {
+//Formatação do campo de desconto em %
+$('#percentual').mask('Z#9V#', {
     translation: {
         'Z': {
             pattern: /[\-\+]/,
@@ -124,30 +173,38 @@ $('#percentual').mask('Z#9V##', {
     }
 });
 
+// Define o valor % para o campo de percentual de desconto quando a pagina é carregada
 $('#percentual').val( $('#percentual').val() + '%' );
 
+// Define o simbolo de % no do campo de desconto %
 function simbolPorc(){
         $('#percentual').val( $('#percentual').val() + '%' );
+        somaGeral();
 }
 
+// Tira o simbolo % quando o campo fica em foco
 function simbolFoco(item) {
     $(item).val( $(item).val().split('%')[0]);
 }
 
+//Função executada quando clica no radio de difinir que o escoto será dado como porcentagem
 function checaPorcent() {
     let p = document.getElementById("descporc").checked;
     if (p) {
         document.getElementById("percentual").style.display = "block";
         document.getElementById("avista").style.display = "none";
         $('#avista').val("R$");
+        somaGeral();
     }
 }
 
+// //Função executada quando clica no radio de difinir que o escoto será dado em dinheiro
 function checaDinheiro() {
     let d = document.getElementById("descdin").checked;
     if (d) {
         document.getElementById("percentual").style.display = "none";
         document.getElementById("avista").style.display = "block";
         $('#percentual').val("%");
+        somaGeral();
     }
 }

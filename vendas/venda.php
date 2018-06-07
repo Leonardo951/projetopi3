@@ -120,7 +120,7 @@ require_once '../functions/check.php';
                         </div>
                     </td>
                     <td class="col-sm-1 col-md-1" id="segunda">
-                        <input type="number" class="form-control qntd" onclick="mudaTotal(this); somaTudo();" id="qntd" name="qntd" min="1" value="1">
+                        <input type="number" class="form-control qntd" onclick="mudaTotal(this)" id="qntd" name="qntd" min="1" value="1">
                     </td>
                     <td class="col-sm-1 col-md-1 text-center" id="terceira"><strong id="preco">xxxx</strong></td>
                     <td class="col-sm-1 col-md-1 text-center soma" id="quarta"><strong id="total"></strong></td>
@@ -135,7 +135,7 @@ require_once '../functions/check.php';
                     <td>   </td>
                     <td>   </td>
                     <td><h5>Subtotal</h5></td>
-                    <td class="text-right"><h5><strong id="subtotal">R$ 0</strong></h5></td>
+                    <td class="text-right"><h5><strong id="subtotal">R$ 0,00</strong></h5></td>
                 </tr>
                 <tr>
                     <td>   </td>
@@ -148,8 +148,8 @@ require_once '../functions/check.php';
                             <input type="radio" id="descdin" name="desc" onclick="checaDinheiro()">
                         </label></td>
                     <td class="text-right">
-                        <input type="text" class="form-control tam" id="avista" onblur="simbolDinh(this)" onfocus="dinhFoco(this)">
-                        <input type="text" class="form-control tam" id="percentual" onblur="simbolPorc()" onfocus="simbolFoco(this)">
+                        <input type="text" class="form-control tam" id="avista" onchange="simbolDinh(this)" onfocus="dinhFoco(this)">
+                        <input type="text" class="form-control tam" id="percentual" onchange="simbolPorc()" onfocus="simbolFoco(this)">
                     </td>
                 </tr>
                 <tr>
@@ -157,7 +157,7 @@ require_once '../functions/check.php';
                     <td>   </td>
                     <td>   </td>
                     <td><h4>Total</h4></td>
-                    <td class="text-right"><h4><strong id="tot-geral">R$ 0</strong></h4></td>
+                    <td class="text-right"><h4><strong id="tot-geral">R$ 0,00</strong></h4></td>
                 </tr>
                 <tr>
                     <td>   </td>
