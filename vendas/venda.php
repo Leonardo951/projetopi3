@@ -122,9 +122,9 @@ require_once '../functions/check.php';
                         <input type="text" class="form-control qntd" onchange="mudaTotal(this); somaTudo();" id="qntd" name="qntd">
                     </td>
                     <td class="col-sm-1 col-md-1 text-center" id="terceira"><strong id="preco">xxxx</strong></td>
-                    <td class="col-sm-1 col-md-1 text-center" id="quarta"><strong id="total" class="soma"></strong></td>
+                    <td class="col-sm-1 col-md-1 text-center soma" id="quarta"><strong id="total"></strong></td>
                     <td class="col-sm-1 col-md-1" id="quinta">
-                        <button type="button" class="btn btn-danger">
+                        <button type="button" class="btn btn-danger" id="remove" onclick="removeLinha(this); somaTudo();">
                             <span class="glyphicon glyphicon-remove"></span> Remover
                         </button></td>
                 </tr>
@@ -134,21 +134,21 @@ require_once '../functions/check.php';
                     <td>   </td>
                     <td>   </td>
                     <td><h5>Subtotal</h5></td>
-                    <td class="text-right"><h5><strong>$24.59</strong></h5></td>
+                    <td class="text-right"><h5><strong id="subtotal">R$ 0</strong></h5></td>
                 </tr>
                 <tr>
                     <td>   </td>
                     <td>   </td>
                     <td>   </td>
                     <td><h5>Desconto</h5></td>
-                    <td class="text-right"><h5><strong>$6.94</strong></h5></td>
+                    <td class="text-right"><h5><strong>R$ 0</strong></h5></td>
                 </tr>
                 <tr>
                     <td>   </td>
                     <td>   </td>
                     <td>   </td>
                     <td><h3>Total</h3></td>
-                    <td class="text-right"><h3><strong id="tot-geral">$31.53</strong></h3></td>
+                    <td class="text-right"><h3><strong id="tot-geral">R$ 0</strong></h3></td>
                 </tr>
                 <tr>
                     <td>   </td>

@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="284cce0b-70af-414c-bfb6-c39fbb5d6946" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/venda.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/venda.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/buscaProdutos.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions/buscaProdutos.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/venda.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/venda.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendas/venda.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendas/venda.php" afterDir="false" />
     </list>
@@ -20,8 +18,8 @@
       <file leaf-file-name="venda.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/venda.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="530">
-              <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
+            <state relative-caret-position="479">
+              <caret line="62" column="1" selection-start-line="62" selection-start-column="1" selection-end-line="62" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -38,8 +36,8 @@
       <file leaf-file-name="venda.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendas/venda.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="121" column="62" lean-forward="true" selection-start-line="121" selection-start-column="62" selection-end-line="121" selection-end-column="62" />
+            <state relative-caret-position="476">
+              <caret line="126" column="121" selection-start-line="126" selection-start-column="121" selection-end-line="126" selection-end-column="121" />
             </state>
           </provider>
         </entry>
@@ -47,8 +45,8 @@
       <file leaf-file-name="venda.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/venda.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="58" column="7" lean-forward="true" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
+            <state relative-caret-position="428">
+              <caret line="76" column="40" selection-start-line="76" selection-start-column="40" selection-end-line="76" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -147,8 +145,8 @@
         <option value="$PROJECT_DIR$/css/clientes.css" />
         <option value="$PROJECT_DIR$/produtos/produtos.php" />
         <option value="$PROJECT_DIR$/produtos/insert.php" />
-        <option value="$PROJECT_DIR$/css/venda.css" />
         <option value="$PROJECT_DIR$/functions/buscaProdutos.php" />
+        <option value="$PROJECT_DIR$/css/venda.css" />
         <option value="$PROJECT_DIR$/vendas/venda.php" />
         <option value="$PROJECT_DIR$/js/venda.js" />
       </list>
@@ -244,7 +242,7 @@
       <workItem from="1526756002275" duration="82376000" />
       <workItem from="1527598392761" duration="60980000" />
       <workItem from="1527861134754" duration="81642000" />
-      <workItem from="1528325595721" duration="17621000" />
+      <workItem from="1528325595721" duration="22627000" />
     </task>
     <task id="LOCAL-00001" summary="organização do código.">
       <created>1526708591814</created>
@@ -372,11 +370,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528338854541</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="venda">
+      <created>1528351348964</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1528351348964</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="249066000" />
+    <option name="totallyTimeSpent" value="254072000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -425,11 +430,20 @@
     <MESSAGE value="habilitarSave" />
     <MESSAGE value="Correção erro no arquivo check" />
     <MESSAGE value="Atualizações e iniciando tela de vena" />
-    <option name="LAST_COMMIT_MESSAGE" value="Atualizações e iniciando tela de vena" />
+    <MESSAGE value="venda" />
+    <option name="LAST_COMMIT_MESSAGE" value="venda" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/venda.js</url>
+          <line>1</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="3" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -714,13 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/venda.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/view.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -738,17 +745,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/venda.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="62" column="1" selection-start-line="62" selection-start-column="1" selection-end-line="62" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vendas/venda.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="121" column="62" lean-forward="true" selection-start-line="121" selection-start-column="62" selection-end-line="121" selection-end-column="62" />
+        <state relative-caret-position="476">
+          <caret line="126" column="121" selection-start-line="126" selection-start-column="121" selection-end-line="126" selection-end-column="121" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/venda.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="58" column="7" lean-forward="true" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
+        <state relative-caret-position="428">
+          <caret line="76" column="40" selection-start-line="76" selection-start-column="40" selection-end-line="76" selection-end-column="40" />
         </state>
       </provider>
     </entry>
