@@ -26,6 +26,7 @@ require_once '../functions/check.php';
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <script src="../js/ie-emulation-modes-warning.js" type="text/javascript"></script>
+    <script src="../js/jquery.inputmask.bundle.min.js" type="text/javascript"></script>
     <script src="../js/jquery-3.3.1.min.js" type="text/javascript"></script>
     <script src="../js/jquery.mask.min.js" type="text/javascript"></script>
     <script src="../js/bootstrap.min.js" type="type/javascript"></script>
@@ -119,7 +120,7 @@ require_once '../functions/check.php';
                         </div>
                     </td>
                     <td class="col-sm-1 col-md-1" id="segunda">
-                        <input type="text" class="form-control qntd" onchange="mudaTotal(this); somaTudo();" id="qntd" name="qntd">
+                        <input type="number" class="form-control qntd" onclick="mudaTotal(this); somaTudo();" id="qntd" name="qntd" min="1" value="1">
                     </td>
                     <td class="col-sm-1 col-md-1 text-center" id="terceira"><strong id="preco">xxxx</strong></td>
                     <td class="col-sm-1 col-md-1 text-center soma" id="quarta"><strong id="total"></strong></td>
@@ -140,15 +141,23 @@ require_once '../functions/check.php';
                     <td>   </td>
                     <td>   </td>
                     <td>   </td>
-                    <td><h5>Desconto</h5></td>
-                    <td class="text-right"><h5><strong>R$ 0</strong></h5></td>
+                    <td><h5>Desconto</h5><label for="descporc" id="porc">%
+                            <input type="radio" id="descporc" name="desc" checked onclick="checaPorcent()">
+                        </label>
+                        <label for="descdin" id="din">$
+                            <input type="radio" id="descdin" name="desc" onclick="checaDinheiro()">
+                        </label></td>
+                    <td class="text-right">
+                        <input type="text" class="form-control tam" id="avista" onblur="simbolDinh(this)" onfocus="dinhFoco(this)">
+                        <input type="text" class="form-control tam" id="percentual" onblur="simbolPorc()" onfocus="simbolFoco(this)">
+                    </td>
                 </tr>
                 <tr>
                     <td>   </td>
                     <td>   </td>
                     <td>   </td>
-                    <td><h3>Total</h3></td>
-                    <td class="text-right"><h3><strong id="tot-geral">R$ 0</strong></h3></td>
+                    <td><h4>Total</h4></td>
+                    <td class="text-right"><h4><strong id="tot-geral">R$ 0</strong></h4></td>
                 </tr>
                 <tr>
                     <td>   </td>

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="284cce0b-70af-414c-bfb6-c39fbb5d6946" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/venda.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/venda.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/venda.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/venda.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendas/venda.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendas/venda.php" afterDir="false" />
     </list>
@@ -15,15 +16,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="venda.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/venda.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
-              <caret line="62" column="1" selection-start-line="62" selection-start-column="1" selection-end-line="62" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="buscaProdutos.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functions/buscaProdutos.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -33,11 +25,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="venda.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/venda.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="513">
+              <caret line="84" column="18" selection-start-line="84" selection-start-column="18" selection-end-line="84" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="venda.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendas/venda.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="126" column="121" selection-start-line="126" selection-start-column="121" selection-end-line="126" selection-end-column="121" />
+            <state relative-caret-position="-7">
+              <caret line="130" column="21" lean-forward="true" selection-start-line="130" selection-start-column="21" selection-end-line="130" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -45,8 +46,8 @@
       <file leaf-file-name="venda.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/venda.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="76" column="40" selection-start-line="76" selection-start-column="40" selection-end-line="76" selection-end-column="40" />
+            <state relative-caret-position="479">
+              <caret line="152" column="1" lean-forward="true" selection-start-line="152" selection-start-column="1" selection-end-line="152" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -98,7 +99,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/logout.php" />
         <option value="$PROJECT_DIR$/clientes/cliente.php" />
         <option value="$PROJECT_DIR$/functions/limpar.php" />
         <option value="$PROJECT_DIR$/check.php" />
@@ -146,6 +146,7 @@
         <option value="$PROJECT_DIR$/produtos/produtos.php" />
         <option value="$PROJECT_DIR$/produtos/insert.php" />
         <option value="$PROJECT_DIR$/functions/buscaProdutos.php" />
+        <option value="$PROJECT_DIR$/js/jquery.inputmask.bundle.min.js" />
         <option value="$PROJECT_DIR$/css/venda.css" />
         <option value="$PROJECT_DIR$/vendas/venda.php" />
         <option value="$PROJECT_DIR$/js/venda.js" />
@@ -242,7 +243,7 @@
       <workItem from="1526756002275" duration="82376000" />
       <workItem from="1527598392761" duration="60980000" />
       <workItem from="1527861134754" duration="81642000" />
-      <workItem from="1528325595721" duration="22627000" />
+      <workItem from="1528325595721" duration="33387000" />
     </task>
     <task id="LOCAL-00001" summary="organização do código.">
       <created>1526708591814</created>
@@ -377,11 +378,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528351348964</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="venda funcionando">
+      <created>1528383802715</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1528383802715</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="254072000" />
+    <option name="totallyTimeSpent" value="264832000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -394,7 +402,7 @@
       <window_info anchor="bottom" id="Version Control" order="5" />
       <window_info anchor="bottom" id="Run" order="8" />
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.3290938" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.1830161" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.1830161" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="0" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
@@ -409,6 +417,29 @@
       <window_info anchor="bottom" id="Find" order="7" weight="0.3290938" />
       <window_info anchor="bottom" id="Messages" order="13" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="8" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.1830161" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
+      <window_info anchor="bottom" id="PHP-CGI Server" order="1" />
+      <window_info anchor="bottom" id="Find" order="7" weight="0.3290938" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
+      <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="bottom" id="Terminal" order="4" weight="0.3290938" />
+      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="5" />
+      <window_info anchor="bottom" id="Message" order="6" />
+      <window_info anchor="bottom" id="Messages" order="13" />
+      <window_info id="Favorites" order="0" side_tool="true" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -431,18 +462,11 @@
     <MESSAGE value="Correção erro no arquivo check" />
     <MESSAGE value="Atualizações e iniciando tela de vena" />
     <MESSAGE value="venda" />
-    <option name="LAST_COMMIT_MESSAGE" value="venda" />
+    <MESSAGE value="venda funcionando" />
+    <option name="LAST_COMMIT_MESSAGE" value="venda funcionando" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/js/venda.js</url>
-          <line>1</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="3" />
     </breakpoint-manager>
   </component>
@@ -693,13 +717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clientes/cadastro.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="35" column="99" lean-forward="true" selection-end-line="299" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/clientes/clientes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70">
@@ -731,13 +748,6 @@
     <entry file="file://$PROJECT_DIR$/js/view.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/cadastro.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="60" column="9" lean-forward="true" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/functions/buscaProdutos.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -745,24 +755,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/clientes/cadastro.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="106" column="10" lean-forward="true" selection-start-line="106" selection-start-column="10" selection-end-line="106" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/jquery.inputmask.bundle.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/cadastro.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/venda.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="62" column="1" selection-start-line="62" selection-start-column="1" selection-end-line="62" selection-end-column="1" />
+        <state relative-caret-position="513">
+          <caret line="84" column="18" selection-start-line="84" selection-start-column="18" selection-end-line="84" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendas/venda.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="126" column="121" selection-start-line="126" selection-start-column="121" selection-end-line="126" selection-end-column="121" />
+        <state relative-caret-position="-7">
+          <caret line="130" column="21" lean-forward="true" selection-start-line="130" selection-start-column="21" selection-end-line="130" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/venda.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="76" column="40" selection-start-line="76" selection-start-column="40" selection-end-line="76" selection-end-column="40" />
+        <state relative-caret-position="479">
+          <caret line="152" column="1" lean-forward="true" selection-start-line="152" selection-start-column="1" selection-end-line="152" selection-end-column="1" />
         </state>
       </provider>
     </entry>
