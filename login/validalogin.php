@@ -32,6 +32,7 @@ if (empty($users))
     };
 
     $_SESSION['user'] = base64_encode($users['perfil']);
+    $_SESSION['coduser'] = base64_encode($users['pk_usuario']);
     $_SESSION['recado'] = 'nada';
 
     header('Location: ../menuprincipal.php');

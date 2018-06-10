@@ -6,6 +6,7 @@ include_once '../converter.php';
 
 $prod   = ucwords(strtolower($_POST['prod']));
 $preco = sanear_valor($_POST['preco']);
+$marca = ucwords(strtolower($_POST['marca']));
 $cat = $_POST['cat'];
 
 $sql = 'SELECT pk_categoria FROM tb_categoria WHERE categoria =  :categoria;';
@@ -35,12 +36,13 @@ while ($c < 1000) {
     $c = $c+1;
 }
 
-$sql = "INSERT INTO tb_produto (nome_prod, preco, fk_categoria, cod_prod) VALUES (?,?,?,?);";
+$sql = "INSERT INTO tb_produto (nome_prod, preco, fk_categoria, cod_prod, marca) VALUES (?,?,?,?,?);";
 $stmt = $conex->prepare($sql);
 $stmt->bindValue(1, $prod);
 $stmt->bindValue(2, $preco);
 $stmt->bindValue(3, $pk_categoria);
 $stmt->bindValue(4, $cod_prod);
+$stmt->bindValue(5, $marca);
 
 if( $stmt->execute() ){
     $_SESSION['recado'] = 'adicionado';

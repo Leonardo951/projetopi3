@@ -120,7 +120,7 @@ require_once '../functions/check.php';
                         </div>
                     </td>
                     <td class="col-sm-1 col-md-1" id="segunda">
-                        <input type="number" class="form-control qntd" onclick="mudaTotal(this)" id="qntd" name="qntd" min="1" value="1">
+                        <input type="number" min="1" max="9999" value="1" class="form-control qntd" onclick="mudaTotal(this)" onchange="mudaTotal(this)" id="qntd" name="qntd" maxlength="4">
                     </td>
                     <td class="col-sm-1 col-md-1 text-center" id="terceira"><strong id="preco">xxxx</strong></td>
                     <td class="col-sm-1 col-md-1 text-center soma" id="quarta"><strong id="total"></strong></td>
@@ -157,7 +157,9 @@ require_once '../functions/check.php';
                     <td>   </td>
                     <td>   </td>
                     <td><h4>Total</h4></td>
-                    <td class="text-right"><h4><strong id="tot-geral">R$ 0,00</strong></h4></td>
+                    <td class="text-right">
+                        <h4><strong id="tot-geral">R$ 0,00</strong></h4>
+                    </td>
                 </tr>
                 <tr>
                     <td>   </td>
@@ -168,9 +170,18 @@ require_once '../functions/check.php';
                             <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
                         </button></td>
                     <td>
-                        <button type="button" class="btn btn-success">
-                            Checkout <span class="glyphicon glyphicon-play"></span>
-                        </button></td>
+                        <form method="POST" action="adicionaVenda.php">
+                            <input type="hidden" id="val_tot_venda" value="R$0,00" name="total">
+                            <input type="hidden" id="desc_din" value="R$0,00" name="descd">
+                            <input type="hidden" id="desc_porc" value="0" name="descp">
+                            <input type="hidden" id="tot_s_desc" value="R$0,00" name="subtotal">
+                            <input type="hidden" id="itens" value="vazio" name="itens">
+                            <input type="hidden" id="qntd_prod" value="0" name="qntd_prod">
+                            <button type="submit" class="btn btn-success" id="confirmar" disabled>
+                                Checkout <span class="glyphicon glyphicon-play"></span>
+                            </button>
+                        </form>
+                        </td>
                 </tr>
                 </tbody>
             </table>

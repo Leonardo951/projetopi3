@@ -102,6 +102,7 @@
                             <th>Código</th>
                             <th>Produto</th>
                             <th>Categoria</th>
+                            <th>Marca</th>
                             <th>Quantidade disponível</th>
                             <th>Preço (R$)</th>
                             <th>Fornecedores</th>
@@ -134,11 +135,13 @@
                         $preco = $row['preco'];
                         $estoque = $row['qntd_estoq'];
                         $categoria = $row['categoria'];
+                        $marca = $row['marca'];
                         echo '
                         <tr>
                             <td>' . $cod_prod . '</td>
                             <td>' . $prod . '</td>  
                             <td>' . $categoria . '</td>
+                            <td>' . $marca . '</td>
                             <td>' . $estoque . '</td>
                             <td>' . number_format($preco, 2, ',', '.') . '</td>
                             <td>
@@ -180,6 +183,10 @@
                                                     echo '
                                                 </select>
                                                 <input name="id" type="hidden" value="' . $id . '" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Marca</label>
+                                                <input type="text" name="marca" class="form-control" value="' . $marca . '" required onchange="habilitaSave()">
                                             </div>
                                             <div class="form-group">
                                                 <label>Preço</label>
@@ -287,6 +294,10 @@
                                         echo '<option>'.$mycateg[$i].'</option>';
                                     } ?>
                                 </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Marca</label>
+                                <input type="text" class="form-control" name="marca" required>
                             </div>
                             <div class="form-group">
                                 <label>Preço</label>

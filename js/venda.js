@@ -1,25 +1,29 @@
 // funçaõ executada quando fazemos a pesquisa por um produto
+let itens = [];
 function buscaProd() {
     let prod = $("#busca_prod").val();
     document.getElementById("alert").style.display = "none";
     $.ajax({
-        url: "../functions/buscaProdutos.php",
+        url: "../vendas/buscaProdutos.php",
         method: "GET",
         dataType: "json",
         data: {prod: prod}
     }).done(function(data){
         if (data.result){
+            // define o id da linha criada como a hora atual
+            let id = new Date().getTime();
+            //Coloca o produto em um array
+            itens.push(data.cod);
             // renomeia os campos da div conforme o resultado do php
             let pformat = parseFloat(data.preco);
             $('#nome').text(data.nome);
-            $('#nome').append('<small class="media-heading"> ['+data.cod+']</small>');
+            $('#nome').append('<small class="media-heading" id="cod'+id+'"> ['+data.cod+']</small>');
             $('#preco').text(numberToReal(pformat));
             $('#total').text(numberToReal(pformat));
+            $('#marca').text(data.marca);
             $('#categoria').text(data.categ);
             //limpar o campo de pesquisa
             $("#busca_prod").val("");
-            // define o id da linha criada como a hora atual
-            let id = new Date().getTime();
             // muda o id dos campos que serão usado para a soma
             $('#qntd').attr('id', 'qd'+id);
             $('#preco').attr('id', 'preco'+id);
@@ -58,21 +62,27 @@ function buscaProd() {
 
 // função executada quando mudamos a quantidade
 function mudaTotal(item) {
-    let id = $(item).attr("id").split('d')[1];
-    let id_preco = '#preco'+id;
-    let id_total = '#total'+id;
-    let qtd = $(item).val();
-    let preco = moedaParaNumero($(id_preco).text());
-    let total = preco*qtd;
-    $(id_total).text(numberToReal(total));
-    somaTudo();
+    if ($(item).val() == 0) {
+        alert('Quantidade Inválida');
+        $(item).val(1);
+    } else {
+        let id = $(item).attr("id").split('d')[1];
+        let id_preco = '#preco' + id;
+        let id_total = '#total' + id;
+        let qtd = parseInt($(item).val());
+        let preco = moedaParaNumero($(id_preco).text());
+        let total = preco * qtd;
+        $(id_total).text(numberToReal(total));
+        somaTudo();
+    }
 }
 
 // Função que soma todos os valores dos produtos e coloca em subtotal
 function somaTudo() {
     let total = 0;
+    let val = 0;
     $(".soma").each(function(){
-        let val = moedaParaNumero($(this).text());
+        val = moedaParaNumero($(this).text());
         total += val;
     });
     $("#subtotal").text(numberToReal(total));
@@ -114,14 +124,23 @@ function somaGeral() {
             $("#tot-geral").text(numberToReal(total));
         }
     }
+    if(moedaParaNumero($('#tot-geral').text()) == 0){
+        $('#confirmar').prop('disabled', true);
+    }else{
+        $('#confirmar').prop('disabled', false);
+    }
+    adicionarVenda();
 }
 
 //Função do botão de remover
 function removeLinha(item) {
     let id = $(item).attr("id").split('e')[1];
+    let id_codigo = '#cod'+id;
+    let codigo = $(id_codigo).text().replace('[', '').replace(']', '');
+    itens.splice(itens.indexOf(codigo), 1);
     let id_linha = '#linha'+id;
     $(id_linha).remove();
-    somaGeral();
+    somaTudo();
 }
 
 //Transforma numero inteiro na formatação de moeda
@@ -145,7 +164,7 @@ function simbolDinh(item){
         $(item).val( $(item).val() + ',00' );
     }
     $(item).val( 'R$' + $(item).val() );
-    somaGeral();
+    somaTudo();
 }
 
 // define um valor pre estabelecido para o campo de desconto em dinheiro assim que a pagina é carregada
@@ -179,7 +198,7 @@ $('#percentual').val( $('#percentual').val() + '%' );
 // Define o simbolo de % no do campo de desconto %
 function simbolPorc(){
         $('#percentual').val( $('#percentual').val() + '%' );
-        somaGeral();
+        somaTudo();
 }
 
 // Tira o simbolo % quando o campo fica em foco
@@ -194,17 +213,36 @@ function checaPorcent() {
         document.getElementById("percentual").style.display = "block";
         document.getElementById("avista").style.display = "none";
         $('#avista').val("R$");
-        somaGeral();
+        somaTudo();
     }
 }
 
-// //Função executada quando clica no radio de difinir que o escoto será dado em dinheiro
+//Função executada quando clica no radio de difinir que o escoto será dado em dinheiro
 function checaDinheiro() {
     let d = document.getElementById("descdin").checked;
     if (d) {
         document.getElementById("percentual").style.display = "none";
         document.getElementById("avista").style.display = "block";
         $('#percentual').val("%");
-        somaGeral();
+        somaTudo();
     }
+}
+
+// Inserir os produtos que estão sendo informados na tabela
+function adicionarVenda() {
+    let qnt_tot = 0;
+    let val = 0;
+    $(".qntd").each(function(){
+        qnt_tot = $(this).val();
+        val += qnt_tot;
+    });
+    // diminuindo 1, pois quando ele clona a linha o campo esta com o valor 1, então é necessário diminuir o valor desta linha
+    val = qnt_tot -1;
+    // define o valor dos campos tipo hidenn para passar os valores para o php
+    $('#qntd_prod').val(val);
+    $('#desc_porc').val(moedaParaNumero($('#percentual').val().split('%')[0]));
+    $('#desc_din').val(moedaParaNumero($('#avista').val().split('$')[1]));
+    $('#val_tot_venda').val(moedaParaNumero($('#tot-geral').text()));
+    $('#tot_s_desc').val(moedaParaNumero($('#subtotal').text()));
+    $('#itens').val(JSON.stringify(itens));
 }
