@@ -28,6 +28,7 @@ function buscaProd() {
             $('#marca').text(data.marca);
             $('#categoria').text(data.categ);
             $('#qntd').attr('max', data.qntd);
+            $('#qntd').addClass('qntd');
             //limpar o campo de pesquisa
             $("#busca_prod").val("");
             // muda o id dos campos que serão usado para a soma
@@ -53,6 +54,7 @@ function buscaProd() {
             $(pre).attr('id', 'preco');
             $(tot).attr('id', 'total');
             $(rem).attr('id', 'remove');
+            $(qnt).removeClass('qntd');
             $('#preco').text('R$ 0');
             $('#total').text('R$ 0');
             // cola os campos criados na li ha criada
@@ -247,17 +249,20 @@ function checaDinheiro() {
 function adicionarVenda() {
     let qnt_tot = 0;
     let val = 0;
+    let quantidades = [];
     $(".qntd").each(function(){
         qnt_tot = $(this).val();
         val += qnt_tot;
+        quantidades.push(qnt_tot);
     });
     // diminuindo 1, pois quando ele clona a linha o campo esta com o valor 1, então é necessário diminuir o valor desta linha
-    val = qnt_tot -1;
+    val = qnt_tot;
     // define o valor dos campos tipo hidenn para passar os valores para o php
-    $('#qntd_prod').val(val);
+    $('#qntd_tot').val(val);
     $('#desc_porc').val(moedaParaNumero($('#percentual').val().split('%')[0]));
     $('#desc_din').val(moedaParaNumero($('#avista').val().split('$')[1]));
     $('#val_tot_venda').val(moedaParaNumero($('#tot-geral').text()));
     $('#tot_s_desc').val(moedaParaNumero($('#subtotal').text()));
     $('#itens').val(JSON.stringify(itens));
+    $('#qntd_prod').val(JSON.stringify(quantidades));
 }

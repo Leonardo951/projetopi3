@@ -7,7 +7,8 @@ $desc = $_POST['descd'];
 $descp = $_POST['descp'] ;
 $subtotal = $_POST['subtotal'] ;
 $_SESSION['itens'] = $_POST['itens'];
-$qntd_prod = $_POST['qntd_prod'];
+$_SESSION['quantidades'] = $_POST['qntd_prod'];
+$qntd_prod = $_POST['qntd_tot'];
 $cod_user = base64_decode($_SESSION['coduser']);
 
 if($desc == 0){

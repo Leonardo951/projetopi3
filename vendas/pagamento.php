@@ -92,12 +92,15 @@ require_once '../conexao.php';
                                 <th>Categoria</th>
                                 <th>Quantidade</th>
                                 <th>Preço</th>
+                                <th>Total</th>
                             </tr>
                             </thead>
                             <tbody>
                             <?php
-                            //                            <input type="hidden" value="'. $info["pk_prod"] .'"
                             $itens = json_decode($_SESSION['itens']);
+                            $quants = json_decode($_SESSION['quantidades']);
+//                            unset($_SESSION['itens']);
+//                            unset($_SESSION['quantidades']);
                             $qnt = count($itens);
                             for($i = 0; $i < $qnt; $i++) {
                                 $query = 'SELECT * FROM view_produtos WHERE cod_prod = :cod;';
@@ -111,8 +114,9 @@ require_once '../conexao.php';
                                     <td>'. $info["nome_prod"] .'</td>
                                     <td>'. $info["marca"] .'</td>
                                     <td>'. $info["categoria"] .'</td>
-                                    <td>'. $info["preco"] .'</td>
-                                    <td>ainda não</td>
+                                    <td class="text-center">'. $quants[$i] .'</td>
+                                    <td class="text-center">'. $info["preco"] .'</td>
+                                    <td class="text-center">'. $info["preco"]*$quants[$i] .'</td>
                                 </tr>';
                             };
                             ?>

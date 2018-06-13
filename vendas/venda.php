@@ -177,6 +177,7 @@ require_once '../functions/check.php';
                             <input type="hidden" id="tot_s_desc" value="R$0,00" name="subtotal">
                             <input type="hidden" id="itens" value="vazio" name="itens">
                             <input type="hidden" id="qntd_prod" value="0" name="qntd_prod">
+                            <input type="hidden" id="qntd_tot" value="0" name="qntd_tot">
                             <button type="submit" class="btn btn-success" id="confirmar" disabled>
                                 Avançar <span class="glyphicon glyphicon-play"></span>
                             </button>
