@@ -6,7 +6,7 @@ $total = $_POST['total'];
 $desc = $_POST['descd'];
 $descp = $_POST['descp'] ;
 $subtotal = $_POST['subtotal'] ;
-$itens = json_decode($_POST['itens']);
+$_SESSION['itens'] = $_POST['itens'];
 $qntd_prod = $_POST['qntd_prod'];
 $cod_user = base64_decode($_SESSION['coduser']);
 
@@ -47,10 +47,9 @@ if($stmt->execute()){
     $stmt = $conex->prepare($sql);
     $stmt->bindParam(':cod_venda', $codigo_venda);
     $stmt->execute();
-    $pks = $stmt->fetch();
-    $pk = $pks['pk_venda'];
-    echo $pk;
-    echo 'foi';
+    $pk = $stmt->fetch();
+    $vend = base64_encode($pk['pk_venda']);
+    header('location: pagamento.php?venda='. $vend .'');
 }else{
     echo 'nao foi';;
 }

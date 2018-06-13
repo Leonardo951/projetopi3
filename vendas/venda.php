@@ -1,6 +1,5 @@
 <?php
 require_once '../functions/check.php';
-require_once '../functions/check.php';
 ?>
 <!DOCTYPE html>
 
@@ -15,7 +14,6 @@ require_once '../functions/check.php';
     <link rel="icon" href="../img/favicon.png">
 
     <title>CABLES-Infomática</title>
-
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
@@ -166,8 +164,10 @@ require_once '../functions/check.php';
                     <td>   </td>
                     <td>   </td>
                     <td>
-                        <button type="button" class="btn btn-default">
-                            <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
+                        <button type="button" class="btn btn-danger" onclick="window.location.reload();" disabled id="cancel">
+<!--                            <span class="glyphicon glyphicon-shopping-cart"></span>-->
+                            <span class="	glyphicon glyphicon-remove"></span>
+                            Cancela venda
                         </button></td>
                     <td>
                         <form method="POST" action="adicionaVenda.php">
@@ -178,7 +178,7 @@ require_once '../functions/check.php';
                             <input type="hidden" id="itens" value="vazio" name="itens">
                             <input type="hidden" id="qntd_prod" value="0" name="qntd_prod">
                             <button type="submit" class="btn btn-success" id="confirmar" disabled>
-                                Checkout <span class="glyphicon glyphicon-play"></span>
+                                Avançar <span class="glyphicon glyphicon-play"></span>
                             </button>
                         </form>
                         </td>

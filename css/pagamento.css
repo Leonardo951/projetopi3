@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+body, html {
+    max-height: 100%;
+    max-width: 100%;
+    background-color: #15243c !important;
+    height: 100vh;
+}
+
+.img-logo-usuario {
+    max-height: 150px;
+}
+
+#pag {
+    background-color: white;
+}
+
+.tam {
+    height: 30px !important;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    padding: 30px 0;
+    font-size: 20px;
+    text-align: center;
+    border-bottom: 1px solid #bbb;
+}
+
+.main {
+    background: #fff;
+}
+
+.footer {
+    padding: 30px 0;
+    font-size: 14px;
+    text-align: center;
+    color: #aaa;
+}
+
+.footer .devices {
+    margin: 0 0 15px;
+    font-family: fontawesome;
+    font-size: 35px;
+}
+
+.payments {
+    min-width: 320px;
+}
+
+.button {
+    position: relative;
+    height: 50px;
+    padding: 0 0 0 50px;
+    font-size: 14px;
+    line-height: 48px;
+    border-bottom: 1px solid #bbb;
+    background: #fafafa;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #f5f5f5;
+}
+
+.button:after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 18px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 1px #bbb, inset 0 0 0 7px #fff;
+    background: #fff;
+}
+
+.button:hover:after {
+    background: #bbb;
+}
+
+.button.active:after {
+    background: #555;
+}
+
+@media all and (min-width: 500px) {
+    .button {
+        height: 60px;
+        padding: 0 0 0 60px;
+        font-size: 18px;
+        line-height: 58px;
+    }
+
+    .button:after {
+        top: 20px;
+        left: 23px;
+    }
+}
+.payments {
+    max-width: 700px;
+    padding: 25px;
+    overflow: hidden;
+    align-content: center;
+    align-items: center;
+    margin-left: 300px;
+}
+
+.button {
+    float: left;
+    width: 100px;
+    height: 150px;
+    margin-right: 10px;
+    padding: 50px 0 0;
+    font-size: 12px;
+    line-height: 1;
+    text-align: center;
+    border: 0;
+    border-radius: 3px;
+    box-shadow: inset 0 0 0 1px #bbb;
+    background-color: #e8e8e8;
+}
+
+.button:last-child {
+    margin-right: 0;
+}
+
+.button:after {
+    top: 15px;
+    left: 40px;
+}
+
+.footer {
+    border-top: 1px solid #bbb;
+}
+
+.vista {
+    margin-top: 20px;
+}
+
+.lateral {
+    margin-left: 80px;
+    display: none;
+}
+
+.fa-credit-card, .fa-money {
+    font-size: 50px !important;
+    color: #15243c !important;
+    border-color: #15243c !important;
+}
+
+.fa-cc-visa {
+    font-size: 30px !important;
+    color: #15243c !important;
+    border-color: #15243c !important;
+    margin-left: 3px !important;
+}
+
+.fa-cc-mastercard {
+    font-size: 30px !important;
+    color: #15243c !important;
+    border-color: #15243c !important;
+}
+
+#pag {
+    border-radius: 5px;
+}
+
+#prods {
+    border-color: #9d9d9d;
+    border-style: double;
+    min-width: 600px;
+    max-width: 800px;
+    max-height: 200px;
+    position: relative;
+    margin-left: 175px;
+    overflow: auto;
+}
+
+#register {
+    margin-left: 282px;
+    margin-top: -40px;
+}
+
+#cancel {
+    margin-top: -40px;
+    margin-left: 260px;
+}

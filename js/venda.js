@@ -10,18 +10,24 @@ function buscaProd() {
         data: {prod: prod}
     }).done(function(data){
         if (data.result){
+            if(data.qntd == 0 || data.qntd == null || data.qntd == '') {
+                alert('Produto não disponível em estoque!');
+                $("#busca_prod").val("");
+                return;
+            }
             // define o id da linha criada como a hora atual
             let id = new Date().getTime();
             //Coloca o produto em um array
             itens.push(data.cod);
             // renomeia os campos da div conforme o resultado do php
-            let pformat = parseFloat(data.preco);
+            let preco = parseFloat(data.preco);
             $('#nome').text(data.nome);
             $('#nome').append('<small class="media-heading" id="cod'+id+'"> ['+data.cod+']</small>');
-            $('#preco').text(numberToReal(pformat));
-            $('#total').text(numberToReal(pformat));
+            $('#preco').text(numberToReal(preco));
+            $('#total').text(numberToReal(preco));
             $('#marca').text(data.marca);
             $('#categoria').text(data.categ);
+            $('#qntd').attr('max', data.qntd);
             //limpar o campo de pesquisa
             $("#busca_prod").val("");
             // muda o id dos campos que serão usado para a soma
@@ -65,6 +71,9 @@ function mudaTotal(item) {
     if ($(item).val() == 0) {
         alert('Quantidade Inválida');
         $(item).val(1);
+    }else if($(item).val() > $(item).attr("max")){
+        alert('Quantidade não disponível em estoque!');
+        $(item).val($(item).attr("max"));
     } else {
         let id = $(item).attr("id").split('d')[1];
         let id_preco = '#preco' + id;
@@ -85,8 +94,12 @@ function somaTudo() {
         val = moedaParaNumero($(this).text());
         total += val;
     });
-    $("#subtotal").text(numberToReal(total));
-    somaGeral();
+    if(isNaN(total)){
+        $("#subtotal").text(numberToReal(0));
+    }else{
+        $("#subtotal").text(numberToReal(total));
+        somaGeral();
+    }
 }
 
 // Verifica se tem algum desconto e aplica ao valor total da venda
@@ -124,10 +137,12 @@ function somaGeral() {
             $("#tot-geral").text(numberToReal(total));
         }
     }
+    // habilita ou desabilita os inputs
     if(moedaParaNumero($('#tot-geral').text()) == 0){
         $('#confirmar').prop('disabled', true);
     }else{
         $('#confirmar').prop('disabled', false);
+        $('#cancel').prop('disabled', false);
     }
     adicionarVenda();
 }
@@ -206,7 +221,7 @@ function simbolFoco(item) {
     $(item).val( $(item).val().split('%')[0]);
 }
 
-//Função executada quando clica no radio de difinir que o escoto será dado como porcentagem
+//Função executada quando clica no radio de difinir que o desconto será dado como porcentagem
 function checaPorcent() {
     let p = document.getElementById("descporc").checked;
     if (p) {
