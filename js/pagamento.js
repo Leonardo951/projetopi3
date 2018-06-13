@@ -1,13 +1,35 @@
-
-    $.ajax({
-        url: "../vendas/buscaClientes.php",
-        method: "GET",
-        dataType: "json",
-    }).done(function(data){
-        $("#buscaCliente" ).autocomplete({
-            source: data
-        });
+$.ajax({
+    url: "../vendas/buscaClientes.php",
+    method: "GET",
+    data: {tipo: 'fisica'},
+    dataType: "json",
+}).done(function(data){
+    $("#buscaCliente" ).autocomplete({
+        source: data
     });
+});
+
+$.ajax({
+    url: "../vendas/buscaClientes.php",
+    method: "GET",
+    data: {tipo: 'resp'},
+    dataType: "json",
+}).done(function(data){
+    $("#buscaCliente" ).autocomplete({
+        source: data
+    });
+});
+
+$.ajax({
+    url: "../vendas/buscaClientes.php",
+    method: "GET",
+    data: {tipo: 'juridico'},
+    dataType: "json",
+}).done(function(data){
+    $("#buscaCliente" ).autocomplete({
+        source: data
+    });
+});
 
 function numberToReal(numer) {
     let numero = numer.toFixed(2).split('.');
@@ -46,4 +68,14 @@ function trocoDinn() {
     }else{
         $('#troco').val('');
     }
+}
+
+function PesJur() {
+    $('#pesFis').css({display: 'none'});
+    $('#pesJur').css({display: 'block'});
+}
+
+function PesFis() {
+    $('#pesFis').css({display: 'block'});
+    $('#pesJur').css({display: 'none'});
 }

@@ -47,10 +47,33 @@ require_once '../conexao.php';
         <form class="form-horizontal">
             <fieldset id="pag">
                 <br>
-                <div class="form-group">
+                <div class="pessoa text-center">
+                    <label class="radio-inline" for="pf" >
+                        <input name="pessoa" id="pf" value="PF" type="radio" onclick="PesFis()" checked>
+                        Pessoa Física
+                    </label>
+                    <label class="radio-inline" for="pj">
+                        <input name="pessoa" id="pj" value="PJ" required type="radio" onclick="PesJur()">
+                        Pessoa Jurídica
+                    </label>
+                </div>
+                <br>
+                <div class="form-group" id="pesFis">
                     <label class="col-md-4 control-label" for="buscaCliente">Cliente</label>
                     <div class="col-md-5">
-                        <input type="text" id="buscaCliente" placeholder="Nome ou CPF" class="form-control tam" autofocus>
+                        <input type="text" id="buscaCliente" placeholder="Pesquise pelo Nome ou CPF" class="form-control tam" autofocus>
+                    </div>
+                </div>
+                <div class="form-group" id="pesJur">
+                    <label class="col-md-4 control-label" for="buscaPj">Cliente</label>
+                    <div class="col-md-4">
+                        <input type="text" id="buscaPj" placeholder="Pesquise pela Empresa ou CNPJ" class="form-control tam" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="buscaResp">Responsável</label>
+                        <div class="col-md-4">
+                            <input type="text" id="buscaResp" placeholder="Pesquise pelo Nome" class="form-control tam">
+                        </div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -168,7 +191,7 @@ require_once '../conexao.php';
                             <div class="col-md-8">
                                 <button id="register" class="btn btn-success" type="button" disabled>Registrar</button>
                                 <br><br>
-                                <a href="venda.php"><button id="cancel" class="btn btn-danger" type="button">Cancelar compra</button></a>
+                                <a href="venda.php"><button id="cancel" class="btn btn-danger" type="button">Cancelar venda</button></a>
                             </div>
                         </div>
             </fieldset>
