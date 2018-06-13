@@ -102,7 +102,7 @@ require_once '../functions/check.php';
                 <td>
                     <div class="input-group div-input">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-                        <input id="busca_prod" class="form-control" autofocus placeholder="Digite o código do produto..." type="search" title="Digite o código e aperte enter para pesquisar" onchange="buscaProd()">
+                        <input id="busca_prod" class="form-control" autofocus placeholder="Digite o código do produto..." type="search" title="Digite o código e aperte enter para pesquisar" onchange="buscaProd(this)">
                     </div>
                     <p class="text-warning" id="alert"><i class="material-icons">&#xe002;</i><small id="text"></small></p>
                 </td>
@@ -171,6 +171,12 @@ require_once '../functions/check.php';
                         </button></td>
                     <td>
                         <form method="POST" action="adicionaVenda.php">
+                            <?php
+                            if(isset($_SESSION['itens'])){
+                            echo '<p id="produtos" style="display: none">'.$_SESSION['itens'].'</p>';
+                            }else{
+                            echo '<p id="produtos" style="display: none">vazio</p>';
+                            }?>
                             <input type="hidden" id="val_tot_venda" value="R$0,00" name="total">
                             <input type="hidden" id="desc_din" value="R$0,00" name="descd">
                             <input type="hidden" id="desc_porc" value="0" name="descp">

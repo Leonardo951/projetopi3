@@ -1,7 +1,75 @@
-// funçaõ executada quando fazemos a pesquisa por um produto
 let itens = [];
-function buscaProd() {
-    let prod = $("#busca_prod").val();
+if($('#produtos').text() != 'vazio') {
+    let prod = $('#produtos').text();
+    let item = JSON.parse(prod);
+    for(let c = 0; c < item.length; c++){
+        $.ajax({
+            url: "../vendas/buscaProdutos.php",
+            method: "GET",
+            dataType: "json",
+            data: {prod: item[c]}
+        }).done(function(data){
+            if (data.result){
+                if(data.qntd == 0 || data.qntd == null || data.qntd == '') {
+                    alert('Produto não disponível em estoque!');
+                    $("#busca_prod").val("");
+                    return;
+                }
+                // define o id da linha criada como a hora atual
+                let id = new Date().getTime();
+                //Coloca o produto em um array
+                itens.push(data.cod);
+                // renomeia os campos da div conforme o resultado do php
+                let preco = parseFloat(data.preco);
+                $('#nome').text(data.nome);
+                $('#nome').append('<small class="media-heading" id="cod'+id+'"> ['+data.cod+']</small>');
+                $('#preco').text(numberToReal(preco));
+                $('#total').text(numberToReal(preco));
+                $('#marca').text(data.marca);
+                $('#categoria').text(data.categ);
+                $('#qntd').attr('max', data.qntd);
+                $('#qntd').addClass('qntd');
+                //limpar o campo de pesquisa
+                $("#busca_prod").val("");
+                // muda o id dos campos que serão usado para a soma
+                $('#qntd').attr('id', 'qd'+id);
+                $('#preco').attr('id', 'preco'+id);
+                $('#total').attr('id', 'total'+id);
+                $('#remove').attr('id', 're'+id);
+                // insere uma tr com o id criado onde será colado os dados
+                $( "<tr id='linha"+id+"'></tr>" ).insertBefore( "#inner" );
+                let variable = '#linha' + id;
+                // defini as variavéis com os clones de todos os tds modificados
+                let p1 = $('#primeira').clone().removeAttr('id');
+                let p2 = $('#segunda').clone().removeAttr('id');
+                let p3 = $('#terceira').clone().removeAttr('id');
+                let p4 = $('#quarta').clone().removeAttr('id');
+                let p5 = $('#quinta').clone().removeAttr('id');
+                // volta os campos da linha exemplo para vazios e modifica o id novamente
+                let pre = "#preco"+id;
+                let tot = "#total"+id;
+                let rem = "#re"+id;
+                let qnt = "#qd"+id;
+                $(qnt).attr('id', 'qntd');
+                $(pre).attr('id', 'preco');
+                $(tot).attr('id', 'total');
+                $(rem).attr('id', 'remove');
+                $(qnt).removeClass('qntd');
+                $('#preco').text('R$ 0');
+                $('#total').text('R$ 0');
+                // cola os campos criados na li ha criada
+                $(variable).append( p1 ).append( p2 ).append( p3 ).append( p4 ).append( p5 );
+                somaTudo();
+            }else{
+                alert('errado');
+                $("#busca_prod").val("");
+            }
+        })
+    }
+}
+// funçaõ executada quando fazemos a pesquisa por um produto
+function buscaProd(item) {
+    let prod = $(item).val();
     document.getElementById("alert").style.display = "none";
     $.ajax({
         url: "../vendas/buscaProdutos.php",

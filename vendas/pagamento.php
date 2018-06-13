@@ -122,8 +122,8 @@ require_once '../conexao.php';
                             <?php
                             $itens = json_decode($_SESSION['itens']);
                             $quants = json_decode($_SESSION['quantidades']);
-//                            unset($_SESSION['itens']);
-//                            unset($_SESSION['quantidades']);
+                            //                            unset($_SESSION['itens']);
+                            //                            unset($_SESSION['quantidades']);
                             $qnt = count($itens);
                             for($i = 0; $i < $qnt; $i++) {
                                 $query = 'SELECT * FROM view_produtos WHERE cod_prod = :cod;';
