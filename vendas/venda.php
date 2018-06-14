@@ -53,34 +53,9 @@ require_once '../functions/check.php';
         </a>
         <div class="col-sm-6">
             <?php
-            if ($_SESSION['recado'] == 'deletado') {?>
+            if ($_SESSION['recado'] == 'errovenda') {?>
                 <div class="alert alert-success">
-                    <strong>Excluído! </strong>O usuário foi removido com sucesso!
-                    <button class="close" data-dismiss="alert">x</button>
-                </div>
-            <?php } elseif($_SESSION['recado'] == 'nodelete') {?>
-                <div class="alert alert-danger">
-                    <strong>Algo deu errado. </strong>Ocorreu um erro ao excluir o usuário.
-                    <button class="close" data-dismiss="alert">x</button>
-                </div>
-            <?php } elseif($_SESSION['recado'] == 'adicionado') {?>
-                <div class="alert alert-success">
-                    <strong>Adicionado! </strong>O usuário foi adicionado com sucesso!
-                    <button class="close" data-dismiss="alert">x</button>
-                </div>
-            <?php } elseif($_SESSION['recado'] == 'erroadicao') {?>
-                <div class="alert alert-warning">
-                    <strong>Algo deu errado. </strong>Ocorreu um erro ao adicionar o usuário!
-                    <button class="close" data-dismiss="alert">x</button>
-                </div>
-            <?php } elseif($_SESSION['recado'] == 'editado') {?>
-                <div class="alert alert-success">
-                    <strong>Modificado! </strong>As informações foram alteradas com sucesso!
-                    <button class="close" data-dismiss="alert">x</button>
-                </div>
-            <?php } elseif($_SESSION['recado'] == 'erroedicao') {?>
-                <div class="alert alert-danger">
-                    <strong>Algo deu errado. </strong>Ocorreu um erro ao modificar as informações do usuário!
+                    <strong>Erro! </strong>Houve um erro ao prosseguir com a venda. <strong>Tente novamente!</strong!
                     <button class="close" data-dismiss="alert">x</button>
                 </div>
             <?php }

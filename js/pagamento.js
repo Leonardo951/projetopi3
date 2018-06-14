@@ -79,3 +79,15 @@ function PesFis() {
     $('#pesFis').css({display: 'block'});
     $('#pesJur').css({display: 'none'});
 }
+
+function cancelaVenda() {
+    $.ajax({
+        url: "../vendas/cancelaVenda.php",
+        method: "GET",
+        dataType: "json"
+    }).done(function(data){
+        if(data.result){
+            window.location.replace('../vendas/venda.php');
+        }
+    })
+}

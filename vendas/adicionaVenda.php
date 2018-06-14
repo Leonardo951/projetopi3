@@ -52,5 +52,5 @@ if($stmt->execute()){
     $vend = base64_encode($pk['pk_venda']);
     header('location: pagamento.php?venda='. $vend .'');
 }else{
-    echo 'nao foi';;
+    $_SESSION['recado'] = 'errovenda';
 }

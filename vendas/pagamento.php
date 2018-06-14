@@ -109,32 +109,32 @@ require_once '../conexao.php';
                     <div>
                         <a href="venda.php"><small id="esqueceu">Esqueceu de algo?</small></a>
                         <div id="prod">
-                        <table class="table table-hover">
-                            <thead>
-                            <tr>
-                                <th>Produtos</th>
-                                <th>Marca</th>
-                                <th>Categoria</th>
-                                <th>Quantidade</th>
-                                <th>Preço</th>
-                                <th>Total</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                            $itens = json_decode($_SESSION['itens']);
-                            $quants = json_decode($_SESSION['quantidades']);
-                            //                            unset($_SESSION['itens']);
-                            //                            unset($_SESSION['quantidades']);
-                            $qnt = count($itens);
-                            for($i = 0; $i < $qnt; $i++) {
-                                $query = 'SELECT * FROM view_produtos WHERE cod_prod = :cod;';
-                                $stmt = $conex->prepare($query);
-                                $stmt->bindParam('cod', $itens[$i]);
-                                $stmt->execute();
-                                $info = $stmt->fetch();
-                                $q = $i+1;
-                                echo '
+                            <table class="table table-hover">
+                                <thead>
+                                <tr>
+                                    <th>Produtos</th>
+                                    <th>Marca</th>
+                                    <th>Categoria</th>
+                                    <th>Quantidade</th>
+                                    <th>Preço</th>
+                                    <th>Total</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                $itens = json_decode($_SESSION['itens']);
+                                $quants = json_decode($_SESSION['quantidades']);
+                                //                            unset($_SESSION['itens']);
+                                //                            unset($_SESSION['quantidades']);
+                                $qnt = count($itens);
+                                for($i = 0; $i < $qnt; $i++) {
+                                    $query = 'SELECT * FROM view_produtos WHERE cod_prod = :cod;';
+                                    $stmt = $conex->prepare($query);
+                                    $stmt->bindParam('cod', $itens[$i]);
+                                    $stmt->execute();
+                                    $info = $stmt->fetch();
+                                    $q = $i+1;
+                                    echo '
                                 <tr>
                                    
                                     <td>'. $info["nome_prod"] .'</td>
@@ -144,10 +144,10 @@ require_once '../conexao.php';
                                     <td class="text-center">'. $info["preco"] .'</td>
                                     <td class="text-center">'. $info["preco"]*$quants[$q] .'</td>
                                 </tr>';
-                            };
-                            ?>
-                            </tbody>
-                        </table>
+                                };
+                                ?>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-10 col-md-offset-1">
@@ -193,9 +193,13 @@ require_once '../conexao.php';
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="register"></label>
                             <div class="col-md-8">
-                                <button id="register" class="btn btn-success" type="button" disabled>Registrar</button>
+                                <button id="register" class="btn btn-success" type="button" disabled>
+                                    Registrar
+                                </button>
                                 <br><br>
-                                <a href="venda.php"><button id="cancel" class="btn btn-danger" type="button">Cancelar venda</button></a>
+                                <button id="cancel" class="btn btn-danger" type="button" onclick="cancelaVenda()">
+                                    Cancelar venda
+                                </button>
                             </div>
                         </div>
             </fieldset>
