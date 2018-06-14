@@ -111,9 +111,9 @@ require_once '../functions/check.php';
                         <div class="media">
                             <div class="pull-left"> <img class="media-object img" src="../img/products.png"> </div>
                             <div>
-                                <h5 class="media-heading" id="nome">Nome do produto<small class="media-heading" id="codigo"> [codigo]</small></h5>
-                                <h6 class="media-heading" id="marca">Marca</h6>
-                                <h6 class="media-heading" id="categoria">Categoria</h6>
+                                <h5 class="media-heading cima" id="nome">Nome do produto<small class="media-heading codigo" id="codigo"> [codigo]</small></h5>
+                                <h6 class="media-heading cima" id="marca">Marca</h6>
+                                <h6 class="media-heading cima" id="categoria">Categoria</h6>
                             </div>
                         </div>
                     </td>
@@ -175,6 +175,8 @@ require_once '../functions/check.php';
                             if(isset($_SESSION['itens'])){
                                 echo '<p id="quantidades" style="display: none">'.$_SESSION['quantidades'].'</p>';
                                 echo '<p id="produtos" style="display: none">'.$_SESSION['itens'].'</p>';
+                                unset($_SESSION['itens']);
+                                unset($_SESSION['quantidades']);
                             }else{
                                 echo '<p id="produtos" style="display: none">vazio</p>';
                                 echo '<p id="quantidades" style="display: none">vazio</p>';

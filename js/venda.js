@@ -1,5 +1,6 @@
 let itens = [];
 if($('#produtos').text() != 'vazio') {
+    $('#busca_prod').prop('readonly', true);
     let prod = $('#produtos').text();
     let qts = $('#quantidades').text();
     let item = JSON.parse(prod);
@@ -14,7 +15,6 @@ if($('#produtos').text() != 'vazio') {
             if (data.result){
                 if(data.qntd == 0 || data.qntd == null || data.qntd == '') {
                     alert('Produto não disponível em estoque!');
-                    $("#busca_prod").val("");
                     return;
                 }
                 // define o id da linha criada como a hora atual
@@ -24,15 +24,13 @@ if($('#produtos').text() != 'vazio') {
                 // renomeia os campos da div conforme o resultado do php
                 let preco = parseFloat(data.preco);
                 $('#nome').text(data.nome);
-                $('#nome').append('<small class="media-heading" id="cod'+id+'"> ['+data.cod+']</small>');
+                $('#nome').append('<small class="media-heading codigo" id="cod'+id+'"> ['+data.cod+']</small>');
                 $('#preco').text(numberToReal(preco));
                 $('#total').text(numberToReal(preco));
                 $('#marca').text(data.marca);
                 $('#categoria').text(data.categ);
                 $('#qntd').attr('max', data.qntd);
                 $('#qntd').addClass('qntd');
-                //limpar o campo de pesquisa
-                $("#busca_prod").val("");
                 // muda o id dos campos que serão usado para a soma
                 $('#qntd').attr('id', 'qd'+id);
                 $('#preco').attr('id', 'preco'+id);
@@ -54,6 +52,7 @@ if($('#produtos').text() != 'vazio') {
                 let qnt = "#qd"+id;
                 let q = c+2;
                 $(qnt).val(quantidade[q]);
+                q = 0;
                 $(qnt).attr('id', 'qntd');
                 $(pre).attr('id', 'preco');
                 $(tot).attr('id', 'total');
@@ -63,12 +62,14 @@ if($('#produtos').text() != 'vazio') {
                 $('#total').text('R$ 0');
                 // cola os campos criados na li ha criada
                 $(variable).append( p1 ).append( p2 ).append( p3 ).append( p4 ).append( p5 );
-                somaTudo();
+                mudaTotal(qnt);
             }else{
-                $("#busca_prod").val("");
+                $('#text').text(data.message);
+                document.getElementById("alert").style.display = "block";
             }
         })
     }
+    $('#busca_prod').prop('readonly', false);
 }
 // função executada quando fazemos a pesquisa por um produto
 function buscaProd(item) {

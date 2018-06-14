@@ -108,7 +108,8 @@ require_once '../conexao.php';
                     <label class="col-md-4 control-label" for="selectbasic">Produtos da compra</label>
                     <div>
                         <a href="venda.php"><small id="esqueceu">Esqueceu de algo?</small></a>
-                        <table class="table table-hover" id="prods">
+                        <div id="prod">
+                        <table class="table table-hover">
                             <thead>
                             <tr>
                                 <th>Produtos</th>
@@ -147,6 +148,7 @@ require_once '../conexao.php';
                             ?>
                             </tbody>
                         </table>
+                        </div>
                     </div>
                     <div class="col-sm-12 col-md-10 col-md-offset-1">
                         <div class='header'>

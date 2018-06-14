@@ -172,15 +172,13 @@ body, html {
     border-radius: 5px;
 }
 
-#prods {
+#prod {
+    overflow-y: scroll;
+    max-height: 150px !important;
+    min-width: 500px;
+    max-width: 800px;
     border-color: #9d9d9d;
     border-style: double;
-    min-width: 600px;
-    max-width: 800px;
-    max-height: 200px;
-    position: relative;
-    margin-left: 175px;
-    overflow: auto;
 }
 
 #register {
