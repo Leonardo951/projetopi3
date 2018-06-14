@@ -173,9 +173,11 @@ require_once '../functions/check.php';
                         <form method="POST" action="adicionaVenda.php">
                             <?php
                             if(isset($_SESSION['itens'])){
-                            echo '<p id="produtos" style="display: none">'.$_SESSION['itens'].'</p>';
+                                echo '<p id="quantidades" style="display: none">'.$_SESSION['quantidades'].'</p>';
+                                echo '<p id="produtos" style="display: none">'.$_SESSION['itens'].'</p>';
                             }else{
-                            echo '<p id="produtos" style="display: none">vazio</p>';
+                                echo '<p id="produtos" style="display: none">vazio</p>';
+                                echo '<p id="quantidades" style="display: none">vazio</p>';
                             }?>
                             <input type="hidden" id="val_tot_venda" value="R$0,00" name="total">
                             <input type="hidden" id="desc_din" value="R$0,00" name="descd">

@@ -107,6 +107,7 @@ require_once '../conexao.php';
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="selectbasic">Produtos da compra</label>
                     <div>
+                        <a href="venda.php"><small id="esqueceu">Esqueceu de algo?</small></a>
                         <table class="table table-hover" id="prods">
                             <thead>
                             <tr>
@@ -131,15 +132,16 @@ require_once '../conexao.php';
                                 $stmt->bindParam('cod', $itens[$i]);
                                 $stmt->execute();
                                 $info = $stmt->fetch();
+                                $q = $i+1;
                                 echo '
                                 <tr>
                                    
                                     <td>'. $info["nome_prod"] .'</td>
                                     <td>'. $info["marca"] .'</td>
                                     <td>'. $info["categoria"] .'</td>
-                                    <td class="text-center">'. $quants[$i] .'</td>
+                                    <td class="text-center">'. $quants[$q] .'</td>
                                     <td class="text-center">'. $info["preco"] .'</td>
-                                    <td class="text-center">'. $info["preco"]*$quants[$i] .'</td>
+                                    <td class="text-center">'. $info["preco"]*$quants[$q] .'</td>
                                 </tr>';
                             };
                             ?>

@@ -1,7 +1,9 @@
 let itens = [];
 if($('#produtos').text() != 'vazio') {
     let prod = $('#produtos').text();
+    let qts = $('#quantidades').text();
     let item = JSON.parse(prod);
+    let quantidade = JSON.parse(qts);
     for(let c = 0; c < item.length; c++){
         $.ajax({
             url: "../vendas/buscaProdutos.php",
@@ -50,6 +52,8 @@ if($('#produtos').text() != 'vazio') {
                 let tot = "#total"+id;
                 let rem = "#re"+id;
                 let qnt = "#qd"+id;
+                let q = c+2;
+                $(qnt).val(quantidade[q]);
                 $(qnt).attr('id', 'qntd');
                 $(pre).attr('id', 'preco');
                 $(tot).attr('id', 'total');
@@ -61,13 +65,12 @@ if($('#produtos').text() != 'vazio') {
                 $(variable).append( p1 ).append( p2 ).append( p3 ).append( p4 ).append( p5 );
                 somaTudo();
             }else{
-                alert('errado');
                 $("#busca_prod").val("");
             }
         })
     }
 }
-// funçaõ executada quando fazemos a pesquisa por um produto
+// função executada quando fazemos a pesquisa por um produto
 function buscaProd(item) {
     let prod = $(item).val();
     document.getElementById("alert").style.display = "none";
