@@ -34,6 +34,7 @@ while ($c < 1000) {
     }
     $c = $c+1;
 }
+$_SESSION['cod_venda'] = $codigo_venda;
 
 $sql = 'INSERT INTO tb_venda (cod_venda, fk_usuario, vl_total, vl_desc, subtotal, qntd_prod) VALUES (?,?,?,?,?,?);';
 $stmt = $conex->prepare($sql);
@@ -49,8 +50,8 @@ if($stmt->execute()){
     $stmt->bindParam(':cod_venda', $codigo_venda);
     $stmt->execute();
     $pk = $stmt->fetch();
-    $vend = base64_encode($pk['pk_venda']);
-    header('location: pagamento.php?venda='. $vend .'');
+    $_SESSION['venda'] = base64_encode($pk['pk_venda']);
+    header('location: pagamento.php?venda='. $_SESSION['venda'] .'');
 }else{
     $_SESSION['recado'] = 'errovenda';
 }

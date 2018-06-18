@@ -152,6 +152,7 @@ require_once '../functions/check.php';
                                 echo '<p id="produtos" style="display: none">'.$_SESSION['itens'].'</p>';
                                 unset($_SESSION['itens']);
                                 unset($_SESSION['quantidades']);
+                                unset($_SESSION['venda']);
                             }else{
                                 echo '<p id="produtos" style="display: none">vazio</p>';
                                 echo '<p id="quantidades" style="display: none">vazio</p>';

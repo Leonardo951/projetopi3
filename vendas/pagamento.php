@@ -193,9 +193,14 @@ require_once '../conexao.php';
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="register"></label>
                             <div class="col-md-8">
-                                <button id="register" class="btn btn-success" type="button" disabled>
-                                    Registrar
-                                </button>
+<!--                                <form action="registra.php" method="POST">-->
+<!--                                    <input type="hidden" value="vazio" id="cpf" name="cpf">-->
+<!--                                    <input type="hidden" value="vazio" id="cnpj" name="cnpj">-->
+<!--                                    <input type="hidden" value="vazio" id="resp" name="resp">-->
+                                    <button id="register" class="btn btn-success" type="button" onclick="registraCliente()" disabled>
+                                        Registrar
+                                    </button>
+<!--                                </form>-->
                                 <br><br>
                                 <button id="cancel" class="btn btn-danger" type="button" onclick="cancelaVenda()">
                                     Cancelar venda

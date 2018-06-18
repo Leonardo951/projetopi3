@@ -91,3 +91,23 @@ function cancelaVenda() {
         }
     })
 }
+
+function registraCliente() {
+    $.ajax({
+        url: "../vendas/registra.php",
+        method: "GET",
+        dataType: "json",
+        data: {
+            resp: $('#buscaResp').val(),
+            cpf: $('#buscaCliente').val(),
+            cnpj: $('#buscaPj').val()
+        }
+    }).done(function(data){
+        if(data.result){
+            window.location.replace('../vendas/confirmado.php');
+        }else{
+            alert('erro');
+            alert(data.erro);
+        }
+    })
+}

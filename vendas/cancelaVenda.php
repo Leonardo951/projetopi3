@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 unset($_SESSION['itens']);
 unset($_SESSION['quantidades']);
