@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="284cce0b-70af-414c-bfb6-c39fbb5d6946" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/venda.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/venda.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendas/adicionaVenda.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendas/adicionaVenda.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendas/confirmado.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendas/confirmado.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendas/pagamento.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendas/pagamento.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendas/venda.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendas/venda.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="venda.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="venda.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendas/venda.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+            <state relative-caret-position="292">
+              <caret line="53" column="30" lean-forward="true" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
               <folding>
                 <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
@@ -42,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adicionaVenda.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="adicionaVenda.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vendas/adicionaVenda.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+            <state relative-caret-position="26">
+              <caret line="29" column="21" lean-forward="true" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -151,8 +148,8 @@
         <option value="$PROJECT_DIR$/vendas/confirmado.php" />
         <option value="$PROJECT_DIR$/js/venda.js" />
         <option value="$PROJECT_DIR$/vendas/pagamento.php" />
-        <option value="$PROJECT_DIR$/vendas/adicionaVenda.php" />
         <option value="$PROJECT_DIR$/vendas/venda.php" />
+        <option value="$PROJECT_DIR$/vendas/adicionaVenda.php" />
       </list>
     </option>
   </component>
@@ -191,6 +188,11 @@
               <item name="compravenda" type="b2602c69:ProjectViewProjectNode" />
               <item name="compravenda" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="functions" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="compravenda" type="b2602c69:ProjectViewProjectNode" />
+              <item name="compravenda" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="usuarios" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="compravenda" type="b2602c69:ProjectViewProjectNode" />
@@ -248,7 +250,7 @@
       <workItem from="1527598392761" duration="60980000" />
       <workItem from="1527861134754" duration="81642000" />
       <workItem from="1528325595721" duration="49814000" />
-      <workItem from="1528487651291" duration="126000000" />
+      <workItem from="1528487651291" duration="126387000" />
     </task>
     <task id="LOCAL-00001" summary="organização do código.">
       <created>1526708591814</created>
@@ -467,11 +469,18 @@
       <option name="project" value="LOCAL" />
       <updated>1529339204790</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="atualização">
+      <created>1529342653671</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1529342653671</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="407259000" />
+    <option name="totallyTimeSpent" value="407646000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -744,13 +753,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/usuarios/usuarios.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="119" column="53" lean-forward="true" selection-start-line="119" selection-start-column="53" selection-end-line="119" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fornecedores/fornecedores.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
@@ -878,23 +880,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendas/adicionaVenda.php">
+    <entry file="file://$PROJECT_DIR$/usuarios/usuarios.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+        <state relative-caret-position="275">
+          <caret line="92" column="22" lean-forward="true" selection-start-line="92" selection-start-column="22" selection-end-line="92" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendas/venda.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+        <state relative-caret-position="292">
+          <caret line="53" column="30" lean-forward="true" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
           <folding>
             <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendas/adicionaVenda.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="29" column="21" lean-forward="true" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
         </state>
       </provider>
     </entry>

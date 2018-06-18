@@ -54,7 +54,7 @@ require_once '../functions/check.php';
         <div class="col-sm-6">
             <?php
             if ($_SESSION['recado'] == 'errovenda') {?>
-                <div class="alert alert-success">
+                <div class="alert alert-danger">
                     Houve um erro ao prosseguir com a venda. <strong>Tente novamente!</strong>
                     <button class="close" data-dismiss="alert">x</button>
                 </div>
