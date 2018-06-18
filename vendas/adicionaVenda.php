@@ -36,7 +36,7 @@ while ($c < 1000) {
 }
 $_SESSION['cod_venda'] = $codigo_venda;
 
-$sql = 'INSERT INTO tb_venda (cod_venda, fk_usuario, vl_total, vl_desc, subtotal, qntd_prod) VALUES (?,?,?,?,?,?);';
+$sql = 'INSERT INTO tb_venda (codvenda, fk_usuario, vl_total, vl_desc, subtotal, qntd_prod) VALUES (?,?,?,?,?,?);';
 $stmt = $conex->prepare($sql);
 $stmt->bindValue(1, $codigo_venda);
 $stmt->bindValue(2, $cod_user);

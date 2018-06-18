@@ -55,7 +55,7 @@ require_once '../functions/check.php';
             <?php
             if ($_SESSION['recado'] == 'errovenda') {?>
                 <div class="alert alert-success">
-                    <strong>Erro! </strong>Houve um erro ao prosseguir com a venda. <strong>Tente novamente!</strong!
+                    Houve um erro ao prosseguir com a venda. <strong>Tente novamente!</strong>
                     <button class="close" data-dismiss="alert">x</button>
                 </div>
             <?php }
@@ -77,7 +77,7 @@ require_once '../functions/check.php';
                 <td>
                     <div class="input-group div-input">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-                        <input id="busca_prod" class="form-control" autofocus placeholder="Digite o código do produto..." type="search" title="Digite o código e aperte enter para pesquisar" onchange="buscaProd(this)">
+                        <input id="busca_prod" class="form-control" maxlength="6" autofocus placeholder="Digite o código do produto..." type="search" title="Digite o código e aperte enter para pesquisar" onchange="buscaProd(this)">
                     </div>
                     <p class="text-warning" id="alert"><i class="material-icons">&#xe002;</i><small id="text"></small></p>
                 </td>

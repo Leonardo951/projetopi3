@@ -101,6 +101,7 @@ function buscaProd(item) {
             $('#categoria').text(data.categ);
             $('#qntd').attr('max', data.qntd);
             $('#qntd').addClass('qntd');
+            $('#qntd').val('1');
             //limpar o campo de pesquisa
             $("#busca_prod").val("");
             // muda o id dos campos que serão usado para a soma

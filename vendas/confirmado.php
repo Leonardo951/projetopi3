@@ -46,6 +46,7 @@ require_once '../conexao.php';
         </a>
         <fieldset id="pag" class="text-center">
             <?php
+            $result = [];
             if(isset($_SESSION['venda'])){
                 $itens = json_decode($_SESSION['itens']);
                 $quants = json_decode($_SESSION['quantidades']);
@@ -60,7 +61,6 @@ require_once '../conexao.php';
                 $stmt->execute();
                 $array = $stmt->fetch();
                 $codigo = $array['cod_venda'];
-                $result = [];
                 for($i = 0; $i < $qnt; $i++) {
                     $query = 'SELECT pk_prod FROM tb_produto WHERE cod_prod = :cod;';
                     $stmt = $conex->prepare($query);
@@ -104,12 +104,12 @@ require_once '../conexao.php';
                         <h4>N°:   '. $codigo .'</h4>
                         <a href="venda.php">
                             <button id="register" class="btn btn-success" type="button">
-                                Voltar para o menu
+                                Registrar nova venda
                             </button>
                         </a>
                         <a href="../menuprincipal.php">
                             <button id="menu" class="btn btn-info" type="button">
-                                Ir ao menu
+                                Voltar para o menu
                             </button>
                         </a>
                     </div>';

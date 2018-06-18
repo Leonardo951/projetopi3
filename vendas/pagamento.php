@@ -41,9 +41,7 @@ require_once '../conexao.php';
 <body>
 <div class="container">
     <div class="row">
-        <a href="../menuprincipal.php">
-            <img src="../img/cables.png/" class="img-logo-usuario"/>
-        </a>
+        <img src="../img/cables.png/" class="img-logo-usuario"/>
         <form class="form-horizontal">
             <fieldset id="pag">
                 <br>

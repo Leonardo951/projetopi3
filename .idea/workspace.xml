@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="284cce0b-70af-414c-bfb6-c39fbb5d6946" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/css/confirmar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendas/confirmado.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/pagamento.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pagamento.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/venda.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/venda.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendas/adicionaVenda.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendas/adicionaVenda.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendas/buscaClientes.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendas/buscaClientes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendas/cancelaVenda.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendas/cancelaVenda.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendas/confirmar.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendas/registra.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendas/confirmado.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendas/confirmado.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendas/pagamento.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendas/pagamento.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendas/venda.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendas/venda.php" afterDir="false" />
     </list>
@@ -22,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="venda.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="venda.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vendas/venda.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="154" column="57" selection-start-line="154" selection-start-column="57" selection-end-line="154" selection-end-column="57" />
+            <state relative-caret-position="119">
+              <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
               <folding>
                 <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
@@ -40,54 +36,17 @@
       <file leaf-file-name="venda.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/venda.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
-              <caret line="340" lean-forward="true" selection-start-line="340" selection-end-line="340" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pagamento.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/pagamento.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="178" column="21" lean-forward="true" selection-start-line="178" selection-start-column="21" selection-end-line="178" selection-end-column="21" />
+            <state relative-caret-position="309">
+              <caret line="105" column="32" lean-forward="true" selection-start-line="105" selection-start-column="32" selection-end-line="105" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="adicionaVenda.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendas/adicionaVenda.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="registra.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendas/registra.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="pagamento.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendas/pagamento.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="825">
-              <caret line="98" selection-start-line="98" selection-end-line="98" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="confirmado.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/vendas/confirmado.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
-              <caret line="87" column="50" lean-forward="true" selection-start-line="87" selection-start-column="50" selection-end-line="87" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="confirmar.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/confirmar.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+            <state relative-caret-position="179">
+              <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -183,17 +142,17 @@
         <option value="$PROJECT_DIR$/css/jquery.ui.css" />
         <option value="$PROJECT_DIR$/css/venda.css" />
         <option value="$PROJECT_DIR$/css/pagamento.css" />
-        <option value="$PROJECT_DIR$/js/venda.js" />
-        <option value="$PROJECT_DIR$/vendas/venda.php" />
         <option value="$PROJECT_DIR$/vendas/confirmar.php" />
         <option value="$PROJECT_DIR$/vendas/cancelaVenda.php" />
-        <option value="$PROJECT_DIR$/vendas/pagamento.php" />
         <option value="$PROJECT_DIR$/vendas/buscaClientes.php" />
         <option value="$PROJECT_DIR$/js/pagamento.js" />
         <option value="$PROJECT_DIR$/vendas/registra.php" />
-        <option value="$PROJECT_DIR$/vendas/adicionaVenda.php" />
         <option value="$PROJECT_DIR$/css/confirmar.css" />
         <option value="$PROJECT_DIR$/vendas/confirmado.php" />
+        <option value="$PROJECT_DIR$/js/venda.js" />
+        <option value="$PROJECT_DIR$/vendas/pagamento.php" />
+        <option value="$PROJECT_DIR$/vendas/adicionaVenda.php" />
+        <option value="$PROJECT_DIR$/vendas/venda.php" />
       </list>
     </option>
   </component>
@@ -289,7 +248,7 @@
       <workItem from="1527598392761" duration="60980000" />
       <workItem from="1527861134754" duration="81642000" />
       <workItem from="1528325595721" duration="49814000" />
-      <workItem from="1528487651291" duration="122650000" />
+      <workItem from="1528487651291" duration="126000000" />
     </task>
     <task id="LOCAL-00001" summary="organização do código.">
       <created>1526708591814</created>
@@ -501,11 +460,18 @@
       <option name="project" value="LOCAL" />
       <updated>1529012516609</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="atualização">
+      <created>1529339204790</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1529339204790</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="403909000" />
+    <option name="totallyTimeSpent" value="407259000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -837,13 +803,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/venda.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="340" lean-forward="true" selection-start-line="340" selection-end-line="340" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendas/cancelaVenda.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -871,19 +830,6 @@
     <entry file="file://$PROJECT_DIR$/vendas/buscaClientes.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendas/venda.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="154" column="57" selection-start-line="154" selection-start-column="57" selection-end-line="154" selection-end-column="57" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/pagamento.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="479">
@@ -891,28 +837,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/pagamento.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="178" column="21" lean-forward="true" selection-start-line="178" selection-start-column="21" selection-end-line="178" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/login/validalogin.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendas/registra.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendas/adicionaVenda.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendas/pagamento.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="98" selection-start-line="98" selection-end-line="98" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/confirmar.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -921,10 +847,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vendas/registra.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/pagamento.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="178" column="21" lean-forward="true" selection-start-line="178" selection-start-column="21" selection-end-line="178" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vendas/confirmado.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="87" column="50" lean-forward="true" selection-start-line="87" selection-start-column="50" selection-end-line="87" selection-end-column="50" />
+        <state relative-caret-position="17">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendas/pagamento.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="43" column="17" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/venda.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="105" column="32" lean-forward="true" selection-start-line="105" selection-start-column="32" selection-end-line="105" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendas/adicionaVenda.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendas/venda.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
