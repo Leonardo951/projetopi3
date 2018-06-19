@@ -59,19 +59,21 @@ require_once '../conexao.php';
                 <div class="form-group" id="pesFis">
                     <label class="col-md-4 control-label" for="buscaCliente">Cliente</label>
                     <div class="col-md-5">
-                        <input type="text" id="buscaCliente" placeholder="Pesquise pelo Nome ou CPF" class="form-control tam" autofocus>
+                        <input type="text" id="buscaCliente" placeholder="Pesquise pelo Nome ou CPF" class="form-control tam" autofocus onchange="erroCliente()">
                     </div>
+                    <p class="text-warning" id="alert"><i class="material-icons">&#xe002;</i></p>
                 </div>
                 <div class="form-group" id="pesJur">
                     <label class="col-md-4 control-label" for="buscaPj">Cliente</label>
                     <div class="col-md-4">
-                        <input type="text" id="buscaPj" placeholder="Pesquise pela Empresa ou CNPJ" class="form-control tam" autofocus>
+                        <input type="text" id="buscaPj" placeholder="Pesquise pela Empresa ou CNPJ" class="form-control tam">
                     </div>
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="buscaResp">Responsável</label>
                         <div class="col-md-4">
-                            <input type="text" id="buscaResp" placeholder="Pesquise pelo Nome" class="form-control tam">
+                            <input type="text" id="buscaResp" placeholder="Pesquise pelo Nome" class="form-control tam" onchange="erroCliPJ()">
                         </div>
+                        <p class="text-warning" id="alertPJ"><i class="material-icons">&#xe002;</i></p>
                     </div>
                 </div>
                 <div class="form-group">

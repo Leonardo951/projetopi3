@@ -121,7 +121,7 @@
                     $prepara->execute();
                     while ( $row = $prepara->fetch() ) {
                         $id = $row['pk_usuario'];
-                        $nome = $row['nome'];
+                        $nome = $row['nome_usuario'];
                         $email = $row['email'];
                         $perfil = $row['perfil'];
                         echo '

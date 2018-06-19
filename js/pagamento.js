@@ -73,11 +73,13 @@ function trocoDinn() {
 function PesJur() {
     $('#pesFis').css({display: 'none'});
     $('#pesJur').css({display: 'block'});
+    $('#buscaPj').focus();
 }
 
 function PesFis() {
     $('#pesFis').css({display: 'block'});
     $('#pesJur').css({display: 'none'});
+    $('#buscaCliente').focus();
 }
 
 function cancelaVenda() {
@@ -93,21 +95,88 @@ function cancelaVenda() {
 }
 
 function registraCliente() {
-    $.ajax({
-        url: "../vendas/registra.php",
-        method: "GET",
-        dataType: "json",
-        data: {
-            resp: $('#buscaResp').val(),
-            cpf: $('#buscaCliente').val(),
-            cnpj: $('#buscaPj').val()
-        }
-    }).done(function(data){
-        if(data.result){
-            window.location.replace('../vendas/confirmado.php');
+    if($('#alert').css('display') == 'none' && $('#alertPJ').css('display') == 'none') {
+        $.ajax({
+            url: "../vendas/registra.php",
+            method: "GET",
+            dataType: "json",
+            data: {
+                resp: $('#buscaResp').val(),
+                cpf: $('#buscaCliente').val(),
+                cnpj: $('#buscaPj').val()
+            }
+        }).done(function(data){
+            if(data.result){
+                window.location.replace('../vendas/confirmado.php');
+            }
+        })
+    }else{
+        if($('#alert').css('display') == 'block'){
+            $('#buscaCliente').focus();
         }else{
-            alert('erro');
-            alert(data.erro);
+            $('#buscaPj').focus();
         }
-    })
+    }
+}
+
+function erroCliente() {
+    if($('#buscaCliente').val() != ''){
+        $.ajax({
+            url: "../vendas/confirmaCliente.php",
+            method: "GET",
+            dataType: "json",
+            data: {
+                campo: $('#buscaCliente').val(),
+                tipo: 'PF'
+            }
+        }).done(function(data){
+            if(data.result){
+                document.getElementById('alert').style.display='block';
+                document.getElementById('buscaCliente').style.borderColor='#D01D33';
+            }else{
+                document.getElementById('alert').style.display='none';
+                document.getElementById('buscaCliente').style.borderColor='#0c6121';
+            }
+        })
+    }else{
+        document.getElementById('alert').style.display='none';
+        document.getElementById('buscaCliente').style.borderColor='#9d9d9d';
+    }
+}
+
+function erroCliPJ() {
+    if($('#buscaPj').val() != '' && $('#buscaResp').val() != ''){
+        $.ajax({
+            url: "../vendas/confirmaCliente.php",
+            method: "GET",
+            dataType: "json",
+            data: {
+                campo: $('#buscaPj').val(),
+                resp: $('#buscaResp').val(),
+                tipo: 'PJ'
+            }
+        }).done(function(data){
+            if(data.result){
+                // Verificar em qual campo esta o erro
+                if(data.onde == 'buscaPJ'){
+                    document.getElementById('alertPJ').style.display='block';
+                    document.getElementById('buscaPj').style.borderColor='#D01D33';
+                    document.getElementById('buscaResp').style.borderColor='#D01D33';
+                }else{
+                    // neste caso o erro é somente no responsável que não é igual ao informado no campo buscaPJ
+                    document.getElementById('alertPJ').style.display='block';
+                    document.getElementById('buscaResp').style.borderColor='#D01D33';
+                    document.getElementById('buscaPj').style.borderColor='#0c6121';
+                }
+            }else{
+                document.getElementById('alertPJ').style.display='none';
+                document.getElementById('buscaResp').style.borderColor='#0c6121';
+                document.getElementById('buscaPj').style.borderColor='#0c6121';
+            }
+        })
+    }else{
+        document.getElementById('alertPJ').style.display='none';
+        document.getElementById('buscaResp').style.borderColor='#9d9d9d';
+        document.getElementById('buscaPj').style.borderColor='#9d9d9d';
+    }
 }

@@ -47,9 +47,9 @@ require_once '../functions/check.php';
         <a href="../menuprincipal.php" class="btn btn-success-retorn btn_ini">
             <span><i class="fa fa-arrow-circle-left"></i> Voltar ao menu</span>
         </a>
-        <a href="#addEmployeeModal" class="btn btn-success btn_ini" data-toggle="modal">
-            <i class="material-icons">&#xE147;</i>
-            <span>Novo usuário</span>
+        <a href="relVendas.php" class="btn btn-success btn_ini">
+            <i class="glyphicon glyphicon-shopping-cart"></i>
+            <span>Vizualizar vendas</span>
         </a>
         <div class="col-sm-6">
             <?php

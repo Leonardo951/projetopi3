@@ -17,7 +17,7 @@ while ($pk = $prepara->fetch()) {
     $pk_perfil = $pk['pk_perfil'];
 };
 
-$sql = "INSERT INTO tb_usuario (nome, email, senha, fk_perfil) VALUES (?,?,?,?)";
+$sql = "INSERT INTO tb_usuario (nome_usuario, email, senha, fk_perfil) VALUES (?,?,?,?)";
 
 $stmt = $conex->prepare($sql);
 $stmt->bindValue(1, $nome);

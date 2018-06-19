@@ -198,3 +198,13 @@ body, html {
 #esqueceu {
     margin-left: 700px;
 }
+
+#alert {
+    color: #D01D33 !important;
+    display: none;
+}
+
+#alertPJ {
+    color: #D01D33 !important;
+    display: none;
+}

@@ -18,7 +18,7 @@ while ($pk = $prepara->fetch()) {
     $pk_perfil = $pk['pk_perfil'];
 };
 
-$sql = "UPDATE tb_usuario SET nome = :nome WHERE pk_usuario = :id;
+$sql = "UPDATE tb_usuario SET nome_usuario = :nome WHERE pk_usuario = :id;
         UPDATE tb_usuario SET email = :email WHERE pk_usuario = :id;
         UPDATE tb_usuario SET fk_perfil = :fk_perfil WHERE pk_usuario = :id";
 
