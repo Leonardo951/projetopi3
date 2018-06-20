@@ -100,6 +100,12 @@ require_once '../functions/check.php';
                     $cliente = $row['nome'];
                     $vendedor = $row['nome_usuario'];
                     $valor = $row['vl_total'];
+                    $dt_hr = $into["dt_hr_venda"];
+                    $dt_agora = new DateTime();
+                    $dt_venda = new DateTime($dt_hr);
+                    $res = $dt_agora->diff($dt_venda);
+                    $res->format('%d');
+                    $tempo = intval($res);
                     echo '
                         <tr>
                             <td>' . $cod_venda . '</td>  
@@ -109,34 +115,38 @@ require_once '../functions/check.php';
                             <td>
                                 <a href="viewer.php?venda=' . $cod_venda . '" class="vizualizar" data-toggle="modal">
                                     <i class="material-icons" data-toggle="tooltip" title="Vizualizar">&#xe85d;</i>
-                                </a>
+                                </a>';
+                    if($tempo <= 7){
+                        echo'
                                 <a href="#deleteClientePF' . $cod_venda . '" class="excluir" data-toggle="modal">
                                     <i class="material-icons" data-toggle="tooltip" title="Excluir">&#xE872;</i>
-                                </a>    
-                            </td>
-                        </tr>
-                        <!-- DeleteUsuario HTML -->
-                        <div id="deleteClientePF' . $cod_venda . '" class="modal fade">
+                                </a>
+                                <!-- DeleteUsuario HTML -->
+                        <div id="deleteClientePF\' . $cod_venda . \'" class="modal fade">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                    <form action="delete.php" method="POST">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title">Excluir cliente</h4>
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <b><p>Deseja realmente excluir este cliente?</p></b>
-                                            <p class="text-warning"><small>Essa ação não poderá ser desfeita...</small></p>
-                                            <input name="id" type="hidden" value="' . $cod_venda . '" />
-                                        </div>
-                                        <div class="modal-footer">
-                                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+                                     <form action="delete.php" method="POST">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Excluir venda</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <b><p>Deseja realmente excluir o registro desta venda?</p></b>
+                                        <p class="text-warning"><small>Essa ação não poderá ser desfeita...</small></p>
+                                        <input name="venda" type="hidden" value="\' . $cod_venda . \'" />
+                                    </div>
+                                    <div class="modal-footer">
+                                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
                                             <input type="submit" class="btn btn-danger" value="Excluir">
                                         </div>
                                     </form>
                                 </div>
                             </div>
                         </div>';
+                    }
+                    echo '
+                            </td>
+                        </tr>';
                     $qntd = $qntd + 1;
                 }
                 // Verificando quantos itens existem na tabela
@@ -232,18 +242,18 @@ require_once '../functions/check.php';
                         <div id="deleteClientePJ' . $id_cod . '" class="modal fade">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                    <form action="delete.php" method="POST">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title">Excluir cliente</h4>
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <b><p>Deseja realmente excluir este cliente?</p></b>
-                                            <p class="text-warning"><small>Essa ação não poderá ser desfeita...</small></p>
-                                            <input name="id" type="hidden" value="' . $id_cod . '" />
-                                        </div>
-                                        <div class="modal-footer">
-                                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+                                     <form action="delete.php" method="POST">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Excluir venda</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <b><p>Deseja realmente excluir o registro desta venda?</p></b>
+                                        <p class="text-warning"><small>Essa ação não poderá ser desfeita...</small></p>
+                                        <input name="venda" type="hidden" value="' . $id_cod . '" />
+                                    </div>
+                                    <div class="modal-footer">
+                                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
                                             <input type="submit" class="btn btn-danger" value="Excluir">
                                         </div>
                                     </form>

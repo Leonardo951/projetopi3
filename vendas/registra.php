@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once '../conexao.php';
+date_default_timezone_set('America/Sao_Paulo');
 
 $cpf = $_GET['cpf'];
 $cnpj = $_GET['cnpj'];
@@ -18,6 +19,7 @@ $vl_total = $into['vl_total'];
 $vl_desc = $into['vl_desc'];
 $subtotal = $into['subtotal'];
 $qntd_prod = $into['qntd_prod'];
+$dt_hr = new DateTime();
 
 $sql = 'DELETE FROM tb_venda WHERE pk_venda = :pk_venda;';
 $stmt = $conex->prepare($sql);
@@ -43,7 +45,7 @@ if(isset($cpf)) {
     $id_fisica = null;
 }
 
-$sql = 'INSERT INTO tb_venda(fk_clie_pf, fk_clie_pj, cod_venda, fk_usuario, vl_total, vl_desc, subtotal, qntd_prod) VALUES (?,?,?,?,?,?,?,?);';
+$sql = 'INSERT INTO tb_venda(fk_clie_pf, fk_clie_pj, cod_venda, fk_usuario, vl_total, vl_desc, subtotal, qntd_prod, dt_hr_venda) VALUES (?,?,?,?,?,?,?,?,?);';
 $stmt = $conex->prepare($sql);
 $stmt->bindValue(1, $id_fisica);
 $stmt->bindValue(2, $id_jur);
@@ -53,6 +55,7 @@ $stmt->bindValue(5, $vl_total);
 $stmt->bindValue(6, $vl_desc);
 $stmt->bindValue(7, $subtotal);
 $stmt->bindValue(8, $qntd_prod);
+$stmt->bindValue(9, $dt_hr);
 if($stmt->execute()){
     $sql = 'SELECT pk_venda FROM tb_venda WHERE cod_venda = :cod_venda;';
     $stmt = $conex->prepare($sql);

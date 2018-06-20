@@ -1,5 +1,6 @@
 <?php
 require_once '../functions/check.php';
+date_default_timezone_set('America/Sao_Paulo');
 ?>
 <!DOCTYPE html>
 
@@ -47,10 +48,15 @@ require_once '../functions/check.php';
         <a href="../menuprincipal.php" class="btn btn-success-retorn btn_ini">
             <span><i class="fa fa-arrow-circle-left"></i> Voltar ao menu</span>
         </a>
-        <a href="relVendas.php" class="btn btn-success btn_ini">
+        <?php
+        $perfil = base64_decode($_SESSION['user']);
+        if($perfil != 'Vendedor'){
+            echo '<a href="relVendas.php" class="btn btn-success btn_ini">
             <i class="glyphicon glyphicon-shopping-cart"></i>
             <span>Vizualizar vendas</span>
-        </a>
+        </a>  ';
+        }
+        ?>
         <div class="col-sm-6">
             <?php
             if ($_SESSION['recado'] == 'errovenda') {?>

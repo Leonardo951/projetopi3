@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once '../conexao.php';
+date_default_timezone_set('America/Sao_Paulo');
 
 $total = $_POST['total'];
 $desc = $_POST['descd'];
@@ -35,8 +36,9 @@ while ($c < 1000) {
     $c = $c+1;
 }
 $_SESSION['cod_venda'] = $codigo_venda;
+$dt_hr = new DateTime();
 
-$sql = 'INSERT INTO tb_venda (cod_venda, fk_usuario, vl_total, vl_desc, subtotal, qntd_prod) VALUES (?,?,?,?,?,?);';
+$sql = 'INSERT INTO tb_venda (cod_venda, fk_usuario, vl_total, vl_desc, subtotal, qntd_prod, dt_hr_venda) VALUES (?,?,?,?,?,?,?);';
 $stmt = $conex->prepare($sql);
 $stmt->bindValue(1, $codigo_venda);
 $stmt->bindValue(2, $cod_user);
@@ -44,6 +46,7 @@ $stmt->bindValue(3, $total);
 $stmt->bindValue(4, $desconto);
 $stmt->bindValue(5, $subtotal);
 $stmt->bindValue(6, $qntd_prod);
+$stmt->bindValue(7, $dt_hr);
 if($stmt->execute()){
     $sql = 'SELECT pk_venda FROM tb_venda WHERE cod_venda = :cod_venda;';
     $stmt = $conex->prepare($sql);
