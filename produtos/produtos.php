@@ -36,6 +36,10 @@
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="../css/jquery.ui.css" />
+        <script src="../js/jquery.ui.js" type="text/javascript"></script>
+
+<!--        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">-->
     </head>
     <body>
         <!--Página que mostra os usuários -->
@@ -52,6 +56,10 @@
                         <a href="#addEmployeeModal" class="btn btn-success btn_ini" data-toggle="modal">
                             <i class="material-icons">&#xE147;</i>
                             <span>Novo produto</span>
+                        </a>
+                        <a href="#addCompra" class="btn btn-primary btn_ini" data-toggle="modal">
+                            <i class="material-icons">&#xE147;</i>
+                            <span>Registrar compra</span>
                         </a>
                         <div class="col-sm-6">
                             <?php
@@ -301,6 +309,50 @@
                             </div>
                             <div class="form-group">
                                 <label>Preço</label>
+                                <input type="text" class="form-control" name="preco" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+                            <input type="submit" class="btn btn-success" value="Adicionar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Modal de nova compra HTML -->
+        <div id="addCompra" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form method="POST" action="novaCompra.php">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Registrar compra</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Produto</label>
+                                <input type="text" class="form-control" name="prod" required autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label>Categoria</label>
+                                <select class="form-control" required name="cat">
+                                    <option></option>
+                                    <?php for($i = 0; $i < count($mycateg); ++$i) {
+                                        echo '<option>'.$mycateg[$i].'</option>';
+                                    } ?>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Marca</label>
+                                <input type="text" class="form-control" name="marca" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Fornecedor</label>
+                                <input type="text" class="form-control" name="fornecedor" id="forn" placeholder="Pesquise pelo nome ou CNPJ da empresa" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Valor da compra</label>
                                 <input type="text" class="form-control" name="preco" required>
                             </div>
                         </div>
