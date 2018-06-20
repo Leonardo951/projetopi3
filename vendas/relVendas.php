@@ -57,48 +57,6 @@ require_once '../functions/check.php';
                     <i class="material-icons">&#xE147;</i>
                     <span>Registrar venda</span>
                 </a>
-
-                <div class="col-md-6">
-                    <?php
-                    if ($_SESSION['recado'] == 'deletado') {?>
-                        <div class="alert alert-success">
-                            <strong>Excluído! </strong>O produto foi removido com sucesso!
-                            <button class="close" data-dismiss="alert">x</button>
-                        </div>
-                    <?php } elseif($_SESSION['recado'] == 'nodelete') {?>
-                        <div class="alert alert-danger">
-                            <strong>Algo deu errado. </strong>Ocorreu um erro ao excluir o produto.
-                            <button class="close" data-dismiss="alert">x</button>
-                        </div>
-                    <?php } elseif($_SESSION['recado'] == 'quantidade') {?>
-                        <div class="alert alert-danger">
-                            <strong>Ops! </strong>Não podemos excluir um produto que ainda está disponível em estoque.
-                            <button class="close" data-dismiss="alert">x</button>
-                        </div>
-                    <?php } elseif($_SESSION['recado'] == 'adicionado') {?>
-                        <div class="alert alert-success">
-                            <strong>Adicionado! </strong>O novo produto foi adicionado com sucesso!
-                            <button class="close" data-dismiss="alert">x</button>
-                        </div>
-                    <?php } elseif($_SESSION['recado'] == 'erroadicao') {?>
-                        <div class="alert alert-warning">
-                            <strong>Algo deu errado. </strong>Ocorreu um erro ao adicionar este produto!
-                            <button class="close" data-dismiss="alert">x</button>
-                        </div>
-                    <?php } elseif($_SESSION['recado'] == 'editado') {?>
-                        <div class="alert alert-success">
-                            <strong>Modificado! </strong>As informações foram alteradas com sucesso!
-                            <button class="close" data-dismiss="alert">x</button>
-                        </div>
-                    <?php } elseif($_SESSION['recado'] == 'erroedicao') {?>
-                        <div class="alert alert-danger">
-                            <strong>Algo deu errado. </strong>Ocorreu um erro ao modificar os dados deste produto!
-                            <button class="close" data-dismiss="alert">x</button>
-                        </div>
-                    <?php }
-                    $_SESSION['recado'] = 'vazio';
-                    ?>
-                </div>
             </div>
         </div>
         <div class="col-md-3 bar">
@@ -149,7 +107,7 @@ require_once '../functions/check.php';
                             <td>' . $vendedor . '</td>
                             <td>' . $valor . '</td>
                             <td>
-                                <a href="viewer.php?view=' . $cod_venda . '" class="vizualizar" data-toggle="modal">
+                                <a href="viewer.php?venda=' . $cod_venda . '" class="vizualizar" data-toggle="modal">
                                     <i class="material-icons" data-toggle="tooltip" title="Vizualizar">&#xe85d;</i>
                                 </a>
                                 <a href="#deleteClientePF' . $cod_venda . '" class="excluir" data-toggle="modal">
@@ -262,7 +220,7 @@ require_once '../functions/check.php';
                             <td>' . $vend . '</td>
                             <td>' . $val_venda . '</td>
                             <td>
-                                <a href="viewer.php?view=' . $id_cod . '" class="vizualizar" data-toggle="modal">
+                                <a href="viewer.php?venda=' . $id_cod . '" class="vizualizar" data-toggle="modal">
                                     <i class="material-icons" data-toggle="tooltip" title="Vizualizar">&#xe85d;</i>
                                 </a>
                                 <a href="#deleteClientePJ' . $id_cod . '" class="excluir" data-toggle="modal">

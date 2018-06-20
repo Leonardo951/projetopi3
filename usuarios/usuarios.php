@@ -133,7 +133,7 @@
                                 <a href="#editUsuario' . $id . '" class="editar" data-toggle="modal">
                                      <i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i>
                                 </a>
-                                <a href="#deleteUsuario' . $id . '" class="excluir" data-toggle="modal")>
+                                <a href="#deleteUsuario' . $id . '" class="excluir" data-toggle="modal">
                                     <i class="material-icons" data-toggle="tooltip" title="Excluir">&#xE872;</i>
                                 </a>    
                             </td>
