@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="284cce0b-70af-414c-bfb6-c39fbb5d6946" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/produtos/buscaDados.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fornecedores/buscaProd.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/produtos.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/produtos.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/produtos.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/produtos.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/produtos/buscaForns.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/produtos/insert.php" beforeDir="false" afterPath="$PROJECT_DIR$/produtos/insert.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/produtos/novaCompra.php" beforeDir="false" afterPath="$PROJECT_DIR$/produtos/novaCompra.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/produtos/produtos.php" beforeDir="false" afterPath="$PROJECT_DIR$/produtos/produtos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/fornecedores.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/fornecedores.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fornecedores/fornecedores.php" beforeDir="false" afterPath="$PROJECT_DIR$/fornecedores/fornecedores.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/fornecedores.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/fornecedores.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,7 +16,53 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="fornecedores.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fornecedores/fornecedores.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="167">
+              <caret line="317" column="56" lean-forward="true" selection-start-line="317" selection-start-column="56" selection-end-line="317" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fornecedores.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/fornecedores.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="232" column="22" lean-forward="true" selection-start-line="232" selection-start-column="22" selection-end-line="232" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fornecedores.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/fornecedores.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="235">
+              <caret line="36" column="7" lean-forward="true" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="venda.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/venda.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="110" column="45" lean-forward="true" selection-start-line="110" selection-start-column="45" selection-end-line="110" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="buscaProd.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fornecedores/buscaProd.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="30" lean-forward="true" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -32,7 +75,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>str_replace</find>
       <find>editar</find>
       <find>cle</find>
       <find>juri'</find>
@@ -62,6 +104,7 @@
       <find>fornecedores</find>
       <find>fornecedor</find>
       <find>button</find>
+      <find>overflow</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -70,10 +113,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/clientes/update.pf.php" />
-        <option value="$PROJECT_DIR$/fornecedores/fornecedores.php" />
-        <option value="$PROJECT_DIR$/fornecedores/create.php" />
-        <option value="$PROJECT_DIR$/clientes/cadastro.php" />
         <option value="$PROJECT_DIR$/clientes/clientes.php" />
         <option value="$PROJECT_DIR$/clientes/insert.php" />
         <option value="$PROJECT_DIR$/clientes/viewer.pf.php" />
@@ -121,6 +160,10 @@
         <option value="$PROJECT_DIR$/js/produtos.js" />
         <option value="$PROJECT_DIR$/produtos/novaCompra.php" />
         <option value="$PROJECT_DIR$/produtos/produtos.php" />
+        <option value="$PROJECT_DIR$/fornecedores/buscaProd.php" />
+        <option value="$PROJECT_DIR$/css/fornecedores.css" />
+        <option value="$PROJECT_DIR$/fornecedores/fornecedores.php" />
+        <option value="$PROJECT_DIR$/js/fornecedores.js" />
       </list>
     </option>
   </component>
@@ -155,6 +198,16 @@
             <path>
               <item name="compravenda" type="b2602c69:ProjectViewProjectNode" />
               <item name="compravenda" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="compravenda" type="b2602c69:ProjectViewProjectNode" />
+              <item name="compravenda" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="fornecedores" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="compravenda" type="b2602c69:ProjectViewProjectNode" />
+              <item name="compravenda" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="produtos" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -207,7 +260,7 @@
       <workItem from="1527861134754" duration="81642000" />
       <workItem from="1528325595721" duration="49814000" />
       <workItem from="1528487651291" duration="129449000" />
-      <workItem from="1529425706022" duration="43069000" />
+      <workItem from="1529425706022" duration="50092000" />
     </task>
     <task id="LOCAL-00001" summary="organização do código.">
       <created>1526708591814</created>
@@ -468,14 +521,22 @@
       <option name="project" value="LOCAL" />
       <updated>1529521410378</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="atualização">
+      <created>1529599874156</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1529599874156</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="453777000" />
+    <option name="totallyTimeSpent" value="460800000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="12" />
       <window_info anchor="bottom" id="PHP-CGI Server" order="1" />
@@ -554,27 +615,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/recuperar-senha/trocasenha.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="55" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="80" column="8" selection-start-line="80" selection-start-column="8" selection-end-line="82" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clientes/insert.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="111" column="8" selection-start-line="111" selection-start-column="8" selection-end-line="113" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/produtos/update.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -593,13 +633,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="547">
           <caret line="18705" column="4" selection-start-line="18705" selection-start-column="4" selection-end-line="18705" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fornecedores/fornecedores.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="106" column="20" selection-start-line="106" selection-start-column="20" selection-end-line="111" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -679,24 +712,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/clientes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/relVendas.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/venda.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="105" column="32" lean-forward="true" selection-start-line="105" selection-start-column="32" selection-end-line="105" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -865,24 +884,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/produtos.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="235" lean-forward="true" selection-start-line="235" selection-end-line="235" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/produtos/insert.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="354">
           <caret line="43" column="31" lean-forward="true" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/produtos/buscaDados.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="49" column="20" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -900,17 +905,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/produtos/produtos.php">
+    <entry file="file://$PROJECT_DIR$/produtos/buscaDados.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="52" column="58" selection-start-line="52" selection-start-column="58" selection-end-line="52" selection-end-column="58" />
+        <state relative-caret-position="102">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="14" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/produtos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="32" column="26" lean-forward="true" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
+        <state relative-caret-position="272">
+          <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/produtos.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="236" column="18" lean-forward="true" selection-start-line="236" selection-start-column="18" selection-end-line="236" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/clientes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/produtos/produtos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="36" column="8" selection-start-line="36" selection-start-column="8" selection-end-line="37" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fornecedores/buscaProd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="30" lean-forward="true" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/fornecedores.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="232" column="22" lean-forward="true" selection-start-line="232" selection-start-column="22" selection-end-line="232" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fornecedores/fornecedores.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="317" column="56" lean-forward="true" selection-start-line="317" selection-start-column="56" selection-end-line="317" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/venda.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="110" column="45" lean-forward="true" selection-start-line="110" selection-start-column="45" selection-end-line="110" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fornecedores.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="36" column="7" lean-forward="true" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
         </state>
       </provider>
     </entry>

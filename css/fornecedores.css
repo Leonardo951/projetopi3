@@ -228,8 +228,26 @@ table.table .avatar {
     border: none;
     min-width: 50px;
     border-radius: 2px;
-    border: none;
     outline: none !important;
     margin-left: 10px;
     font-weight: bold;
+}
+
+.mytab {
+    max-width: 380px;
+    overflow-y: scroll !important;
+    max-height: 125px !important;
+}
+
+.ui-autocomplete {
+    z-index: 215000000 !important;
+}
+
+.glyphicon-remove{
+    color: red !important;
+    font-size: 15px !important;
+}
+
+.linha {
+    display: none;
 }
