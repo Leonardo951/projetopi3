@@ -36,13 +36,14 @@ while ($c < 1000) {
     $c = $c+1;
 }
 
-$sql = "INSERT INTO tb_produto (nome_prod, preco, fk_categoria, cod_prod, marca) VALUES (?,?,?,?,?);";
+$sql = "INSERT INTO tb_produto (nome_prod, preco, fk_categoria, cod_prod, marca, quantidade) VALUES (??,,?,?,?,?);";
 $stmt = $conex->prepare($sql);
 $stmt->bindValue(1, $prod);
 $stmt->bindValue(2, $preco);
 $stmt->bindValue(3, $pk_categoria);
 $stmt->bindValue(4, $cod_prod);
 $stmt->bindValue(5, $marca);
+$stmt->bindValue(6, 0);
 
 if( $stmt->execute() ){
     $_SESSION['recado'] = 'adicionado';

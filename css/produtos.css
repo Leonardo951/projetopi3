@@ -234,8 +234,6 @@ table.table .avatar {
     font-weight: bold;
 }
 
-/*.fade {*/
-    /*background-color: transparent !important;*/
-    /*border-color: transparent !important;*/
-    /*overflow: hidden !important;*/
-/*}*/
+.ui-autocomplete {
+    z-index: 215000000 !important;
+}

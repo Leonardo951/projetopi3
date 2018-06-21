@@ -16,12 +16,10 @@
 
         <title>CABLES-Infomática</title>
 
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
         <!-- Custom styles for this template -->
         <link href="../css/produtos.css" rel="stylesheet">
 
+        <!-- Bootstrap core CSS -->
         <link href="../css/bootstrap.min.css" rel="stylesheet">
 
         <script src="../js/ie-emulation-modes-warning.js" type="text/javascript"></script>
@@ -32,14 +30,12 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
         <link rel="stylesheet" href="../css/jquery.ui.css" />
         <script src="../js/jquery.ui.js" type="text/javascript"></script>
-
-<!--        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">-->
     </head>
     <body>
         <!--Página que mostra os usuários -->
@@ -57,10 +53,15 @@
                             <i class="material-icons">&#xE147;</i>
                             <span>Novo produto</span>
                         </a>
-                        <a href="#addCompra" class="btn btn-primary btn_ini" data-toggle="modal">
-                            <i class="material-icons">&#xE147;</i>
-                            <span>Registrar compra</span>
-                        </a>
+                        <?php
+                        if(base64_decode($_SESSION['user']) != 'Vendedor'){
+                            echo '
+                            <a href="#addCompra" class="btn btn-primary btn_ini" data-toggle="modal">
+                                <i class="material-icons">&#xE147;</i>
+                                <span>Registrar compra</span>
+                            </a>';
+                        }
+                        ?>
                         <div class="col-sm-6">
                             <?php
                             if ($_SESSION['recado'] == 'deletado') {?>
@@ -96,6 +97,16 @@
                             <?php } elseif($_SESSION['recado'] == 'erroedicao') {?>
                                 <div class="alert alert-danger">
                                     <strong>Algo deu errado. </strong>Ocorreu um erro ao modificar os dados deste produto!
+                                    <button class="close" data-dismiss="alert">x</button>
+                                </div>
+                            <?php } elseif($_SESSION['recado'] == 'compraadd') {?>
+                                <div class="alert alert-success">
+                                    <strong>Registrado! </strong>Compra registrada com sucesso!
+                                    <button class="close" data-dismiss="alert">x</button>
+                                </div>
+                            <?php } elseif($_SESSION['recado'] == 'compraerro') {?>
+                                <div class="alert alert-danger">
+                                    <strong>Algo deu errado. </strong>Ocorreu um erro ao registrar a compra!
                                     <button class="close" data-dismiss="alert">x</button>
                                 </div>
                             <?php }
@@ -332,20 +343,17 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label>Produto</label>
-                                <input type="text" class="form-control" name="prod" required autofocus>
+                                <input type="text" class="form-control" id="prod" name="prod" required autofocus placeholder="Pesquise pelo nome ou código do produto" onchange="buscaDados()">
                             </div>
                             <div class="form-group">
                                 <label>Categoria</label>
-                                <select class="form-control" required name="cat">
-                                    <option></option>
-                                    <?php for($i = 0; $i < count($mycateg); ++$i) {
-                                        echo '<option>'.$mycateg[$i].'</option>';
-                                    } ?>
-                                </select>
+                                <input type="text" readonly class="form-control" required name="cat" id="categoria">
+                                <input type="hidden" id="fk-cat" name="fk_cat">
+                                <input type="hidden" id="pk" name="pk_prod">
                             </div>
                             <div class="form-group">
                                 <label>Marca</label>
-                                <input type="text" class="form-control" name="marca" required>
+                                <input type="text" class="form-control" name="marca" required id="marca" readonly>
                             </div>
                             <div class="form-group">
                                 <label>Fornecedor</label>
@@ -353,7 +361,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Valor da compra</label>
-                                <input type="text" class="form-control" name="preco" required>
+                                <input type="text" class="form-control" name="valor" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Quantidade</label>
+                                <input type="number" class="form-control" name="qnt" required min="1" value="1">
                             </div>
                         </div>
                         <div class="modal-footer">
