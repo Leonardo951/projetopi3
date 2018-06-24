@@ -1,3 +1,7 @@
+document.getElementById("prod").addEventListener("click", function(event){
+    event.preventDefault()
+});
+
 $.ajax({
     url: "../fornecedores/buscaProd.php",
     method: "GET",
@@ -10,8 +14,28 @@ $.ajax({
         source: data,
         minLength: 2,
         select: function(event, ui) {
-            // alert(ui.item.value);
-            $('#codigo').text(ui.item);
+            let codigo = '';
+            let codigos = [];
+            let produto = '';
+            let produtos = [];
+            $(".cod").each(function(){
+                codigo = $(this).text();
+                codigos.push(codigo);
+            });
+            $(".produtos").each(function(){
+                produto = $(this).text();
+                produtos.push(produto);
+            });
+            for(let i=0; i < codigos.length; i++) {
+                if(codigos[i] == ui.item.value) {
+                    $('#prod').val('');
+                    return;
+                }
+                if(produtos[i] == ui.item.value) {
+                    $('#prod').val('');
+                    return;
+                }
+            }
             $.ajax({
                 url: "../fornecedores/buscaProd.php",
                 method: "GET",

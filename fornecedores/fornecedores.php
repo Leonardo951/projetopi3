@@ -103,6 +103,7 @@ include_once '../conexao.php';
                 <th>E-mail</th>
                 <th>DDD</th>
                 <th>Telefone</th>
+                <th>Ações</th>
             </tr>
             </thead>
             <tbody>
@@ -313,12 +314,19 @@ include_once '../conexao.php';
                     </div>
                     <div class="mytab">
                         <table class="table table-striped table-hover">
-                            <tr class="linha">
-                                <td id="codigo" class="cod"></td>
-                                <td id="nome_prod"></td>
-                                <td class="excluir" id="exclui" onclick="apagaLinha(this)"><i class="glyphicon glyphicon-remove"></i></td>
-                            </tr>
-                            <tr id="novalinha"></tr>
+                            <thead>
+                                <th>Código</th>
+                                <th>Produto</th>
+                                <th>Remover</th>
+                            </thead>
+                            <tbody>
+                                <tr class="linha">
+                                    <td id="codigo" class="cod"></td>
+                                    <td id="nome_prod" class="produtos"></td>
+                                    <td class="excluir" id="exclui" onclick="apagaLinha(this)"><i class="glyphicon glyphicon-remove"></i></td>
+                                </tr>
+                                <tr id="novalinha"></tr>
+                            </tbody>
                         </table>
                         <input type="hidden" id="codigos" name="codigos">
                     </div>

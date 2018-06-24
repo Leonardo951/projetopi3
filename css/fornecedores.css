@@ -251,3 +251,7 @@ table.table .avatar {
 .linha {
     display: none;
 }
+
+td, th {
+    text-align: center !important;
+}
