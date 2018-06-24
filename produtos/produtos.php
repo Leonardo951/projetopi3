@@ -164,7 +164,7 @@
                             <td>' . $estoque . '</td>
                             <td>' . number_format($preco, 2, ',', '.') . '</td>
                             <td>
-                                <a href="#" class="forn" data-toggle="modal">Visualizar</a>
+                                <a href="../prod-vendidos/prod_vendidos.php?produto='. $cod_prod .'" target=“_blank” class="forn" data-toggle="modal">Visualizar</a>
                             </td>
                             <td>
                                 <a href="#editUsuario' . $id . '" class="editar" data-toggle="modal">
