@@ -36,6 +36,7 @@
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.quicksearch/2.3.1/jquery.quicksearch.js"></script>
     </head>
     <body>
         <!--Página que mostra os usuários -->
@@ -91,6 +92,12 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-4 bar">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                        <input id="input-search" name="search" class="form-control" placeholder="Pesquisar usuário" type="search" title="Pesquisar">
+                    </div>
+                </div><br><br/>
                 <table class="table table-striped table-hover" id="usuariotable">
                     <thead>
                         <tr>
@@ -290,5 +297,6 @@
             </div>
         </div>
     <script type="text/javascript" src="../js/usuarios.js"></script>
+    <script type="text/javascript" src="../js/search.js"></script>
     </body>
 </html>

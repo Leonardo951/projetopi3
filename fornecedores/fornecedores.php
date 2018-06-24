@@ -39,6 +39,7 @@ include_once '../conexao.php';
 
     <link rel="stylesheet" href="../css/jquery.ui.css" />
     <script src="../js/jquery.ui.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.quicksearch/2.3.1/jquery.quicksearch.js"></script>
 </head>
 <body>
 <!--Página que mostra os usuários -->
@@ -94,6 +95,12 @@ include_once '../conexao.php';
                 </div>
             </div>
         </div>
+        <div class="col-md-4 bar">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                <input id="input-search" name="search" class="form-control" placeholder="Pesquisar fornecedor" type="search" title="Pesquisar">
+            </div>
+        </div><br><br/>
         <table class="table table-striped table-hover" id="usuariotable">
             <thead>
             <tr>
@@ -344,5 +351,6 @@ include_once '../conexao.php';
     </div>
 </div>
 <script type="text/javascript" src="../js/fornecedores.js"></script>
+<script type="text/javascript" src="../js/search.js"></script>
 </body>
 </html>
