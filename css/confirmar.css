@@ -26,3 +26,7 @@ body, html {
     margin-top: 10px !important;
     padding: 4px 35px;
 }
+
+td, th {
+    text-align: center !important;
+}

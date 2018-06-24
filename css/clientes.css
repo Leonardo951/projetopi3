@@ -241,3 +241,7 @@ table.table .avatar {
     margin-left: 10px;
     font-weight: bold;
 }
+
+td, th {
+    text-align: center !important;
+}

@@ -41,7 +41,7 @@ require_once '../conexao.php';
 <body>
 <div class="container">
     <div class="row text-center">
-        <a href="../menuprincipal.php">
+        <a href="../index.php">
             <img src="../img/cables.png/" class="img-logo-usuario"/>
         </a>
         <fieldset id="pag" class="text-center">
@@ -91,7 +91,7 @@ require_once '../conexao.php';
                                 Reiniciar venda
                             </button>
                         </a>
-                        <a href="../menuprincipal.php">
+                        <a href="../index.php">
                             <button id="menu" class="btn btn-info" type="button">
                                 Voltar para o menu
                             </button>
@@ -101,13 +101,13 @@ require_once '../conexao.php';
                 echo '
                     <div class="text">
                         <h3>A sua venda foi confirmada!</h3>
-                        <h4>N°:   '. $codigo .'</h4>
+                        <h4>N°:   '. $codigo . '</h4>
                         <a href="venda.php">
                             <button id="register" class="btn btn-success" type="button">
                                 Registrar nova venda
                             </button>
                         </a>
-                        <a href="../menuprincipal.php">
+                        <a href="../index.php">
                             <button id="menu" class="btn btn-info" type="button">
                                 Voltar para o menu
                             </button>

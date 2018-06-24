@@ -2,12 +2,12 @@
 
 session_start();
 
-if(basename( __FILE__ ) != 'menuprincipal.php') {
+if(basename( __FILE__ ) != 'index.php') {
     if( base64_decode($_SESSION['user']) == 'Vendedor' && basename( __FILE__ ) == 'usuarios.php' ||
         base64_decode($_SESSION['user']) == 'Vendedor' && basename( __FILE__ ) == 'fornecedores.php' ||
         base64_decode($_SESSION['user']) == 'Gerente' && basename( __FILE__ ) == 'usuarios.php' )
     {
-        header('location: ../menuprincipal.php');
+        header('location: ../index.php');
     } else {
         if (isset($_SESSION["sessiontime"])) {
             if ($_SESSION["sessiontime"] < time()) {

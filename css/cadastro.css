@@ -52,3 +52,7 @@ body, .container {
 #juridica {
     display: none;
 }
+
+td, th {
+    text-align: center !important;
+}

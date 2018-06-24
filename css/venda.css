@@ -88,3 +88,7 @@ body, html {
 .cima {
     margin-top: -4px !important;
 }
+
+td, th {
+    text-align: center !important;
+}

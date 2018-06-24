@@ -46,10 +46,10 @@ include_once '../conexao.php';
     <div class="table-wrapper">
         <div class="table-title">
             <div class="row">
-                <a href="../menuprincipal.php">
+                <a href="../index.php">
                     <img src="../img/cables.png/" class="img-logo-usuario"/>
                 </a>
-                <a href="../menuprincipal.php" class="btn btn-success-retorn btn_ini">
+                <a href="../index.php" class="btn btn-success-retorn btn_ini">
                     <span><i class="fa fa-arrow-circle-left"></i> Voltar ao menu</span>
                 </a>
                 <a href="#addEmployeeModal" class="btn btn-success btn_ini" data-toggle="modal">
@@ -103,6 +103,7 @@ include_once '../conexao.php';
                 <th>E-mail</th>
                 <th>DDD</th>
                 <th>Telefone</th>
+                <th>Produtos<br>Fornecidos</th>
                 <th>Ações</th>
             </tr>
             </thead>
@@ -141,6 +142,9 @@ include_once '../conexao.php';
                             <td>' . $email . '</td>
                             <td>' . $ddd . '</td>
                             <td>' . $tel . '</td>
+                            <td>
+                                <a href="../fornecidos/prod-fornecidos.php?fornecedor='. $cnpj .'" target=“_blank” class="forn" data-toggle="modal">Visualizar</a>
+                            </td>
                             <td>
                                 <a href="#editUsuario' . $id . '" class="editar" data-toggle="modal">
                                      <i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i>

@@ -110,4 +110,6 @@ body, html {
 #relembre {
     margin-bottom: 5px; }
 
-/*# sourceMappingURL=login.component.css.map */
+td, th {
+    text-align: center !important;
+}

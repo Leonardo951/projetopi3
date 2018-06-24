@@ -118,3 +118,7 @@ th, td {
 #liforn {
     text-align: left !important;
 }
+
+td, th {
+    text-align: center !important;
+}

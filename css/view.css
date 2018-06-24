@@ -79,3 +79,6 @@ body, .container {
 
 .modal form label {
     font-weight: normal; }
+td, th {
+    text-align: center !important;
+}

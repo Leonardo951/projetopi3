@@ -2,10 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="284cce0b-70af-414c-bfb6-c39fbb5d6946" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/css/prod_vendidos.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prod-vendidos/prod_vendidos.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientes/cadastro.php" beforeDir="false" afterPath="$PROJECT_DIR$/clientes/cadastro.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientes/clientes.php" beforeDir="false" afterPath="$PROJECT_DIR$/clientes/clientes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/cadastro.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/cadastro.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/clientes.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/clientes.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/confirmar.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/confirmar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/menuprincipal.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/menuprincipal.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/pagamento.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/pagamento.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/prod_vendidos.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/prod_vendidos.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/produtos.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/produtos.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/relVendas.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/relVendas.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/relembre-me.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/relembre-me.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/usuarios.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/usuarios.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/venda.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/venda.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/view.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/view.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fornecedores/fornecedores.php" beforeDir="false" afterPath="$PROJECT_DIR$/fornecedores/fornecedores.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/check.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions/check.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/validalogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/validalogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menuprincipal.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prod-vendidos/prod_vendidos.php" beforeDir="false" afterPath="$PROJECT_DIR$/fornecidos/prod-fornecidos.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/produtos/produtos.php" beforeDir="false" afterPath="$PROJECT_DIR$/produtos/produtos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuarios/usuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios/usuarios.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendas/confirmado.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendas/confirmado.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendas/relVendas.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendas/relVendas.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendas/venda.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendas/venda.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,47 +38,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="fornecedores.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fornecedores/fornecedores.php">
+      <file leaf-file-name="login.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/login.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="134" column="37" lean-forward="true" selection-start-line="134" selection-start-column="37" selection-end-line="134" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fornecedores.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/fornecedores.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="prod_vendidos.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/prod-vendidos/prod_vendidos.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="71" column="25" lean-forward="true" selection-start-line="71" selection-start-column="25" selection-end-line="71" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="prod_vendidos.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/prod_vendidos.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="114" column="23" selection-start-line="114" selection-start-column="23" selection-end-line="114" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="produtos.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/produtos/produtos.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="153" column="47" lean-forward="true" selection-start-line="153" selection-start-column="47" selection-end-line="153" selection-end-column="47" />
+            <state relative-caret-position="473">
+              <caret line="114" column="1" selection-start-line="114" selection-start-column="1" selection-end-line="114" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -74,7 +60,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>limp</find>
       <find>estado</find>
       <find>cnpj</find>
       <find>input</find>
@@ -104,6 +89,7 @@
       <find>array_push</find>
       <find>includes</find>
       <find>codigo'</find>
+      <find>menuprincipal</find>
     </findStrings>
     <dirStrings>
       <dir>C:\xampp\htdocs\compravenda\js</dir>
@@ -115,35 +101,23 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/recuperar-senha/recuperar.php" />
-        <option value="$PROJECT_DIR$/functions/check.menu.php" />
-        <option value="$PROJECT_DIR$/menuprincipal.php" />
-        <option value="$PROJECT_DIR$/css/clientes.css" />
-        <option value="$PROJECT_DIR$/js/jquery.inputmask.bundle.min.js" />
-        <option value="$PROJECT_DIR$/produtos/update.php" />
-        <option value="$PROJECT_DIR$/functions/buscaProdutos.php" />
         <option value="$PROJECT_DIR$/vendas/buscaProdutos.php" />
         <option value="$PROJECT_DIR$/functions/check.php" />
         <option value="$PROJECT_DIR$/js/jquery.ui.js" />
-        <option value="$PROJECT_DIR$/css/cadastro.css" />
         <option value="$PROJECT_DIR$/css/jquery.ui.css" />
-        <option value="$PROJECT_DIR$/css/venda.css" />
         <option value="$PROJECT_DIR$/vendas/confirmar.php" />
         <option value="$PROJECT_DIR$/vendas/cancelaVenda.php" />
         <option value="$PROJECT_DIR$/vendas/buscaClientes.php" />
-        <option value="$PROJECT_DIR$/css/confirmar.css" />
         <option value="$PROJECT_DIR$/vendas/confirmado.php" />
         <option value="$PROJECT_DIR$/js/venda.js" />
         <option value="$PROJECT_DIR$/login/validalogin.php" />
         <option value="$PROJECT_DIR$/usuarios/create.php" />
         <option value="$PROJECT_DIR$/usuarios/update.php" />
-        <option value="$PROJECT_DIR$/css/relVendas.css" />
         <option value="$PROJECT_DIR$/js/relVendas.js" />
         <option value="$PROJECT_DIR$/vendas/confirmaCliente.php" />
         <option value="$PROJECT_DIR$/js/pagamento.js" />
         <option value="$PROJECT_DIR$/vendas/pagamento.php" />
         <option value="$PROJECT_DIR$/vendas/edit.php" />
-        <option value="$PROJECT_DIR$/css/pagamento.css" />
         <option value="$PROJECT_DIR$/vendas/viewer.php" />
         <option value="$PROJECT_DIR$/vendas/relVendas.php" />
         <option value="$PROJECT_DIR$/vendas/venda.php" />
@@ -151,7 +125,6 @@
         <option value="$PROJECT_DIR$/vendas/registra.php" />
         <option value="$PROJECT_DIR$/produtos/buscaForns.php" />
         <option value="$PROJECT_DIR$/produtos/buscaCompra.php" />
-        <option value="$PROJECT_DIR$/css/produtos.css" />
         <option value="$PROJECT_DIR$/produtos/buscaDados.php" />
         <option value="$PROJECT_DIR$/js/produtos.js" />
         <option value="$PROJECT_DIR$/fornecedores/buscaProd.php" />
@@ -160,12 +133,25 @@
         <option value="$PROJECT_DIR$/produtos/novaCompra.php" />
         <option value="$PROJECT_DIR$/produtos/delete.php" />
         <option value="$PROJECT_DIR$/fornecedores/create.php" />
-        <option value="$PROJECT_DIR$/css/fornecedores.css" />
         <option value="$PROJECT_DIR$/js/fornecedores.js" />
-        <option value="$PROJECT_DIR$/fornecedores/fornecedores.php" />
         <option value="$PROJECT_DIR$/prod-vendidos/prod_vendidos.php" />
         <option value="$PROJECT_DIR$/produtos/produtos.php" />
+        <option value="$PROJECT_DIR$/fornecedores/fornecedores.php" />
+        <option value="$PROJECT_DIR$/css/fornecedores.css" />
+        <option value="$PROJECT_DIR$/fornecidos/prod-fornecidos.php" />
+        <option value="$PROJECT_DIR$/css/cadastro.css" />
+        <option value="$PROJECT_DIR$/css/clientes.css" />
+        <option value="$PROJECT_DIR$/css/confirmar.css" />
+        <option value="$PROJECT_DIR$/css/view.css" />
+        <option value="$PROJECT_DIR$/css/venda.css" />
+        <option value="$PROJECT_DIR$/css/usuarios.css" />
+        <option value="$PROJECT_DIR$/css/relVendas.css" />
+        <option value="$PROJECT_DIR$/css/relembre-me.css" />
+        <option value="$PROJECT_DIR$/css/produtos.css" />
         <option value="$PROJECT_DIR$/css/prod_vendidos.css" />
+        <option value="$PROJECT_DIR$/css/pagamento.css" />
+        <option value="$PROJECT_DIR$/css/menuprincipal.css" />
+        <option value="$PROJECT_DIR$/css/login.css" />
       </list>
     </option>
   </component>
@@ -203,12 +189,12 @@
             <path>
               <item name="compravenda" type="b2602c69:ProjectViewProjectNode" />
               <item name="compravenda" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="prod-vendidos" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="compravenda" type="b2602c69:ProjectViewProjectNode" />
               <item name="compravenda" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="produtos" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="fornecidos" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -544,11 +530,18 @@
       <option name="project" value="LOCAL" />
       <updated>1529856399321</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="atualização">
+      <created>1529872597065</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1529872597065</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="482637000" />
+    <option name="totallyTimeSpent" value="486938000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -644,65 +637,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/jquery.ui.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="18705" column="4" selection-start-line="18705" selection-start-column="4" selection-end-line="18705" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cadastro.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="53" column="1" lean-forward="true" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/jquery.ui.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="1176" column="1" selection-start-line="1176" selection-start-column="1" selection-end-line="1176" selection-end-column="1" />
-          <folding>
-            <element signature="e#11524#11607#2" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendas/cancelaVenda.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/confirmar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendas/confirmado.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/clientes.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/relVendas.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="215" column="13" lean-forward="true" selection-start-line="215" selection-start-column="13" selection-end-line="215" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/clientes/clientes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -731,20 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/venda.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="89" column="1" lean-forward="true" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/pagamento.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="265" column="44" selection-start-line="265" selection-start-column="44" selection-end-line="265" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendas/delete.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -763,6 +683,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="490">
           <caret line="146" column="20" selection-start-line="146" selection-start-column="20" selection-end-line="146" selection-end-column="20" />
+          <folding>
+            <element signature="e#1501#1508#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -842,7 +765,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/menuprincipal.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
           <caret line="132" column="30" lean-forward="true" selection-start-line="132" selection-start-column="30" selection-end-line="132" selection-end-column="30" />
@@ -867,13 +790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/produtos.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="236" column="18" lean-forward="true" selection-start-line="236" selection-start-column="18" selection-end-line="236" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -943,31 +859,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/fornecedores.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/usuarios/usuarios.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
           <caret line="109" column="22" lean-forward="true" selection-start-line="109" selection-start-column="22" selection-end-line="109" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/usuarios.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="203" column="33" lean-forward="true" selection-end-line="234" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/fornecedores.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="255" column="34" selection-start-line="255" selection-start-column="34" selection-end-line="255" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -978,31 +873,129 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fornecedores/fornecedores.php">
+    <entry file="file://$PROJECT_DIR$/js/fornecedores.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="134" column="37" lean-forward="true" selection-start-line="134" selection-start-column="37" selection-end-line="134" selection-end-column="37" />
+        <state relative-caret-position="153">
+          <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fornecidos/prod-fornecidos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="103" column="17" lean-forward="true" selection-start-line="103" selection-start-column="17" selection-end-line="103" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/produtos/produtos.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="153" column="47" lean-forward="true" selection-start-line="153" selection-start-column="47" selection-end-line="153" selection-end-column="47" />
+        <state relative-caret-position="204">
+          <caret line="255" column="48" lean-forward="true" selection-start-line="255" selection-start-column="48" selection-end-line="255" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fornecedores/fornecedores.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="105" column="32" selection-start-line="105" selection-start-column="32" selection-end-line="105" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/cadastro.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="57" column="1" selection-start-line="57" selection-start-column="1" selection-end-line="57" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/clientes.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="246" column="1" selection-start-line="246" selection-start-column="1" selection-end-line="246" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/confirmar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/view.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="83" column="1" selection-start-line="83" selection-start-column="1" selection-end-line="83" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/venda.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="93" column="1" selection-start-line="93" selection-start-column="1" selection-end-line="93" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/fornecedores.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="254" selection-start-line="254" selection-end-line="256" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/usuarios.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="238" column="1" selection-start-line="238" selection-start-column="1" selection-end-line="238" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/relVendas.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="246" column="1" selection-start-line="246" selection-start-column="1" selection-end-line="246" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/relembre-me.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="101" lean-forward="true" selection-start-line="101" selection-end-line="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/produtos.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="242" column="1" selection-start-line="242" selection-start-column="1" selection-end-line="242" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/prod_vendidos.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="114" column="23" selection-start-line="114" selection-start-column="23" selection-end-line="114" selection-end-column="23" />
+        <state relative-caret-position="524">
+          <caret line="123" column="1" selection-start-line="123" selection-start-column="1" selection-end-line="123" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prod-vendidos/prod_vendidos.php">
+    <entry file="file://$PROJECT_DIR$/css/pagamento.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="71" column="25" lean-forward="true" selection-start-line="71" selection-start-column="25" selection-end-line="71" selection-end-column="25" />
+        <state relative-caret-position="524">
+          <caret line="271" column="1" selection-start-line="271" selection-start-column="1" selection-end-line="271" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/menuprincipal.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="114" column="1" selection-start-line="114" selection-start-column="1" selection-end-line="114" selection-end-column="1" />
         </state>
       </provider>
     </entry>

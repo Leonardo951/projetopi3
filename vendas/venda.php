@@ -42,10 +42,10 @@ date_default_timezone_set('America/Sao_Paulo');
 <body>
 <div class="container">
     <div class="row">
-        <a href="../menuprincipal.php">
+        <a href="../index.php">
             <img src="../img/cables.png/" class="img-logo-usuario"/>
         </a>
-        <a href="../menuprincipal.php" class="btn btn-success-retorn btn_ini">
+        <a href="../index.php" class="btn btn-success-retorn btn_ini">
             <span><i class="fa fa-arrow-circle-left"></i> Voltar ao menu</span>
         </a>
         <?php

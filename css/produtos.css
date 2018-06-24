@@ -237,3 +237,7 @@ table.table .avatar {
 .ui-autocomplete {
     z-index: 215000000 !important;
 }
+
+td, th {
+    text-align: center !important;
+}

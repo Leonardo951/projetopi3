@@ -40,7 +40,7 @@ require_once '../conexao.php';
             <div class="table-wrapper">
                 <div class="table-title">
                     <img id="logo" src="../img/cables.png"/>
-                    <a href="../menuprincipal.php" class="btn btn-success-retorn btn_ini">
+                    <a href="../index.php" class="btn btn-success-retorn btn_ini">
                         <span><i class="fa fa-arrow-circle-left"></i> Voltar ao menu</span>
                     </a>
                     <a href="clientes.php" class="btn btn-primary btn_ini">

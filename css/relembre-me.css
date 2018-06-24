@@ -100,4 +100,6 @@ body, html {
 .btn_rec.btn-recuper:focus {
     background-color: #0c6121; }
 
-/*# sourceMappingURL=recuperacao-senha.component.css.map */
+td, th {
+    text-align: center !important;
+}
