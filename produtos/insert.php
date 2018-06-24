@@ -36,7 +36,7 @@ while ($c < 1000) {
     $c = $c+1;
 }
 
-$sql = "INSERT INTO tb_produto (nome_prod, preco, fk_categoria, cod_prod, marca, quantidade) VALUES (??,,?,?,?,?);";
+$sql = "INSERT INTO tb_produto (nome_prod, preco, fk_categoria, cod_prod, marca, qntd_estoq) VALUES (?,?,?,?,?,?);";
 $stmt = $conex->prepare($sql);
 $stmt->bindValue(1, $prod);
 $stmt->bindValue(2, $preco);
@@ -51,5 +51,4 @@ if( $stmt->execute() ){
 } else {
     $_SESSION['recado'] = 'erroadicao';
     header('Location: produtos.php');
-
 }

@@ -309,22 +309,23 @@ include_once '../conexao.php';
                     </div>
                     <div class="form-group">
                         <label>Produtos</label>
-                        <input type="text" class="form-control" id="prod" name="produtos" required placeholder="Pesquise pelo nome ou código do produto">
+                        <input type="text" class="form-control" id="prod" name="produtos" placeholder="Pesquise pelo nome ou código do produto">
                     </div>
                     <div class="mytab">
                         <table class="table table-striped table-hover">
                             <tr class="linha">
-                                <td id="codigo"></td>
+                                <td id="codigo" class="cod"></td>
                                 <td id="nome_prod"></td>
-                                <td class="excluir" id="exclui" onclick="apagaLinha(this)"><i class="glyphicon glyphicon-remove"></i> </td>
+                                <td class="excluir" id="exclui" onclick="apagaLinha(this)"><i class="glyphicon glyphicon-remove"></i></td>
                             </tr>
                             <tr id="novalinha"></tr>
                         </table>
+                        <input type="hidden" id="codigos" name="codigos">
                     </div>
                 </div>
                 <div class="modal-footer">
                     <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-                    <input type="submit" class="btn btn-success" value="Adicionar">
+                    <input type="submit" class="btn btn-success" id="adicionar" value="Adicionar" onclick="registraProds()">
                 </div>
             </form>
         </div>

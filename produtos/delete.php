@@ -5,7 +5,7 @@ include_once '../conexao.php';
 
 $id = $_POST['id'];
 $qntd = $_POST['qntd'];
-
+echo $id;
 if ($qntd == 0 ) {
 
     $PDO = $conex;
@@ -14,16 +14,16 @@ if ($qntd == 0 ) {
 
     $stmt = $PDO->prepare($sql);
 
-    $stmt->bindParam(':pk_prod', $id, PDO::PARAM_INT);
+    $stmt->bindParam('pk_prod', $id);
 
     if ($stmt->execute()) {
         $_SESSION['recado'] = 'deletado';
         header('Location: produtos.php');
 
     } else {
+        echo 'errado';
         $_SESSION['recado'] = 'nodelete';
         header('Location: produtos.php');
-
     }
 }else {
     $_SESSION['recado'] = 'quantidade';

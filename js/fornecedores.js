@@ -32,6 +32,7 @@ $.ajax({
                 $( "<tr id='linha"+date+"'></tr>" ).insertBefore( "#novalinha" );
                 let variable = '#linha' + date;
                 $(variable).append(p1).append(p2).append(p3);
+                $('#codigo').text('');
             })
         }
     });
@@ -48,4 +49,17 @@ $('.editar').on('hide.bs.modal', function () {
 function apagaLinha(item) {
     let id = '#linha' + $(item).attr('id');
     $(id).remove();
+}
+
+function registraProds() {
+    document.getElementById("adicionar").addEventListener("click", function(event){
+        event.preventDefault()
+    });
+    let codigo = '';
+    let codigos = [];
+    $(".cod").each(function(){
+        codigo = $(this).text();
+        codigos.push(codigo);
+    });
+    $('#codigos').val(JSON.stringify(codigos));
 }
