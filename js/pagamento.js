@@ -15,7 +15,7 @@ $.ajax({
     data: {tipo: 'resp'},
     dataType: "json",
 }).done(function(data){
-    $("#buscaCliente" ).autocomplete({
+    $("#buscaPj" ).autocomplete({
         source: data
     });
 });
@@ -26,7 +26,7 @@ $.ajax({
     data: {tipo: 'juridico'},
     dataType: "json",
 }).done(function(data){
-    $("#buscaCliente" ).autocomplete({
+    $("#buscaResp" ).autocomplete({
         source: data
     });
 });

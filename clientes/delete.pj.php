@@ -7,7 +7,8 @@ $id = $_POST['id'];
 
 $PDO = $conex;
 
-$sql="DELETE FROM tb_cliente_pj WHERE pk_cliente_pj = :id";
+$sql="DELETE FROM tb_cliente_pj WHERE pk_cliente_pj = :id;
+      DELETE FROM bt_endereco WHERE fk_cli_pj = :id;";
 
 $stmt = $PDO->prepare($sql);
 
@@ -20,5 +21,4 @@ if ( $stmt->execute() ) {
 } else {
     $_SESSION['recado'] = 'nodelete';
     header('Location: clientes.php');
-
 }

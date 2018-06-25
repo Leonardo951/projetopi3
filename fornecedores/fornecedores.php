@@ -165,7 +165,7 @@ include_once '../conexao.php';
                         <div id="editUsuario' . $id . '" class="modal fade editar">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                    <form action="update.pf.php" method="POST">
+                                    <form action="update.php" method="POST">
                                         <div class="modal-header">
                                             <h4 class="modal-title">Editar fornecedor</h4>
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -181,7 +181,7 @@ include_once '../conexao.php';
                                             </div>
                                             <div class="form-group">
                                                 <label>CNPJ</label>
-                                                <input type="text" name="cnpj" class="form-control" value="' . $rz . '" required onchange="habilitaSave()">
+                                                <input type="text" name="cnpj" class="form-control" value="' . $cnpj . '" required onchange="habilitaSave()">
                                             </div>
                                             <div class="form-group">
                                                 <label>E-mail</label>
@@ -190,17 +190,21 @@ include_once '../conexao.php';
                                             <div class="form-group">
                                                 <label>DDD</label>
                                                 <select class="form-control" required name="ddd"  onchange="habilitaSave()">';
-                for($i = 0; $i < count($myddds); ++$i) {
-                    if($myddds[$i] == $ddd) {
-                        echo '<option selected>'.$myddds[$i].'</option>';
-                    } else {
-                        echo '<option>'.$myddds[$i].'</option>';
-                    }
-                }
-                echo '
+                                            for($i = 0; $i < count($myddds); ++$i) {
+                                                if($myddds[$i] == $ddd) {
+                                                    echo '<option selected>'.$myddds[$i].'</option>';
+                                                } else {
+                                                    echo '<option>'.$myddds[$i].'</option>';
+                                                }
+                                            }
+                                            echo '
                                                 </select>
                                                 <input name="id" type="hidden" value="' . $id . '" />
                                             </div>
+                                            <div class="form-group">
+                                            <label>Telefone</label>
+                                            <input type="tel" maxlength="8" class="form-control" name="tel" required value="'. $tel .'">
+                                        </div> 
                                         </div>
                                         <div class="modal-footer">
                                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
@@ -300,7 +304,7 @@ include_once '../conexao.php';
                     </div>
                     <div class="form-group">
                         <label>CNPJ</label>
-                        <input type="text" maxlength="14" class="form-control cpf-mask" name="cnpj" required>
+                        <input type="text" maxlength="18" class="form-control cpf-mask" name="cnpj" required>
                     </div>
                     <div class="form-group">
                         <label>E-mail</label>
@@ -326,17 +330,17 @@ include_once '../conexao.php';
                     <div class="mytab">
                         <table class="table table-striped table-hover">
                             <thead>
-                                <th>Código</th>
-                                <th>Produto</th>
-                                <th>Remover</th>
+                            <th>Código</th>
+                            <th>Produto</th>
+                            <th>Remover</th>
                             </thead>
                             <tbody>
-                                <tr class="linha">
-                                    <td id="codigo" class="cod"></td>
-                                    <td id="nome_prod" class="produtos"></td>
-                                    <td class="excluir" id="exclui" onclick="apagaLinha(this)"><i class="glyphicon glyphicon-remove"></i></td>
-                                </tr>
-                                <tr id="novalinha"></tr>
+                            <tr class="linha">
+                                <td id="codigo" class="cod"></td>
+                                <td id="nome_prod" class="produtos"></td>
+                                <td class="excluir" id="exclui" onclick="apagaLinha(this)"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            <tr id="novalinha"></tr>
                             </tbody>
                         </table>
                         <input type="hidden" id="codigos" name="codigos">

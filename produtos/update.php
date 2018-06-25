@@ -16,14 +16,10 @@ $sql = 'SELECT pk_categoria FROM tb_categoria WHERE categoria = :categoria;';
 $prepara = $PDO->prepare($sql);
 $prepara->bindParam(':categoria', $categoria);
 $prepara->execute();
-while ($pk = $prepara->fetch()) {
-    $pk_categoria = $pk['pk_categoria'];
-};
+$pk = $prepara->fetch();
+$pk_categoria = $pk['pk_categoria'];
 
-$sql = "UPDATE tb_produto SET nome_prod = :nome_prod WHERE pk_produto = :pk_produto;
-        UPDATE tb_produto SET preco = :preco WHERE pk_produto = :pk_produto;
-        UPDATE tb_produto SET marca = :marca WHERE pk_produto = :pk_produto;
-        UPDATE tb_produto SET fk_categoria = :fk_categoria WHERE pk_produto = :pk_produto;";
+$sql = "UPDATE tb_produto SET nome_prod = :nome_prod, preco = :preco, marca = :marca, fk_categoria = :fk_categoria WHERE pk_prod = :pk_produto;";
 
 $stmt = $PDO->prepare($sql);
 

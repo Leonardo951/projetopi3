@@ -1,6 +1,7 @@
 <?php
 
 require_once '../conexao.php';
+include_once '../converter.php';
 session_start();
 
 $id = $_POST['id'];
@@ -9,17 +10,12 @@ $email  = strtolower($_POST['email']);
 $rz  = ucwords(strtolower($_POST['razao_soc']));
 $ddd = $_POST['ddd'];
 $tel = $_POST['tel'];
-$cnpj = $_POST['cnpj'];
+$cnpj = sanear_valor($_POST['cnpj']);
 
 
 $PDO = $conex;
 
-$sql = "UPDATE tb_fornecedor SET nome = :nome WHERE pk_usuario = :id;
-        UPDATE tb_fornecedor SET razao_soc = :razao_soc WHERE pk_usuario = :id;
-        UPDATE tb_fornecedor SET cnpj = :cnpj WHERE pk_usuario = :id;
-        UPDATE tb_fornecedor SET email = :email WHERE pk_usuario = :id;
-        UPDATE tb_fornecedor SET telefone = :telefone WHERE pk_usuario = :id;
-        UPDATE tb_fornecedor SET fk_ddd = :fk_ddd WHERE pk_usuario = :id";
+$sql = "UPDATE tb_fornecedor SET nome = :nome, razao_soc = :razao_soc, cnpj = :cnpj, email = :email, fk_ddd = :fk_ddd, telefone = :telefone WHERE pk_usuario = :id;";
 
 $stmt = $PDO->prepare($sql);
 

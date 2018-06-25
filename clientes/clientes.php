@@ -248,12 +248,12 @@ require_once '../functions/check.php';
                     $id_pj = $row['pk_cliente_pj'];
                     $rz = $row['razao_soc'];
                     $nbr_cnpj = $row['cnpj'];
-                    $cnpj = vsprintf( '%d.%d.%d/%d-%d' , sscanf( $nbr_cnpj , '%2d%3d%3d%4d%2d' ) );
+//                    $cnpj = vsprintf( '%d.%d.%d/%d-%d' , sscanf( $nbr_cnpj , '%2d%3d%3d%4d%2d' ) );
                     $cod_pj = base64_encode($id_pj);
                     echo '
                         <tr>
                             <td>' . $rz . '</td>  
-                            <td>' . $cnpj . '</td>
+                            <td>' . $nbr_cnpj . '</td>
                             <td>
                                 <a href="viewer.pj.php?view=' . $cod_pj . '" class="vizualizar" data-toggle="modal">
                                     <i class="material-icons" data-toggle="tooltip" title="Vizualizar">&#xe85d;</i>

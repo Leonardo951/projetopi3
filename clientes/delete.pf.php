@@ -7,7 +7,8 @@ $id = $_POST['id'];
 
 $PDO = $conex;
 
-$sql="DELETE FROM tb_clientes_pf WHERE pk_clie_pf = :id";
+$sql="DELETE FROM tb_clientes_pf WHERE pk_clie_pf = :id;
+      DELETE FROM tb_endereco WHERE fk_cli_pf = :id;";
 
 $stmt = $PDO->prepare($sql);
 

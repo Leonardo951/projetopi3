@@ -129,7 +129,7 @@
                             <th>Produto</th>
                             <th>Categoria</th>
                             <th>Marca</th>
-                            <th>Quantidade disponível</th>
+                            <th>Quantidade<br>disponível</th>
                             <th>Preço (R$)</th>
                             <th>Fornecedores</th>
                             <th>Ações</th>
@@ -186,7 +186,7 @@
                         <div id="editUsuario' . $id . '" class="modal fade editar">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                    <form action="update.pf.php" method="POST">
+                                    <form action="update.php" method="POST">
                                         <div class="modal-header">
                                             <h4 class="modal-title">Editar informações produto</h4>
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>

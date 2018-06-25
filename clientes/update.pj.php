@@ -69,16 +69,16 @@ if ($stmt->execute()) {
         $stmt->bindParam(':cep', $cep);
         $stmt->bindParam(':id', $id);
 
-    if ($stmt->execute()) {
+$stmt->execute();;
         $_SESSION['recado'] = 'editado';
         header('Location: viewer.pj.php?view=' . $cod . '');
 
-    } else {
-        $_SESSION['recado'] = 'erroend';
-        header('Location: viewer.pj.php?view=' . $cod . '');
+//    } else {
+//        $_SESSION['recado'] = 'erroend';
+//        header('Location: viewer.pj.php?view=' . $cod . '');
 
-    }
-} else {
+//    }
+} else  {
     $_SESSION['recado'] = 'erroedicao';
     header('Location: viewer.pj.php?view=' . $cod . '');
 }

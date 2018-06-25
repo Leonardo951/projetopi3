@@ -241,7 +241,7 @@ require_once '../conexao.php';
                         <div class="col-md-8">
                             <button id="atualizar" class="btn btn-success btn_fim" disabled type="Submit">Atualizar</button>
                             <button id="editar" class="btn btn-primary btn_fim" type="button" onclick="editarCampos()">Editar campos</button>
-                            <a href="#confirmDelete" data-toggle="modal"><button id="excluir" class="btn btn-danger btn_fim" type="button">Excluir cliente</button></a>
+<!--                            <a href="#confirmDelete" data-toggle="modal"><button id="excluir" class="btn btn-danger btn_fim" type="button">Excluir cliente</button></a>-->
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,6 @@
 <?php
 include_once '../conexao.php';
+include_once '../converter.php';
 session_start();
 
 $nome   = ucwords(strtolower($_POST['nome']));
@@ -7,7 +8,7 @@ $email  = strtolower($_POST['email']);
 $rz  = ucwords(strtolower($_POST['razao_soc']));
 $ddd = $_POST['ddd'];
 $tel = $_POST['tel'];
-$cnpj = $_POST['cnpj'];
+$cnpj = sanear_valor($_POST['cnpj']);
 $codigos = json_decode($_POST['codigos']);
 
 $sql = "INSERT INTO tb_fornecedor (nome, email, razao_soc, cnpj, fk_ddd, telefone) VALUES (?,?,?,?,?,?);";

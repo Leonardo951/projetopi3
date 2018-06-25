@@ -11,7 +11,7 @@ $sql="DELETE FROM tb_fornecedor WHERE pk_fornecedor = :id";
 
 $stmt = $PDO->prepare($sql);
 
-$stmt->bindParam(':id', $id, PDO::PARAM_INT);
+$stmt->bindParam('id', $id);
 
 if ( $stmt->execute() ) {
     $_SESSION['recado'] = 'deletado';
@@ -19,6 +19,6 @@ if ( $stmt->execute() ) {
 
 } else {
     $_SESSION['recado'] = 'nodelete';
-    header('Location: fornecedores.php');
-
+//    header('Location: fornecedores.php');
+    echo $id;
 }

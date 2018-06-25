@@ -62,14 +62,15 @@ if ($stmt->execute()) {
     $stmt->bindParam(':complemento', $compl);
     $stmt->bindParam(':cep', $cep);
     $stmt->bindParam(':fk_cli_pf', $id);
-    if ($stmt->execute()) {
+//    if ($stmt->execute()) {
+    $stmt->execute();
         $_SESSION['recado'] = 'editado';
         header('Location: viewer.pf.php?view=' . $cod . '');
-    } else {
-        $_SESSION['recado'] = 'erroend';
-        header('Location: viewer.pf.php?view=' . $cod . '');
+//    } else {
+//        $_SESSION['recado'] = 'erroend';
+//        header('Location: viewer.pf.php?view=' . $cod . '');
 //        print_r($stmt->errorInfo());
-    }
+//    }
 } else {
     $_SESSION['recado'] = 'erroedicao';
     header('Location: viewer.pf.php?view=' . $cod . '');

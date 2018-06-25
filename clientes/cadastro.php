@@ -47,7 +47,6 @@ require_once '../conexao.php';
                         <i class="glyphicon glyphicon-menu-hamburger"></i>
                         <span>Ver clientes existentes</span>
                     </a>
-                    <div class="col-md-6">
                         <?php if($_SESSION['recado'] == 'adicionado') {?>
                         <div class="alert alert-success">
                             <strong>Adicionado! </strong>Novo cliente adicionado com sucesso!
@@ -59,7 +58,6 @@ require_once '../conexao.php';
                             <button class="close" data-dismiss="alert" id="message">x</button>
                         </div>
                         <?php } $_SESSION['recado'] = 'vazio';?>
-                    </div>
                 </div>
             </div>
             <br><br>

@@ -37,6 +37,7 @@ while ($c < 1000) {
 }
 $_SESSION['cod_venda'] = $codigo_venda;
 $dt_hr = new DateTime();
+$result = $dt_hr->format('Y-m-d H:i:s');
 
 $sql = 'INSERT INTO tb_venda (cod_venda, fk_usuario, vl_total, vl_desc, subtotal, qntd_prod, dt_hr_venda) VALUES (?,?,?,?,?,?,?);';
 $stmt = $conex->prepare($sql);
@@ -46,7 +47,7 @@ $stmt->bindValue(3, $total);
 $stmt->bindValue(4, $desconto);
 $stmt->bindValue(5, $subtotal);
 $stmt->bindValue(6, $qntd_prod);
-$stmt->bindValue(7, $dt_hr);
+$stmt->bindValue(7, $result);
 if($stmt->execute()){
     $sql = 'SELECT pk_venda FROM tb_venda WHERE cod_venda = :cod_venda;';
     $stmt = $conex->prepare($sql);
