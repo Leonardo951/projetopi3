@@ -42,7 +42,7 @@ require_once '../conexao.php';
 <div class="container">
     <div class="row text-center">
         <a href="../index.php">
-            <img src="../img/cables.png/" class="img-logo-usuario"/>
+            <img src="../img/cables.png" class="img-logo-usuario"/>
         </a>
         <fieldset id="pag" class="text-center">
             <?php

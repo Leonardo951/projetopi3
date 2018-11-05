@@ -48,7 +48,7 @@ include_once '../conexao.php';
         <div class="table-title">
             <div class="row">
                 <a href="../index.php">
-                    <img src="../img/cables.png/" class="img-logo-usuario"/>
+                    <img src="../img/cables.png" class="img-logo-usuario"/>
                 </a>
                 <a href="../index.php" class="btn btn-success-retorn btn_ini">
                     <span><i class="fa fa-arrow-circle-left"></i> Voltar ao menu</span>

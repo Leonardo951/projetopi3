@@ -42,7 +42,7 @@ date_default_timezone_set('America/Sao_Paulo');
 <body>
 <div class="container">
     <div class="row">
-        <img src="../img/cables.png/" class="img-logo-usuario"/>
+        <img src="../img/cables.png" class="img-logo-usuario"/>
         <a href="relVendas.php" class="btn btn-success-retorn btn_ini">
             <span><i class="fa fa-arrow-circle-left"></i> Retornar</span>
         </a>

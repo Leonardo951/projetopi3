@@ -44,7 +44,7 @@ include_once '../conexao.php';
 <div class="container">
     <div class="row">
         <a href="../index.php">
-            <img src="../img/cables.png/" class="img-logo-usuario"/>
+            <img src="../img/cables.png" class="img-logo-usuario"/>
         </a>
         <?php
         if(isset($_GET['produto'])){
